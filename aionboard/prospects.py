@@ -169,11 +169,12 @@ def score_business(
     """Score a business 0-100 based on multiple signals.
 
     Components:
-      - Status: active = 100, dissolved/other = 0 (early exit)
-      - Business age: newer incorporation → higher (max 30 pts)
-      - Postcode density: denser cluster → higher (max 20 pts)
-      - SIC code diversity: more SICs → higher (max 15 pts)
-      - Planning activity nearby: +10 if planning apps in area
+      - Status: active = continue, dissolved/other = 0 (early exit)
+      - Is actual electrician: +20 if SIC 43210 (max 20 pts)
+      - Business age: newer incorporation → higher (max 25 pts)
+      - Postcode density: denser cluster → higher (max 15 pts)
+      - SIC code diversity: more SICs → higher (max 10 pts)
+      - Planning activity nearby: +15 if planning apps in area
       - Contract activity nearby: +15 if contracts in area
     """
     # Status gate
@@ -183,18 +184,29 @@ def score_business(
 
     score = 0.0
 
-    # --- Business age (max 30 pts) ---
+    # --- Is actual electrician (max 20 pts) ---
+    sic_codes = business.get("sic_codes") or []
+    if "43210" in sic_codes:
+        score += 20  # Electrical installation — our target
+    elif any(sic.startswith("43") for sic in sic_codes):
+        score += 10  # Related construction
+    elif any(sic.startswith("61") for sic in sic_codes):
+        score += 5   # Telecoms (related but not core)
+    else:
+        score += 0   # IT, energy, etc. — not our target
+
+    # --- Business age (max 25 pts) ---
     inc_str = business.get("incorporation_date")
     if inc_str:
         try:
             inc_date = datetime.strptime(str(inc_str), "%Y-%m-%d").date()
             age_years = (date.today() - inc_date).days / 365.25
-            # 0-5 years → 30 pts, 5-10 → 20 pts, 10-20 → 10 pts, 20+ → 5 pts
-            if age_years <= 5:
-                score += 30
-            elif age_years <= 10:
+            # 0-3 years → 25 pts (new, needs setup), 3-7 → 20 pts, 7-15 → 10 pts, 15+ → 5 pts
+            if age_years <= 3:
+                score += 25
+            elif age_years <= 7:
                 score += 20
-            elif age_years <= 20:
+            elif age_years <= 15:
                 score += 10
             else:
                 score += 5
@@ -202,32 +214,31 @@ def score_business(
             pass
     else:
         # Unknown date → treat as medium age
-        score += 15
+        score += 12
 
-    # --- Postcode density (max 20 pts) ---
+    # --- Postcode density (max 15 pts) ---
     if max_density > 0:
         density_ratio = min(postcode_density / max_density, 1.0)
-        score += round(density_ratio * 20, 1)
+        score += round(density_ratio * 15, 1)
 
-    # --- SIC code diversity (max 15 pts) ---
-    sic_codes = business.get("sic_codes") or []
+    # --- SIC code diversity (max 10 pts) ---
     num_sics = len(sic_codes)
     if num_sics >= 4:
-        score += 15
-    elif num_sics >= 3:
-        score += 12
-    elif num_sics >= 2:
-        score += 8
-    elif num_sics >= 1:
-        score += 4
-
-    # --- Planning activity nearby (max 10 pts) ---
-    if planning_count > 0:
         score += 10
+    elif num_sics >= 3:
+        score += 8
+    elif num_sics >= 2:
+        score += 5
+    elif num_sics >= 1:
+        score += 2
+
+    # --- Planning activity nearby (max 15 pts) ---
+    if planning_count > 0:
+        score += min(planning_count / 10, 15)  # Scale by count, cap at 15
 
     # --- Contract activity nearby (max 15 pts) ---
     if contract_count > 0:
-        score += 15
+        score += min(contract_count / 10, 15)  # Scale by count, cap at 15
 
     return round(min(score, 100.0), 1)
 
@@ -292,8 +303,15 @@ def generate_prospect_list(
             "density": density,
         })
 
-    scored.sort(key=lambda x: x["score"], reverse=True)
-    return [p for p in scored if p["score"] >= min_score]
+    # Deduplicate by company name (keep highest score)
+    seen: dict[str, dict] = {}
+    for p in scored:
+        name = p["name"].strip()
+        if name not in seen or p["score"] > seen[name]["score"]:
+            seen[name] = p
+    
+    deduped = sorted(seen.values(), key=lambda x: x["score"], reverse=True)
+    return [p for p in deduped if p["score"] >= min_score]
 
 
 # ---------------------------------------------------------------------------
