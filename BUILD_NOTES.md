@@ -514,6 +514,27 @@ Three agents now share this repo. AGENTS.md predated two of them. Preparing a cl
 
 ---
 
+## Session 2026-09-23 — Full audit, threads, forward devplan
+
+### Context
+Repo review requested: audit state, consolidate open threads, update handover, plan what's next.
+
+### What was done
+- Audit: 147 tests green, tree clean, no TODO/FIXME markers, no stale pricing or guarantee claims outside disclaimers.
+- `THREADS.md`: 12 open threads (T1–T12) with owners, blockers, and definitions of done. No orphaned next-steps remain.
+- `DEVPLAN_NEXT.md`: phases 0–4 with gates, standing orders (what not to do), and kill criteria agreed while calm.
+- AGENTS.md doc table updated.
+
+### Current state
+- 147 tests pass.
+- No completed paying installation is recorded.
+- Critical path is T1 (first electrician install) → T2 (first quickstart) → Phase 0 exit.
+
+### Next steps
+Per DEVPLAN_NEXT.md Phase 0: sell (T3), deliver (T1/T2), measure (T4).
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:

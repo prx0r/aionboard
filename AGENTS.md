@@ -98,4 +98,6 @@ Lesson from the merge: when multiple agents push, rebase carefully and run the F
 | The funnel | `FUNNEL.md`, `ADDONS.md` |
 | Strategy + economics | `STRATEGY.md`, `GEO_OPPORTUNITIES.md` |
 | Build history | `BUILD_NOTES.md` |
+| Open threads | `THREADS.md` (T1–T12, start here for what to do next) |
+| What's next | `DEVPLAN_NEXT.md` (phases 0–4, gates, kill criteria) |
 | Peer critiques | `PEER_REVIEW.md`, `devplan.md` |
