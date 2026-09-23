@@ -15,6 +15,7 @@ from .crm import (
     record_tps_check,
 )
 from .backup import create_backup, restore_backup, verify_backup
+from .buddy import buddy_answer, buddy_ask, build_business_graph
 from .businesses import (
     create_business,
     find_by_company_number,
@@ -129,6 +130,9 @@ __all__ = [
     "find_by_company_number",
     "answer_text",
     "ask",
+    "buddy_answer",
+    "buddy_ask",
+    "build_business_graph",
     "build_graph",
     "build_knowledge_bundle",
     "generate_handover",

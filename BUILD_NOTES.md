@@ -397,6 +397,28 @@ Needed a zero-marginal-cost funnel (TikTok → site → £20) and a queryable st
 
 ---
 
+## Session 2026-09-23 — Onboard buddy on the harness pattern
+
+### Context
+Reuse influence's pi harness pattern (per-business kernel, read-only tools, decide gate) and give every customer a free scoped assistant — complement to Muse, not competitor.
+
+### What was done
+- `aionboard/buddy.py`: per-business graph (vertical pack + stack + install state), scoped `buddy_ask()` with citations, honest ignorance, no cross-tenant leakage.
+- Shared stemming fix in `graph.py` retrieval so plurals match.
+- `HARNESS.md`: reused pattern, buddy-vs-Muse table, on-ramp strategy.
+- 8 new buddy tests.
+
+### Current state
+- 99 tests pass.
+- No completed paying installation is recorded.
+
+### Next steps
+1. Validate one manual electrician installation.
+2. Validate one £20 nail-tech quickstart and measure support minutes.
+3. Serve the buddy over the dashboard pattern when a real customer exists.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:

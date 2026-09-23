@@ -20,8 +20,14 @@ REGISTRY_PATH = REPO_ROOT / "regulations" / "registry.json"
 _TOKEN_PATTERN = re.compile(r"[a-z0-9]+")
 
 
+def _stem(token: str) -> str:
+    if len(token) > 3 and token.endswith("s"):
+        return token[:-1]
+    return token
+
+
 def _tokens(text: str) -> set[str]:
-    return set(_TOKEN_PATTERN.findall(text.lower()))
+    return {_stem(token) for token in _TOKEN_PATTERN.findall(text.lower())}
 
 
 def build_graph() -> dict:
