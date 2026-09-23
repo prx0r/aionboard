@@ -308,6 +308,29 @@ Exact per-tool API automation is the wrong deliverable. Customers won't hand ove
 
 ---
 
+## Session 2026-09-23 — Geographic opportunities + strategy doc
+
+### Context
+Saved the strategic analysis as STRATEGY.md, then combined it with powuk signals geographically so the retention pitch becomes "your assistant finds opportunities near you."
+
+### What was done
+- `STRATEGY.md`: flaws, security deployed-vs-documented gap, per-vertical AI-vs-human table, honest unit economics (£20 loses standalone, £499 funds the business).
+- Audited powuk signals: planning descriptions + authority entities, OCDS buyer localities/postcodes, ONS labour by region, 10k businesses across 184 areas.
+- `aionboard/opportunities.py`: keyword scoring per vertical, outward-area matching, approval-gated digest. Conservative by design.
+- `GEO_OPPORTUNITIES.md`: per-vertical signal map, matching flow, Muse angle, stated limits.
+- 14 new matcher tests.
+
+### Current state
+- 67 tests pass.
+- No completed paying installation is recorded.
+
+### Next steps
+1. Validate one manual electrician installation.
+2. Validate one £20 nail-tech quickstart and measure support minutes.
+3. Feed live powuk signals into the matcher on a schedule.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:

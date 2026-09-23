@@ -54,6 +54,7 @@ from .integrations import (
     set_capability_state,
 )
 from .manual import generate_manual
+from .opportunities import digest, match_for_business, same_area, score_opportunity
 from .onboarding import (
     PACKAGES,
     create_onboarding,
@@ -138,6 +139,7 @@ __all__ = [
     "list_stack",
     "mark_untrusted",
     "marketing_allowed",
+    "match_for_business",
     "needs_legal_review",
     "new_business_id",
     "open_ticket",
@@ -150,13 +152,16 @@ __all__ = [
     "record_tps_check",
     "redeem_approval",
     "render_site",
+    "digest",
     "resolve_ticket",
     "restore_backup",
     "resume_onboarding",
     "recipe_for",
     "rules_for_industry",
     "run_demo",
+    "same_area",
     "scan_text",
+    "score_opportunity",
     "set_capability_state",
     "set_onboarding_task",
     "set_task",
