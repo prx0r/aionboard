@@ -35,3 +35,7 @@ python3 -c "from aionboard.demo import demo_summary; print(demo_summary())"
 ```
 
 Runtime CRM databases and generated customer handovers stay local and are ignored by git. Research records are not marketing permission.
+
+## Docs
+
+New here? Start with `AGENTS.md` — repo map, honest state of the world, security work queue, and conventions. Canonical offer lives in `OFFER.md`.
