@@ -81,6 +81,37 @@
     {"tool": "GoCardless", "category": "payments", "use": "integrate", "source": "cgraphuk"},
     {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"}
   ],
+  "legal": [
+    {
+      "id": "LEG-CLEANCHEM",
+      "law": "COSHH + Work at Height for cleaning trades",
+      "requires": ["COSHH assessments for chemicals; risk assessment for ladder/window work; competent persons only"],
+      "basis": "well-established"
+    },
+    {
+      "id": "LEG-DATAPAY",
+      "law": "Data protection + card-data handling",
+      "requires": ["Lawful basis for client and round data; key/alarm details secured"],
+      "basis": "well-established"
+    }
+  ],
+  "uk_opportunities": [
+    {
+      "name": "Round density",
+      "signal": "Filling streets not postcodes compounds £/hour",
+      "powuk_source": "planning_apps (housing density)"
+    },
+    {
+      "name": "First-clean premiums",
+      "signal": "2–3x work priced separately from standard visits",
+      "powuk_source": "n/a (operational data)"
+    },
+    {
+      "name": "Garden maintenance contracts",
+      "signal": "Seasonal repeat work from domestic and commercial clients",
+      "powuk_source": "contracts_finder (grounds maintenance)"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

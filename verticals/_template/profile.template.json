@@ -28,6 +28,21 @@
       "source": "TODO-source"
     }
   ],
+  "legal": [
+    {
+      "id": "TODO-LEG-ID",
+      "law": "TODO law",
+      "requires": ["TODO requirement"],
+      "basis": "TODO-basis"
+    }
+  ],
+  "uk_opportunities": [
+    {
+      "name": "TODO opportunity",
+      "signal": "TODO signal",
+      "powuk_source": "TODO source"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

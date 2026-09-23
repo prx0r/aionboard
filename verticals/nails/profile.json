@@ -83,6 +83,37 @@
     {"tool": "Instagram", "category": "discovery + portfolio", "use": "integrate", "source": "vendor-docs"},
     {"tool": "TikTok", "category": "discovery", "use": "integrate", "source": "vendor-docs"}
   ],
+  "legal": [
+    {
+      "id": "LEG-DATAPAY",
+      "law": "Data protection + card-data handling",
+      "requires": ["Lawful basis for client data/photos; never store raw PANs; deposit terms stated upfront"],
+      "basis": "well-established"
+    },
+    {
+      "id": "LEG-COSHH-PATCH",
+      "law": "Chemical safety + patch-test records",
+      "requires": ["COSHH awareness for acrylics/gels; patch-test records where colour chemistry applies"],
+      "basis": "well-established"
+    }
+  ],
+  "uk_opportunities": [
+    {
+      "name": "Social-led discovery",
+      "signal": "Instagram/TikTok portfolios convert followers to bookings",
+      "powuk_source": "n/a (social discovery)"
+    },
+    {
+      "name": "Infill intervals",
+      "signal": "2–3 week maintenance cycles create predictable repeat demand",
+      "powuk_source": "ons_labour (beauty demand)"
+    },
+    {
+      "name": "Deposit-protected diary",
+      "signal": "Upfront deposits convert enquiries to committed bookings",
+      "powuk_source": "n/a (booking-platform data)"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

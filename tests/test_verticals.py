@@ -79,6 +79,14 @@ class VerticalPackTests(unittest.TestCase):
                 self.assertIn("chatgpt_status", readiness)
                 self.assertIn("connector_requirements", readiness)
                 self.assertIn("approval_rules", readiness)
+                self.assertTrue(profile["legal"])
+                for entry in profile["legal"]:
+                    for key in ("id", "law", "requires", "basis"):
+                        self.assertIn(key, entry)
+                self.assertTrue(profile["uk_opportunities"])
+                for entry in profile["uk_opportunities"]:
+                    for key in ("name", "signal", "powuk_source"):
+                        self.assertIn(key, entry)
 
     def test_vertical_docs_make_no_guarantees(self):
         for vertical in vertical_directories():

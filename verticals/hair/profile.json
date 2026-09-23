@@ -82,6 +82,37 @@
     {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"},
     {"tool": "Instagram", "category": "discovery + portfolio", "use": "integrate", "source": "vendor-docs"}
   ],
+  "legal": [
+    {
+      "id": "LEG-COSHH-PATCH",
+      "law": "Chemical safety + patch-test records",
+      "requires": ["COSHH assessments for tints/bleach; patch test + record before colour services"],
+      "basis": "well-established"
+    },
+    {
+      "id": "LEG-DATAPAY",
+      "law": "Data protection + card-data handling",
+      "requires": ["Lawful basis for client data/photos; never store raw PANs"],
+      "basis": "well-established"
+    }
+  ],
+  "uk_opportunities": [
+    {
+      "name": "Colour maintenance cycles",
+      "signal": "Regrowth intervals drive predictable rebooking",
+      "powuk_source": "ons_labour (beauty demand)"
+    },
+    {
+      "name": "Mobile service-area coverage",
+      "signal": "Home-visit hairdressing serves customers underserved by salons",
+      "powuk_source": "planning_apps (housing growth)"
+    },
+    {
+      "name": "Portfolio-led referrals",
+      "signal": "Before/after content converts social followers to bookings",
+      "powuk_source": "n/a (social discovery)"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

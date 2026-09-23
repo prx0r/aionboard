@@ -159,6 +159,32 @@ The nine `targets.md` niches needed the same repeatable folder structure as elec
 
 ---
 
+## Session 2026-09-23 — MCP, stack capture, data policy, vertical legal
+
+### Context
+Peer review asked for an MCP-first direction, a clear existing-stack strategy, data/security/backup policy, and per-vertical legalities plus UK opportunities.
+
+### What was done
+- Added `MCP.md` and `mcp/tools.json`: 5 read tools, 4 gated write tools, OAuth/scoped-token design, audit requirements.
+- Added `STACK_CAPTURE.md`: ask → classify → verify → record flow with integrate/import-from/replace verdicts.
+- Added `stack_items` table to the CRM with replace-gate (customer approval required).
+- Added `DATA_POLICY.md`: data classes, retention, backups, incident response, customer rights.
+- Added `aionboard/backup.py`: timestamped SQLite backups with SHA-256 manifests and verify.
+- Added `legal` + `uk_opportunities` to all 11 vertical profiles from cgraphuk legislation registry and powuk sources.
+- Added 9 new tests (stack capture, backups, MCP contracts).
+
+### Current state
+- 32 tests pass.
+- No completed paying installation is recorded.
+- Ongoing tech support deliberately deferred.
+
+### Next steps
+1. Build the remote HTTPS MCP server (read tools first).
+2. Validate one electrician installation before expanding outreach.
+3. Submit Muse connector when eligible.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:

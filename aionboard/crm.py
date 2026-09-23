@@ -22,6 +22,7 @@ ALLOWED_OUTCOMES = {
 }
 ALLOWED_TPS_LISTS = {"TPS", "CTPS", "INTERNAL"}
 ALLOWED_TPS_RESULTS = {"clear", "blocked", "unknown"}
+ALLOWED_STACK_VERDICTS = {"integrate", "import-from", "replace"}
 POSTCODE_OUTWARD_PATTERN = re.compile(r"^[A-Z]{1,2}\d{1,2}[A-Z]?$")
 POSTCODE_INWARD_PATTERN = re.compile(r"^(.+?)([0-9][A-Z]{2})$")
 
@@ -85,9 +86,23 @@ def init_db(connection: sqlite3.Connection) -> None:
             notes TEXT NOT NULL DEFAULT ''
         );
 
+        CREATE TABLE IF NOT EXISTS stack_items (
+            id INTEGER PRIMARY KEY,
+            company_number TEXT NOT NULL REFERENCES prospects(company_number) ON DELETE CASCADE,
+            tool TEXT NOT NULL,
+            category TEXT NOT NULL DEFAULT '',
+            verdict TEXT NOT NULL DEFAULT 'integrate',
+            access TEXT NOT NULL DEFAULT '',
+            owner TEXT NOT NULL DEFAULT 'customer',
+            verified INTEGER NOT NULL DEFAULT 0,
+            recorded_at TEXT NOT NULL,
+            UNIQUE(company_number, tool)
+        );
+
         CREATE INDEX IF NOT EXISTS idx_contacts_company ON contacts(company_number);
         CREATE INDEX IF NOT EXISTS idx_attempts_company ON contact_attempts(company_number);
         CREATE INDEX IF NOT EXISTS idx_tps_company ON tps_checks(company_number);
+        CREATE INDEX IF NOT EXISTS idx_stack_company ON stack_items(company_number);
         """
     )
     connection.commit()
@@ -338,6 +353,86 @@ def record_contact_attempt(
     )
     connection.commit()
     return int(cursor.lastrowid)
+
+
+def record_stack_item(
+    connection: sqlite3.Connection,
+    *,
+    company_number: str,
+    tool: str,
+    category: str = "",
+    verdict: str = "integrate",
+    access: str = "",
+    owner: str = "customer",
+    verified: bool = False,
+) -> int:
+    """Record a tool in the customer's existing stack.
+
+    Default verdict is integrate or import-from. `replace` requires
+    explicit customer approval recorded in notes via access field.
+    """
+    normalized_number = company_number.strip().upper()
+    if get_prospect(connection, normalized_number) is None:
+        raise ValueError("unknown prospect")
+    normalized_tool = tool.strip()
+    if not normalized_tool:
+        raise ValueError("tool is required")
+    if verdict not in ALLOWED_STACK_VERDICTS:
+        raise ValueError(f"unsupported verdict: {verdict}")
+    if verdict == "replace" and "customer approval" not in access.lower():
+        raise ValueError("replace verdict requires recorded customer approval")
+
+    now = utcnow()
+    existing = connection.execute(
+        "SELECT id FROM stack_items WHERE company_number = ? AND tool = ?",
+        (normalized_number, normalized_tool),
+    ).fetchone()
+    if existing is None:
+        cursor = connection.execute(
+            """
+            INSERT INTO stack_items
+            (company_number, tool, category, verdict, access, owner, verified, recorded_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                normalized_number,
+                normalized_tool,
+                category.strip(),
+                verdict,
+                access.strip(),
+                owner.strip() or "customer",
+                1 if verified else 0,
+                now,
+            ),
+        )
+        connection.commit()
+        return int(cursor.lastrowid)
+    connection.execute(
+        """
+        UPDATE stack_items
+        SET category = ?, verdict = ?, access = ?, owner = ?, verified = ?, recorded_at = ?
+        WHERE id = ?
+        """,
+        (
+            category.strip(),
+            verdict,
+            access.strip(),
+            owner.strip() or "customer",
+            1 if verified else 0,
+            now,
+            int(existing["id"]),
+        ),
+    )
+    connection.commit()
+    return int(existing["id"])
+
+
+def list_stack(connection: sqlite3.Connection, company_number: str) -> list[dict]:
+    rows = connection.execute(
+        "SELECT * FROM stack_items WHERE company_number = ? ORDER BY tool",
+        (company_number.strip().upper(),),
+    ).fetchall()
+    return [dict(row) for row in rows]
 
 
 def serialize_row(row: MutableMapping[str, object] | sqlite3.Row) -> dict:

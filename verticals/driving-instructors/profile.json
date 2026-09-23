@@ -50,6 +50,32 @@
     {"tool": "Customer-owned payments", "category": "payments", "use": "integrate", "source": "customer-owned"},
     {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"}
   ],
+  "legal": [
+    {
+      "id": "LEG-DATAPAY",
+      "law": "Data protection + card-data handling",
+      "requires": ["Lawful basis for learner data; progress records secured; safeguarding obligations checked per instructor"],
+      "basis": "well-established"
+    },
+    {
+      "id": "LEG-MTD-ITSA",
+      "law": "MTD for Income Tax: digital records + quarterly updates",
+      "requires": ["Apr 2026: £50k+; Apr 2027: £30k+; compatible software"],
+      "basis": "verified-2026"
+    }
+  ],
+  "uk_opportunities": [
+    {
+      "name": "Waiting-list demand",
+      "signal": "Test backlogs create waiting-list businesses",
+      "powuk_source": "ons_labour (driving demand)"
+    },
+    {
+      "name": "Block-booking plans",
+      "signal": "Prepaid lesson blocks smooth cash flow",
+      "powuk_source": "n/a (operational data)"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

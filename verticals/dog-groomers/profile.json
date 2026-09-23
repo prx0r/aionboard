@@ -81,6 +81,37 @@
     {"tool": "Wag", "category": "marketplace", "use": "integrate", "source": "cgraphuk"},
     {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"}
   ],
+  "legal": [
+    {
+      "id": "LEG-ANIMAL",
+      "law": "Boarding/daycare licensing + welfare duty",
+      "requires": ["Local-authority licence where applicable; incident protocol; welfare duty of care"],
+      "basis": "well-established"
+    },
+    {
+      "id": "LEG-DATAPAY",
+      "law": "Data protection + card-data handling",
+      "requires": ["Lawful basis for client and pet records; medical/behavior data secured"],
+      "basis": "well-established"
+    }
+  ],
+  "uk_opportunities": [
+    {
+      "name": "Direct-repeat migration",
+      "signal": "Rover/Wag fees make direct booking highly valuable",
+      "powuk_source": "n/a (marketplace data)"
+    },
+    {
+      "name": "Vet and groomer referrals",
+      "signal": "Reciprocal, high-trust referral channel",
+      "powuk_source": "ch_capacity (business universe)"
+    },
+    {
+      "name": "Waiting-list fill",
+      "signal": "Cancellations filled from waiting lists protect the diary",
+      "powuk_source": "n/a (operational data)"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

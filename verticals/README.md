@@ -23,6 +23,7 @@ verticals/
 Each vertical pack contains:
 
 - `manifest.json`: machine-readable identity, status, subdomains, and source pointers.
+- `profile.json`: structured pains, stack, onboarding difficulty, legal, UK opportunities, and agent readiness.
 - `README.md`: pilot scope and evidence state.
 - `PAINS.md`: top verified research pains, not measured customer outcomes.
 - `STACK.md`: existing customer software; integrate or import, do not replace unnecessarily.

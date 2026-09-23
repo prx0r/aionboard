@@ -50,6 +50,32 @@
     {"tool": "Stripe / Square", "category": "payments", "use": "integrate", "source": "customer-owned"},
     {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"}
   ],
+  "legal": [
+    {
+      "id": "LEG-DATAPAY",
+      "law": "Data protection + card-data handling",
+      "requires": ["Lawful basis for client and vehicle data; never store raw PANs"],
+      "basis": "well-established"
+    },
+    {
+      "id": "LEG-MTD-ITSA",
+      "law": "MTD for Income Tax: digital records + quarterly updates",
+      "requires": ["Apr 2026: £50k+; Apr 2027: £30k+; compatible software"],
+      "basis": "verified-2026"
+    }
+  ],
+  "uk_opportunities": [
+    {
+      "name": "Photo-quote speed",
+      "signal": "Fastest professional written quote wins the job",
+      "powuk_source": "n/a (operational data)"
+    },
+    {
+      "name": "Repeat details",
+      "signal": "Seasonal details and maintenance plans create repeat revenue",
+      "powuk_source": "n/a (operational data)"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

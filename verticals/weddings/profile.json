@@ -51,6 +51,37 @@
     {"tool": "Photography tooling", "category": "to be discovered", "use": "import-from", "source": "customer"},
     {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"}
   ],
+  "legal": [
+    {
+      "id": "LEG-COSHH-PATCH",
+      "law": "Chemical safety + patch-test records (makeup work)",
+      "requires": ["Patch test + record before relevant colour/chemical treatments"],
+      "basis": "well-established"
+    },
+    {
+      "id": "LEG-DATAPAY",
+      "law": "Data protection + card-data handling",
+      "requires": ["Lawful basis for couple data, photos, contracts; image consent in writing"],
+      "basis": "well-established"
+    }
+  ],
+  "uk_opportunities": [
+    {
+      "name": "Portfolio-led discovery",
+      "signal": "Real weddings and venue-tagged content convert social followers",
+      "powuk_source": "n/a (social discovery)"
+    },
+    {
+      "name": "Package deposits",
+      "signal": "High-ticket bookings protected by deposits and contracts",
+      "powuk_source": "n/a (operational data)"
+    },
+    {
+      "name": "Venue partnerships",
+      "signal": "Preferred-supplier lists drive qualified enquiries",
+      "powuk_source": "planning_apps (venue development)"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

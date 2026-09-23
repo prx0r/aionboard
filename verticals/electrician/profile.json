@@ -84,6 +84,54 @@
     {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"},
     {"tool": "Telnyx + voice agent", "category": "comms", "use": "separate-deliverable", "source": "cgraphuk"}
   ],
+  "legal": [
+    {
+      "id": "LEG-ELECTRICAL",
+      "law": "Electrical competence + Part P + PRS 5-yearly EICRs",
+      "requires": ["Competent persons only; notifiable domestic work via registered scheme or building control; private rentals need valid 5-year EICR"],
+      "basis": "well-established"
+    },
+    {
+      "id": "LEG-CIS",
+      "law": "Construction Industry Scheme deductions",
+      "requires": ["Verify subbies with HMRC; deduct 20%/30%"],
+      "basis": "verified-2026"
+    },
+    {
+      "id": "LEG-CDM",
+      "law": "CDM contractor duties",
+      "requires": ["SKET-check appointees; domestic-client duties default to contractor in control"],
+      "basis": "verified-2026"
+    },
+    {
+      "id": "LEG-DATAPAY",
+      "law": "Data protection + card-data handling",
+      "requires": ["Lawful basis and minimisation; never store raw PANs; secrets as refs"],
+      "basis": "well-established"
+    }
+  ],
+  "uk_opportunities": [
+    {
+      "name": "EICR landlord cycles",
+      "signal": "Private rentals need valid 5-year EICRs; letting agents need compliant contractors",
+      "powuk_source": "planning_apps, ch_capacity"
+    },
+    {
+      "name": "EV charger installs",
+      "signal": "Electrification demand; complex quotes and parts follow-up",
+      "powuk_source": "ons_skills, gov_grants"
+    },
+    {
+      "name": "Public procurement",
+      "signal": "Government electrical-services contracts",
+      "powuk_source": "contracts_finder, find_tender"
+    },
+    {
+      "name": "New construction",
+      "signal": "Planning applications indicate where electrical work is coming",
+      "powuk_source": "planning_apps"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

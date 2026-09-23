@@ -1,0 +1,80 @@
+{
+  "protocol": "mcp-tools/1",
+  "garden": "aionboard",
+  "auth": "OAuth 2.1 with scoped tokens; per-action approval for writes",
+  "audit": "Every tool call logged with identity, parameters, response reference, and approval ID",
+  "tools": [
+    {
+      "name": "vertical_lookup",
+      "kind": "read",
+      "description": "Return a vertical pack manifest and profile.",
+      "scopes": ["verticals:read"],
+      "approval": "none",
+      "evidence": "none"
+    },
+    {
+      "name": "pain_lookup",
+      "kind": "read",
+      "description": "Return pain mappings for a vertical, with verification basis.",
+      "scopes": ["verticals:read"],
+      "approval": "none",
+      "evidence": "none"
+    },
+    {
+      "name": "stack_lookup",
+      "kind": "read",
+      "description": "Return current-software intelligence for a vertical.",
+      "scopes": ["verticals:read"],
+      "approval": "none",
+      "evidence": "none"
+    },
+    {
+      "name": "install_status",
+      "kind": "read",
+      "description": "Return installation checklist state for a business.",
+      "scopes": ["installs:read"],
+      "approval": "none",
+      "evidence": "none"
+    },
+    {
+      "name": "handover_read",
+      "kind": "read",
+      "description": "Return a generated handover record. Never returns secrets.",
+      "scopes": ["installs:read"],
+      "approval": "none",
+      "evidence": "none"
+    },
+    {
+      "name": "record_contact_attempt",
+      "kind": "write",
+      "description": "Record a contact attempt. Blocked by TPS/CTPS and suppression.",
+      "scopes": ["crm:write"],
+      "approval": "explicit per-action approval",
+      "evidence": "contact source, permission, TPS/CTPS result"
+    },
+    {
+      "name": "set_install_task",
+      "kind": "write",
+      "description": "Advance an installation checklist task. Verified status requires evidence.",
+      "scopes": ["installs:write"],
+      "approval": "explicit per-action approval",
+      "evidence": "owner, authorization, action, verification, evidence"
+    },
+    {
+      "name": "generate_handover",
+      "kind": "write",
+      "description": "Generate a customer handover. Rejected if secrets are detected.",
+      "scopes": ["installs:write"],
+      "approval": "explicit per-action approval",
+      "evidence": "complete installation state"
+    },
+    {
+      "name": "draft_quote",
+      "kind": "write",
+      "description": "Draft a quote from an approved price book. Never auto-sends.",
+      "scopes": ["jobs:write"],
+      "approval": "explicit per-action approval",
+      "evidence": "price book reference, owner approval"
+    }
+  ]
+}

@@ -8,8 +8,10 @@ from .crm import (
     get_prospect,
     import_prospects,
     init_db,
+    list_stack,
     parse_region,
     record_contact_attempt,
+    record_stack_item,
     record_tps_check,
 )
 from .demo import run_demo
@@ -45,8 +47,10 @@ __all__ = [
     "import_prospects",
     "init_db",
     "is_complete",
+    "list_stack",
     "parse_region",
     "record_contact_attempt",
+    "record_stack_item",
     "record_tps_check",
     "render_site",
     "run_demo",

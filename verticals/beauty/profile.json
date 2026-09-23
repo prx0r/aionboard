@@ -85,6 +85,43 @@
     {"tool": "Mangomint", "category": "salon management", "use": "import-from", "source": "cgraphuk"},
     {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"}
   ],
+  "legal": [
+    {
+      "id": "LEG-COSHH-PATCH",
+      "law": "Chemical safety + patch-test records in hair/beauty",
+      "requires": ["COSHH assessments for tints/bleach; patch test + record before colour services"],
+      "basis": "well-established"
+    },
+    {
+      "id": "LEG-DATAPAY",
+      "law": "Data protection + card-data handling",
+      "requires": ["Lawful basis and minimisation for client data/photos; never store raw PANs"],
+      "basis": "well-established"
+    },
+    {
+      "id": "LEG-TIPS",
+      "law": "Fair tips: 100% pass-through + written policy",
+      "requires": ["Allocate 100% of qualifying tips fairly where applicable"],
+      "basis": "verified-2026"
+    }
+  ],
+  "uk_opportunities": [
+    {
+      "name": "Repeat bookings and packages",
+      "signal": "Treatment intervals and prepaid courses drive retention",
+      "powuk_source": "ons_labour (beauty demand)"
+    },
+    {
+      "name": "Instagram/TikTok discovery",
+      "signal": "Portfolio-led discovery converts followers to bookings",
+      "powuk_source": "n/a (social discovery)"
+    },
+    {
+      "name": "Training pipeline",
+      "signal": "Apprenticeship providers produce new technicians",
+      "powuk_source": "apar, ofqual"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",
