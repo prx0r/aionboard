@@ -43,6 +43,24 @@
       "powuk_source": "TODO source"
     }
   ],
+  "finance": {
+    "accounting": [
+      {"tool": "TODO-tool", "fit": "TODO-fit", "source": "TODO-source"}
+    ],
+    "payments": [
+      {"tool": "TODO-tool", "use": "TODO-use", "source": "TODO-source"}
+    ],
+    "typical_monthly_cost_gbp": "TODO-range (hypothesis)",
+    "notes": "TODO-notes"
+  },
+  "tax": [
+    {
+      "id": "TODO-TAX-ID",
+      "rule": "TODO rule",
+      "applies": "TODO who it applies to",
+      "basis": "TODO-basis"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

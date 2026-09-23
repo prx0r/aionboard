@@ -132,6 +132,48 @@
       "powuk_source": "planning_apps"
     }
   ],
+  "finance": {
+    "accounting": [
+      {"tool": "QuickBooks", "fit": "Strong all-round; CIS on all plans; job costing on higher tiers", "source": "trade-press-2026"},
+      {"tool": "Xero", "fit": "Clean bookkeeping; CIS built in; CIS300 filing via £5/mo add-on; best bank feeds", "source": "trade-press-2026"},
+      {"tool": "FreeAgent", "fit": "Simple sole-trader option; free via NatWest/RBS/Mettle; CIS figures prepared, filed via HMRC online", "source": "trade-press-2026"},
+      {"tool": "Sage", "fit": "Established firms; retentions and job costing depth", "source": "trade-press-2026"}
+    ],
+    "payments": [
+      {"tool": "Stripe", "use": "Card payments, deposits, online quotes", "source": "vendor-docs"},
+      {"tool": "Square", "use": "In-person and online card payments", "source": "vendor-docs"},
+      {"tool": "GoCardless", "use": "Direct Debit for repeat commercial clients", "source": "vendor-docs"},
+      {"tool": "Bank transfer", "use": "Zero-fee default for larger jobs", "source": "customer-owned"}
+    ],
+    "typical_monthly_cost_gbp": "£30-60 (one job tool £12-25 plus one accounting package £14-36; hypothesis)",
+    "notes": "Trade job tool handles quotes/jobs/scheduling; accounting package handles HMRC compliance. Never move money without approval."
+  },
+  "tax": [
+    {
+      "id": "TAX-MTD-ITSA",
+      "rule": "Digital records + quarterly updates via compatible software; £50k+ from Apr 2026, £30k+ from Apr 2027, £20k+ from Apr 2028",
+      "applies": "Sole traders and landlords above thresholds",
+      "basis": "verified-2026"
+    },
+    {
+      "id": "TAX-VAT",
+      "rule": "Register at £90k taxable turnover (rolling 12 months); MTD for VAT returns",
+      "applies": "Businesses above threshold",
+      "basis": "well-established"
+    },
+    {
+      "id": "TAX-CIS",
+      "rule": "Verify subcontractors with HMRC; deduct 20% registered / 30% unregistered; file CIS300 monthly",
+      "applies": "Construction trades using subcontractors",
+      "basis": "verified-2026"
+    },
+    {
+      "id": "TAX-CT",
+      "rule": "Corporation Tax on company profits; keep digital records for year end",
+      "applies": "Limited companies",
+      "basis": "well-established"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

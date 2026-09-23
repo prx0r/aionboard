@@ -87,6 +87,20 @@ class VerticalPackTests(unittest.TestCase):
                 for entry in profile["uk_opportunities"]:
                     for key in ("name", "signal", "powuk_source"):
                         self.assertIn(key, entry)
+                finance = profile["finance"]
+                self.assertTrue(finance["accounting"])
+                self.assertTrue(finance["payments"])
+                self.assertIn("typical_monthly_cost_gbp", finance)
+                for entry in finance["accounting"]:
+                    for key in ("tool", "fit", "source"):
+                        self.assertIn(key, entry)
+                for entry in finance["payments"]:
+                    for key in ("tool", "use", "source"):
+                        self.assertIn(key, entry)
+                self.assertTrue(profile["tax"])
+                for entry in profile["tax"]:
+                    for key in ("id", "rule", "applies", "basis"):
+                        self.assertIn(key, entry)
 
     def test_vertical_docs_make_no_guarantees(self):
         for vertical in vertical_directories():

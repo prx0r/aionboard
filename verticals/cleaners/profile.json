@@ -120,6 +120,40 @@
       "powuk_source": "epc_stock, gov_grants"
     }
   ],
+  "finance": {
+    "accounting": [
+      {"tool": "QuickBooks Simple Start", "fit": "Cheap MTD-ready entry for sole-trader cleaners", "source": "trade-press-2026"},
+      {"tool": "FreeAgent", "fit": "Simple bookkeeping; free via NatWest/RBS/Mettle", "source": "trade-press-2026"},
+      {"tool": "Xero Standard", "fit": "Unlimited invoices for growing rounds", "source": "trade-press-2026"}
+    ],
+    "payments": [
+      {"tool": "GoCardless", "use": "Direct Debit for repeat plans; low failure rates", "source": "vendor-docs"},
+      {"tool": "Stripe", "use": "Card deposits and online payments", "source": "vendor-docs"},
+      {"tool": "Bank transfer", "use": "Zero-fee default for regulars", "source": "customer-owned"}
+    ],
+    "typical_monthly_cost_gbp": "£27-60 cleaning ops plus £0-30 accounting; card/DD fees per transaction (hypothesis)",
+    "notes": "Recurring revenue suits Direct Debit; card backup covers one-offs. Never move money without approval."
+  },
+  "tax": [
+    {
+      "id": "TAX-MTD-ITSA",
+      "rule": "Digital records + quarterly updates via compatible software; £50k+ from Apr 2026, £30k+ from Apr 2027, £20k+ from Apr 2028",
+      "applies": "Sole traders above thresholds",
+      "basis": "verified-2026"
+    },
+    {
+      "id": "TAX-VAT",
+      "rule": "Register at £90k taxable turnover (rolling 12 months); MTD for VAT returns",
+      "applies": "Businesses above threshold",
+      "basis": "well-established"
+    },
+    {
+      "id": "TAX-PAYROLL",
+      "rule": "PAYE, National Insurance, and pension duties when employing cleaners",
+      "applies": "Employers",
+      "basis": "well-established"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

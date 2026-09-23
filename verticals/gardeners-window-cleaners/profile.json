@@ -112,6 +112,34 @@
       "powuk_source": "contracts_finder (grounds maintenance)"
     }
   ],
+  "finance": {
+    "accounting": [
+      {"tool": "FreeAgent", "fit": "Simple sole-trader bookkeeping; free via NatWest/RBS/Mettle", "source": "trade-press-2026"},
+      {"tool": "QuickBooks Simple Start", "fit": "Cheap MTD-ready entry", "source": "trade-press-2026"},
+      {"tool": "Xero Starter", "fit": "Clean invoicing and bank feeds", "source": "trade-press-2026"}
+    ],
+    "payments": [
+      {"tool": "GoCardless", "use": "Direct Debit for round customers; low failure rates", "source": "vendor-docs"},
+      {"tool": "Stripe", "use": "Card deposits for first cleans", "source": "vendor-docs"},
+      {"tool": "Bank transfer", "use": "Zero-fee default for regulars", "source": "customer-owned"}
+    ],
+    "typical_monthly_cost_gbp": "£0-35 round ops plus £0-19 accounting; card/DD fees per transaction (hypothesis)",
+    "notes": "Round businesses live on Direct Debit discipline. Never move money without approval."
+  },
+  "tax": [
+    {
+      "id": "TAX-MTD-ITSA",
+      "rule": "Digital records + quarterly updates via compatible software; £50k+ from Apr 2026, £30k+ from Apr 2027, £20k+ from Apr 2028",
+      "applies": "Sole traders above thresholds",
+      "basis": "verified-2026"
+    },
+    {
+      "id": "TAX-VAT",
+      "rule": "Register at £90k taxable turnover (rolling 12 months); MTD for VAT returns",
+      "applies": "Businesses above threshold",
+      "basis": "well-established"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

@@ -185,6 +185,28 @@ Peer review asked for an MCP-first direction, a clear existing-stack strategy, d
 
 ---
 
+## Session 2026-09-23 — Finance and tax per vertical
+
+### Context
+Each vertical needed legislation detail plus what businesses normally use for money: accounting, payments, and tax obligations.
+
+### What was done
+- Researched UK trade accounting (QuickBooks/Xero/FreeAgent/Sage), beauty payments (Fresha/Stripe/Square/Treatwell), and MTD ITSA thresholds (£50k Apr 2026, £30k Apr 2027, £20k Apr 2028).
+- Added `finance` (accounting, payments, typical monthly cost, notes) and `tax` (MTD, VAT £90k, CIS, CT, payroll) sections to all 11 vertical profiles.
+- Extended profile template and validation tests.
+
+### Current state
+- 32 tests pass.
+- Finance data marked with sources; cost ranges marked hypothesis.
+- No completed paying installation is recorded.
+
+### Next steps
+1. Validate finance stacks with the first real customer per vertical.
+2. Confirm MTD filing workflows with the customer's accountant.
+3. Record actual monthly software spend to replace hypotheses.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:
