@@ -15,7 +15,7 @@
 
 - **Status:** OPEN
 - **Owner:** founder (sales + delivery, cannot delegate yet)
-- **What:** One manual £499 pilot install for a real electrical business. Measure delivery hours end-to-end.
+- **What:** One manual £20 pilot install for a real electrical business. Measure delivery hours end-to-end.
 - **Blocked by:** Nothing. Prospects exist in `prospects_electrical.csv`; playbook in `SALES_PLAYBOOK.md`; checklist in `verticals/electrician/INSTALL.md`.
 - **Done when:** Install checklist all `verified`, handover generated, delivery hours recorded, customer permission (or refusal) for case study logged.
 - **Why first:** Every economic assumption, every automation decision, and every sales claim depends on this number.

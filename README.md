@@ -4,7 +4,7 @@ One-fee AI setup for UK trades and beauty businesses. Pilot only — zero paying
 
 ## What it does
 
-One-off setup (£499 standard, £20 quickstart). No subscriptions. Owner approves everything. We never hold passwords.
+One-off setup (£20 basic). Add-ons £5-10 each. Integrated package £50/month. Owner approves everything. We never hold passwords.
 
 See [OFFER.md](OFFER.md) for canonical pricing and scope.
 

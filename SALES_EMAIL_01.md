@@ -36,5 +36,5 @@ Bumping this once in case it got buried — still happy to do the 10-minute call
 1. Verify the email address belongs to the business (website, directory, or prior contact).
 2. Record source + date + legal basis in CRM before sending.
 3. One follow-up maximum. Any objection (including silence after follow-up + 14 days) → suppression list.
-4. Never attach anything. Never include pricing beyond the £20/£499 public offer.
+4. Never attach anything. Never include pricing beyond the £20/£50 public offer.
 5. Log outcome: replied / booked demo / not interested / no answer.

@@ -1,4 +1,4 @@
-"""Add-on catalog — services beyond the £20/£499 setups.
+"""Add-on catalog — services beyond the £20 setups.
 
 Each add-on is separately consented and separately priced. State machine
 per customer: offered -> consented -> active. Nothing activates without

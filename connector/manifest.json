@@ -51,7 +51,7 @@
     "end_to_end": "Fictional nail-tech journey tested; no live customer data used in tests"
   },
   "pricing": {
-    "customer_cost": "Free with £20 quickstart or £499 standard setup. No per-message Muse charges from AI Onboard; Meta's own pricing applies separately."
+    "customer_cost": "Free with £20 basic onboarding. No per-message Muse charges from AI Onboard; Meta's own pricing applies separately."
   },
   "limitations": [
     "US-only until Meta launches Muse in the UK; UK customers use the standalone buddy meanwhile.",

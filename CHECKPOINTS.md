@@ -7,7 +7,7 @@
 **Goal:** One verified paying installation per package, delivered manually, with evidence.
 
 **Packages (canonical definition in `OFFER.md`):**
-- `standard-ai-setup` (£499): bespoke electrician/complex-business installations, 14 days of fixes.
+- `standard-ai-setup` (£20 basic + add-ons): bespoke electrician/complex-business installations, 14 days of fixes.
 - `muse-quickstart` (£20): tightly standardised sole-trader onboarding, 7 days of support, one agreed workflow only.
 
 **In scope (both packages):**

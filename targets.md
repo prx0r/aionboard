@@ -17,15 +17,15 @@ The wider opportunity is significant, but it requires a different prospecting st
 
 | Market | What could actually be sold | Proposed test price | Where prospects may be found |
 | --- | --- | --- | --- |
-| Independent nail technicians | Booking link, deposits, Instagram enquiry workflow, repeat-booking reminders | £249–£349 | TikTok, Instagram, local beauty directories |
-| Lash and brow artists | Booking, appointment preparation, rebooking and consent-based reminders | £249–£349 | Instagram, TikTok, booking platforms |
-| Mobile hairdressers and braiders | Portable booking system, service-area information, client enquiries and social portfolio | £299–£499 | Instagram, Facebook, local directories |
-| Dog groomers | Recurring appointments, reminders, client records and waiting lists | £349–£499 | Facebook, Google Maps, grooming directories |
-| Domestic cleaners | Recurring scheduling, quotations, payment reminders and customer management | £349–£499 | Local Facebook groups, Google Maps |
-| Gardeners and window cleaners | Repeat visits, route organisation, missed enquiries and recurring payments | £349–£599 | Google Maps, local directories, Facebook |
-| Mobile car detailers | Quote requests with photos, appointment scheduling and repeat-service offers | £349–£599 | Instagram, TikTok, Google Maps |
-| Driving instructors | Enquiry management, lesson scheduling, waiting lists and progress administration | £299–£499 | Google Maps, instructor directories |
-| Wedding photographers and makeup artists | Enquiry qualification, availability, proposals, deposits and contracts | £399–£699 | Instagram, wedding marketplaces |
+| Independent nail technicians | Booking link, deposits, Instagram enquiry workflow, repeat-booking reminders | £20 + add-ons | TikTok, Instagram, local beauty directories |
+| Lash and brow artists | Booking, appointment preparation, rebooking and consent-based reminders | £20 + add-ons | Instagram, TikTok, booking platforms |
+| Mobile hairdressers and braiders | Portable booking system, service-area information, client enquiries and social portfolio | £20 + add-ons | Instagram, Facebook, local directories |
+| Dog groomers | Recurring appointments, reminders, client records and waiting lists | £20 + add-ons | Facebook, Google Maps, grooming directories |
+| Domestic cleaners | Recurring scheduling, quotations, payment reminders and customer management | £20 + add-ons | Local Facebook groups, Google Maps |
+| Gardeners and window cleaners | Repeat visits, route organisation, missed enquiries and recurring payments | £20 + add-ons | Google Maps, local directories, Facebook |
+| Mobile car detailers | Quote requests with photos, appointment scheduling and repeat-service offers | £20 + add-ons | Instagram, TikTok, Google Maps |
+| Driving instructors | Enquiry management, lesson scheduling, waiting lists and progress administration | £20 + add-ons | Google Maps, instructor directories |
+| Wedding photographers and makeup artists | Enquiry qualification, availability, proposals, deposits and contracts | £20 + add-ons | Instagram, wedding marketplaces |
 
 These prices are positioning hypotheses, not observed willingness to pay. Test them through discovery calls and paid founding-client installations before creating nine separate products.
 

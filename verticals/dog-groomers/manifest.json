@@ -8,7 +8,7 @@
   "public_offer": "../../OFFER.md",
   "proposed_subdomain": "groomers.aionboard.co.uk",
   "subdomain_status": "proposed",
-  "proposed_test_price_gbp": [349, 499],
+  "proposed_test_price_gbp": [20],
   "price_status": "hypothesis",
   "sources": {
     "cgraphuk_template": "cgraphuk/graph/tpl/tpl-petcare-gb.json",

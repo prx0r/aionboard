@@ -12,7 +12,7 @@ from .crm import utcnow
 
 PACKAGES = {
     "standard-ai-setup": {
-        "price_gbp": 499,
+        "price_gbp": 20,
         "support_days": 14,
         "description": "Full assisted setup for 2-10 person businesses.",
     },

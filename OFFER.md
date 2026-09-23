@@ -1,85 +1,125 @@
 # OFFER.md
 
-> Current, narrow pilot offer. This file supersedes pricing and scope claims in older research drafts.
+> Canonical pricing. This file supersedes all other pricing claims.
 
 ## Status
 
 Pilot only. No completed paying installation is recorded in this repository yet.
 
-Performance figures, payback periods, missed-call rates, lead volumes, and AI-discovery outcomes are hypotheses unless tied to a dated, customer-approved case study.
+All performance figures are hypotheses unless tied to a dated, customer-approved case study.
 
-## Standard AI Setup — £499 one-off
+---
 
-For 2–10 person businesses. Includes:
+## Pricing model
 
-1. Assistant setup for email and calendar workflows the customer already owns and authorizes.
-2. Enquiry-capture workflow using customer-approved contact details.
-3. Quotation drafting from a customer-approved price book.
-4. Owner approval before any outbound quote, booking, payment, or customer-facing message.
-5. Google Business Profile assistance through Google’s ordinary interface.
-6. One live training session.
-7. Written handover.
-8. Fourteen days of fixes for configured workflows.
+Three tiers. Every customer starts at Basic. Add-ons are purchased individually. Integrated is the ongoing relationship.
 
-Google verification remains `pending` until Google confirms it. API acceptance is not proof of verification.
+```
+Basic (£20 one-off) → Add-ons (individual) → Integrated (£50/mo)
+```
 
-## Muse Quickstart — £20 one-off
+---
 
-For sole traders. Tightly standardised:
+## Basic Onboarding — £20 one-off
 
-1. One priority workflow only (bookings, enquiries, quotations, or appointment admin).
+Mostly automated. One priority workflow, configured and taught.
+
+1. One priority workflow (bookings, enquiries, quotations, or appointment admin).
 2. Guided connection to existing calendar, email, or booking software.
 3. Personalised assistant with the customer's services, prices, and hours.
-4. Basic income-and-expense organisation in supported accounting software. No bank-credential collection, no payment initiation, no tax filing by us.
-5. Training session plus personalised manual with ready-to-use prompts.
-6. Seven days of setup support: unlimited AI-assisted questions, one scheduled human session, human escalation only if the agreed installation doesn't work.
-7. Completion when the customer demonstrates the workflow unaided.
+4. Training session plus personalised manual with ready-to-use prompts.
+7. Seven days of setup support.
+8. Completion when the customer demonstrates the workflow unaided.
 
-Third-party software charges are shown before installation and paid by the customer. Support minutes, failed connections, refunds, and 7-day active use are recorded to validate the price.
+**What this is:** A configured assistant that handles one workflow. The customer owns everything. We teach them to use it and leave.
 
-## Support allowance (muse-quickstart)
+**What this is not:** A website, a phone system, a marketing service, or ongoing management.
 
-- Unlimited automated-guide questions during the 7-day window, with sensible abuse limits (rate-limited, no bulk or off-topic use).
-- One scheduled human session included.
-- Human escalation only when the agreed installation doesn't work.
-- Unrestricted bespoke development is never included.
-- Delivery and support minutes are measured before any allowance expansion.
+---
 
-## Explicitly excluded from the standard setup
+## Add-ons — individual pricing
 
-Separate deliverables with separate pricing and customer-paid supplier costs:
+Purchased alongside Basic or at any time after.
 
-- New or rebuilt website
-- Live voice-agent service
-- WhatsApp Cloud API production integration
-- Facebook, Instagram, or Meta account administration
-- Custom integrations
-- Lead-generation service
-- Ongoing subscriptions
+| Add-on | Price | What it is |
+|--------|-------|-----------|
+| AI Website + Chatbot | £10 | 1-page site with inline AI chatbot, Cloudflare hosting |
+| Google Business Profile Setup | £10 | Complete every field, service menu, photos, attributes |
+| AI Visibility Package | £10 | llms.txt, schema.org markup, robots.txt, Bing submission |
+| Social Bio Optimisation | £5 | Instagram/TikTok/Facebook bio + booking link |
+| Digital Footprint Audit | £10 | Check GBP, website, ChatGPT, socials, NAP consistency |
+| Additional Workflows | £5 each | Add bookings, quotes, reminders, rebooking, reviews |
+| OZEV Grant Page | £10 | Landing page explaining £500 grant, eligibility, CTA |
+| Price Book Setup | £5 | Digitise and load approved prices into assistant |
+| Compliance Tracker | £10 | Cert reminders, expiry tracking, audit-ready reports |
+
+**All add-ons are one-off fees.** No recurring charges from us for add-ons.
+
+---
+
+## Integrated Package — £50/month
+
+For businesses that want ongoing support, monitoring, and growth. Requires Basic + at least one add-on.
+
+### What's included
+
+| Service | What you get |
+|---------|-------------|
+| **Ongoing monitoring** | We check your workflows weekly, fix issues before they break |
+| **Tech support** | Unlimited AI-assisted support, 1 human session/month |
+| **Consulting** | Monthly 30-min call: what's working, what to fix, what to add |
+| **Custom tools** | Up to 2 hours/month of custom workflow adjustments |
+| **Teaching** | New feature training as tools evolve, prompt library updates |
+| **Digital footprint maintenance** | Monthly GBP posts, AI visibility re-check, NAP consistency |
+
+### What's NOT included
+
+- Website rebuilds or redesigns
+- New integrations beyond existing tools
+- Ad management or lead generation
+- Anything requiring supplier costs (we pass these through at cost)
+
+### Pricing
+
+| Component | Cost | Notes |
+|-----------|------|-------|
+| Integrated package | £50/month | Core monitoring, support, consulting, teaching |
+| Supplier costs (pass-through) | At cost | Domain (£10/yr), hosting (free-£9/mo), telephony (per-use) |
+| Additional hours | £25/hour | Beyond 2hrs/month included |
+
+---
+
+## Pricing against the human alternative
+
+| What a human costs | What we charge | Savings |
+|--------------------|---------------|---------|
+| Social media manager: £300-500/month | £20 + £50/mo | £2,400-5,400/year |
+| Virtual assistant: £200-400/month | £20 + £50/mo | £1,800-4,200/year |
+| Booking system: £40/month | £20 + £10 add-on | £450/year |
+| Accountant for MTD: £50-100/month | £20 (we set up the software) | £600-1,200/year |
+
+**The pitch:** "£20 to get started. £10 for a website. £50/month if you want us to keep it running. Less than a single day of a social media manager."
+
+---
 
 ## Platform access reality
 
 | Capability | Status |
 |---|---|
 | Existing email/calendar workflows | Available after customer authorization |
-| Google Business Profile assistance | Manual through Google’s ordinary UI; API automation requires Google approval |
-| Meta/WhatsApp production integration | Blocked until access, review, business verification, and payment terms are completed |
-| Meta Muse access | Depends on Meta availability, eligibility, and access; not included |
-| OpenMuse | Separate open-source project; does not grant Meta Muse access |
-| Live voice service | Experimental/manual only; recurring telephony, compute, model, and monitoring costs are separate |
-
-Meta messaging and telephony costs vary by message category, destination, supplier, and usage. AI Onboard does not represent these services as free.
+| Google Business Profile assistance | Manual through Google's ordinary UI |
+| Meta/WhatsApp production integration | Blocked until access, review, and verification completed |
+| Live voice service | Experimental; supplier costs separate |
+| Website + chatbot | Static site on Cloudflare; AI chatbot from knowledge bundle |
 
 ## Google visibility reality
 
-This service can make public business information accurate, accessible, and understandable. It cannot guarantee:
+We can make public business information accurate, accessible, and understandable. We cannot guarantee:
 
 - ChatGPT recommendations
 - Google Maps ranking
 - Google AI Overview inclusion
 - Perplexity, Gemini, Claude, or Apple Intelligence placement
-
-`/llms.txt` is an optional experiment, not a central deliverable. Do not substitute AI-generated photographs for authentic work photographs.
 
 ## Contact rules
 

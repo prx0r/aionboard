@@ -19,7 +19,7 @@ Proposed surface: `nails.aionboard.co.uk`. Parent vertical: beauty.
 
 ## The offer (outcome-based)
 
-**Standard AI Setup — £499 one-off:**
+**Standard AI Setup — £20 one-off + add-ons:**
 
 Every appointment over £30 has a deposit. No-shows drop from 8% to under 3%. Enquiries go to booking instead of DM ping-pong. Every completed appointment gets a review request. Lapsed customers get rebooking reminders at their infill interval.
 

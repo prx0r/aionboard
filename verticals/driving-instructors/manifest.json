@@ -8,7 +8,7 @@
   "public_offer": "../../OFFER.md",
   "proposed_subdomain": "instructors.aionboard.co.uk",
   "subdomain_status": "proposed",
-  "proposed_test_price_gbp": [299, 499],
+  "proposed_test_price_gbp": [20],
   "price_status": "hypothesis",
   "sources": {
     "cgraphuk_template": null,

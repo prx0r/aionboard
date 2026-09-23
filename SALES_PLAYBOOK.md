@@ -16,11 +16,12 @@
 
 ### If they're interested
 
-> "The pilot installation is £499 and currently covers assisted setup,
-> training, and fourteen days of fixes. I can show a fictional-business
-> demonstration so you can see the workflow.
+> "It's £20 to get started — we configure one workflow, train you on it,
+> and you own everything. If you want a website, Google profile, or AI
+> visibility, those are £10 each. And if you want us to keep it running,
+> that's £50/month — monitoring, support, consulting, the works.
 >
-> Would you like to see the demo?"
+> I can show you a quick demo. Want to see it?"
 
 ### If they're not interested
 
@@ -64,7 +65,7 @@ Before live marketing contact, verify contact details, record permission or lega
 |-----------|----------|
 | "I already use Tradify" | "We don't replace it. The pilot can use your existing Tradify setup where practical, subject to what its access and export options support." |
 | "I don't need AI" | "That's understandable. Would you like to see the fictional-business demo and judge whether the enquiry and quotation workflow would help?" |
-| "Too expensive" | "The standard pilot is £499. We do not promise a specific payback period or revenue result." |
+| "Too expensive" | "The basic pilot is £20. Add-ons are £5-10 each. We do not promise a specific payback period or revenue result." |
 | "I'm too busy" | "The pilot focuses on your existing workflows. We can schedule installation and training at a time that suits you." |
 | "I don't trust AI" | "Owner approval is required before any quote, booking, payment, or customer-facing message." |
 
@@ -123,7 +124,7 @@ Before live marketing contact, verify contact details, record permission or lega
 ### Day 14
 
 > "Hi [Name], I know you're busy so I'll keep this short. The founding-client
-> rate is available until [date]. After that, it goes back to £499.
+> rate is available until [date]. After that, it goes back to £20 + add-ons.
 > Let me know if you'd like to lock it in."
 
 ---

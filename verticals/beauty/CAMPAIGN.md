@@ -10,7 +10,7 @@ Verify business status, public contact source, and marketing permission before o
 
 ## Paid wedge
 
-Standard £499 pilot installation:
+Basic onboarding (£20):
 
 1. Existing email and calendar setup.
 2. Booking-request triage with treatment, staff, room, patch-test, and allergy checks.

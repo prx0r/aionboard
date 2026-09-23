@@ -129,8 +129,9 @@ Customers receive the implementation state, account ownership, evidence, pending
 
 | Service | Price | Current status |
 |---------|-------|----------------|
-| Standard AI Setup | £499 | Pilot manual installation per `OFFER.md` |
-| Muse Quickstart | £20 | Pilot manual installation per `OFFER.md` |
+| Basic Onboarding | £20 one-off | Pilot manual installation per `OFFER.md` |
+| Add-ons | £5-10 each | Per `ADDONS.md` |
+| Integrated Package | £50/month | Monitoring, support, consulting |
 | Website development | Separate quote | Separate deliverable |
 | Live voice service | Separate quote plus customer-paid costs | Separate deliverable |
 | Meta production integration | Separate quote plus customer-paid Meta charges | Blocked/approval required |

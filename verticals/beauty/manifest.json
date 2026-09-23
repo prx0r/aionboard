@@ -7,6 +7,7 @@
   "public_offer": "../../OFFER.md",
   "proposed_subdomain": "beauty.aionboard.co.uk",
   "subdomain_status": "proposed",
+  "proposed_test_price_gbp": [20],
   "sources": {
     "cgraphuk_template": "cgraphuk/graph/tpl/tpl-beauty-gb.json",
     "cgraphuk_teardown": "cgraphuk/graph/pain/td-beauty-gb.json",

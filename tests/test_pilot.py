@@ -364,7 +364,7 @@ class WebsiteTests(unittest.TestCase):
 
         html = render_site()
         self.assertIn("aionboard.co.uk", html)
-        self.assertIn("£499", html)
+        self.assertIn("£20", html)
         self.assertIn("mailto:hello@aionboard.co.uk", html)
         self.assertIn("TPS", html)
         self.assertIn("suppression", html)

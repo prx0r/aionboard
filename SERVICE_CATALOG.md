@@ -49,7 +49,7 @@ Current pilot scope is defined in `OFFER.md`.
 
 ## Current pilot package
 
-The standard AI Setup is £499 one-off and is defined in `OFFER.md`:
+Basic onboarding is £20 one-off, defined in `OFFER.md`:
 
 1. Setup for existing email and calendar workflows the customer authorizes.
 2. Enquiry-capture preparation using customer-approved contacts.
@@ -197,7 +197,7 @@ Website development, live voice service, Meta production integration, custom int
 
 ## Pricing strategy
 
-The current pilot offer is the £499 standard setup in `OFFER.md`. Monthly packages and add-ons below are future roadmap items, not current products.
+The current pilot offer is the £20 basic onboarding in `OFFER.md`. Add-ons (£5-10 each) and the £50/month integrated package are current offerings.
 
 ### Future monthly packages
 

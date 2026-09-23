@@ -8,7 +8,7 @@
   "public_offer": "../../OFFER.md",
   "proposed_subdomain": "rounds.aionboard.co.uk",
   "subdomain_status": "proposed",
-  "proposed_test_price_gbp": [349, 599],
+  "proposed_test_price_gbp": [20],
   "price_status": "hypothesis",
   "sources": {
     "cgraphuk_template": "cgraphuk/graph/tpl/tpl-window-cleaner-gb.json",

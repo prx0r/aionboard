@@ -6,7 +6,7 @@ import os
 
 SITE_DOMAIN = "aionboard.co.uk"
 BOOKING_EMAIL = "hello@aionboard.co.uk"
-STANDARD_PRICE_GBP = 499
+STANDARD_PRICE_GBP = 20
 QUICKSTART_PRICE_GBP = 20
 
 

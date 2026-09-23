@@ -1,13 +1,13 @@
 # Car detailer outcomes
 
-> What the customer actually gets. Not tasks. Outcomes. The £499 buys these results, not our time.
+> What the customer actually gets. Not tasks. Outcomes.
 
-## The offer as outcomes
+## The offer
 
-### Standard AI Setup — £499 one-off
+### Basic Onboarding — £20 one-off
 
-| What we do | What you get | How you measure it |
-|------------|-------------|-------------------|
+| What we do | What you get | How you measure |
+|------------|-------------|-----------------|
 | Set up photo-led quote request workflow | Every enquiry includes vehicle info + photos before you quote | Quotes issued without photos: 0% |
 | Configure automated quote follow-up | Every quote gets chased at 24h, 48h, 7 days — you approve each | Quote follow-up rate: 0% → 100% |
 | Add repeat-service reminders | Lapsed customers get a reminder at their maintenance interval | Repeat booking rate from reminders: measured |
@@ -17,52 +17,55 @@
 | Google Business Profile check | Name, hours, services, booking link are accurate and consistent | Profile completeness verified |
 | Training session | You can do all of this yourself without us | Completion: customer demonstrates workflow unaided |
 | Written manual | Step-by-step guide for everything we set up | Handover document delivered |
-| 14 days of fixes | If something breaks or you're confused, we fix it | Support tickets resolved |
+| 7 days of fixes | If something breaks or you're confused, we fix it | Support tickets resolved |
 
-### Muse Quickstart — £20 one-off
+### Integrated Package — £50/month
 
-For sole traders. One priority workflow:
+For businesses that want ongoing support and growth.
 
-| What you pick | What you get |
-|--------------|-------------|
-| **Quotes** | Photo request + quote draft from approved prices |
-| **Follow-up** | Auto-chase at 24h, 48h, 7 days with your approval |
-| **Repeats** | Consent-based rebooking reminders at maintenance intervals |
-| **Enquiries** | Quick replies + booking link in bios |
+| What you get | What it means |
+|-------------|--------------|
+| Weekly monitoring | We check your workflows, fix issues before they break |
+| Tech support | Unlimited AI-assisted + 1 human session/month |
+| Monthly consulting | 30-min call: what's working, what to fix |
+| Custom tools | 2hrs/month of workflow adjustments |
+| Teaching | New features, prompt library updates |
+| GBP posting | 4 Google Business Profile posts/month |
+| AI visibility check | Monthly re-check of llms.txt, schema, NAP |
 
-Plus: training session, personalised manual, 7 days of support.
+## Add-ons
 
----
+See [ADDONS_CATALOG.md](../../ADDONS_CATALOG.md) for full details.
+
+| Add-on | Price | Why this vertical needs it |
+|--------|-------|--------------------------|
+| Website + AI Chatbot | £10 | Car detailers rely on Instagram; a website with before/after gallery and chatbot captures bookings from Google searches |
+| GBP Optimisation | £10 | Car owners search "car detailing near me" — a complete GBP with services, photos, and booking link drives local traffic |
+| AI Visibility | £10 | Make your detailing business show up when AI assistants recommend local detailers |
+| Full Digital Audit | £5 | Identify gaps across all platforms before investing in individual add-ons |
+
+**Recommended bundle:** Professional — £30 (saves £5) — includes Website + GBP + AI Visibility
 
 ## Pricing against the human alternative
 
-| What a human costs | What we charge | What the customer saves |
-|--------------------|---------------|----------------------|
-| Virtual assistant for DMs and quotes: £200-400/month | £499 one-off | £2,400-4,800/year |
-| Booking system subscription: £20-40/month | £499 one-off + £0 ongoing | £240-480/year |
-| Repeat marketing (texts/emails): £100-200/month | £499 one-off | £1,200-2,400/year |
+| What a human costs | What we charge | Savings |
+|--------------------|---------------|---------|
+| Virtual assistant for DMs and quotes: £200-400/mo | £20 + £50/mo | £1,800-4,200/yr |
+| Booking system: £20-40/mo | £20 + £10 add-on | £180-420/yr |
+| Repeat marketing (texts/emails): £100-200/mo | £20 + £50/mo | £600-1,800/yr |
 
-**The pitch in one line:** "We set up the photo quotes, follow-up chasers, and repeat reminders that a VA does for £300/month — for £499 once."
+**The pitch in one line:** "We set up the photo quotes, follow-up chasers, and repeat reminders that a VA does for £300/month — for £20 + £50/mo."
 
----
+## What's NOT included
 
-## What's NOT included (and why)
+- New website — separate deliverable, separate price
+- WhatsApp production integration — requires Meta access, business verification, supplier costs
+- Instagram/TikTok posting — we set up the intake, not the content
+- Lead generation — separate offering when pipeline is proven
+- Equipment recommendations — operational judgment; we don't advise on kit
+- Accounting/tax filing — separate: we help set up FreeAgent/QuickBooks, you own the accounts
 
-| Excluded | Why |
-|----------|-----|
-| New website | Separate deliverable, separate price |
-| WhatsApp production integration | Requires Meta access, business verification, supplier costs |
-| Instagram/TikTok posting | We set up the intake, not the content |
-| Lead generation | Separate offering when pipeline is proven |
-| Ongoing subscription | One-fee model. No recurring charges from us. |
-| Equipment recommendations | Operational judgment; we don't advise on kit |
-| Accounting/tax filing | Separate: we help set up FreeAgent/QuickBooks, you own the accounts |
-
----
-
-## Measurement (what we track per customer)
-
-These are the before/after metrics from FLYWHEEL.md, applied to car detailers:
+## Measurement
 
 | Metric | Baseline (before) | Target (after 30 days) | How we measure |
 |--------|-------------------|----------------------|----------------|
@@ -74,18 +77,3 @@ These are the before/after metrics from FLYWHEEL.md, applied to car detailers:
 | Weather-related cancellations (untracked) | measured | reduced by 50% | Scheduling log |
 
 **No proof, no claim.** Every metric above is a hypothesis until a real customer proves it. Mark it as such in any external communication.
-
----
-
-## Add-ons
-
-See [ADDONS_CATALOG.md](../../ADDONS_CATALOG.md) for full details.
-
-| Add-on | Price | Why this vertical needs it |
-|--------|-------|--------------------------|
-| Website + AI Chatbot | £199 | Car detailers rely on Instagram; a website with before/after gallery and chatbot captures bookings from Google searches |
-| GBP Optimisation | £99 | Car owners search "car detailing near me" — a complete GBP with services, photos, and booking link drives local traffic |
-| AI Visibility | £149 | Make your detailing business show up when AI assistants recommend local detailers |
-| Full Digital Audit | £79 | Identify gaps across all platforms before investing in individual add-ons |
-
-**Recommended bundle:** Professional — £699 (saves £47) — includes Website + GBP + AI Visibility

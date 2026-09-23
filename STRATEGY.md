@@ -5,14 +5,14 @@
 ## What's strong
 
 1. **The data is real.** 10,000 electrical businesses with postcodes is a genuine asset. Most consultancies start with nothing.
-2. **The narrow offer is right.** £499 pilot, manual-first, owner approval on everything. That survives contact with reality.
+2. **The narrow offer is right.** £20 basic + add-ons + £50/mo integrated, manual-first, owner approval on everything. That survives contact with reality.
 3. **The code now exists.** CRM, install state machine, demo, handover, tests — the repo went from docs-only to a verifiable core.
 4. **The vertical structure is clean.** 11 packs, same schema, no invented outcomes. Easy to extend.
 
 ## What's fragile
 
 1. **No revenue yet.** Everything is hypothesis. The most important number is still zero: paying customers.
-2. **Pricing is incoherent across drafts.** `OFFER.md` is canonical (£499 pilot + £20 quickstart). Older research files float other numbers — treat those as hypotheses, never checkout prices.
+2. **Pricing is incoherent across drafts.** `OFFER.md` is canonical (£20 basic + add-ons + £50/mo integrated). Older research files float other numbers — treat those as hypotheses, never checkout prices.
 3. **Scope keeps expanding.** Every session adds docs. No more architecture documents until there's a paying customer.
 4. **The Muse bet is unhedged.** US-only, no UK date. The assistant-agnostic fallback must be the primary pitch now, not later.
 5. **Influence is a liability until audited.** Known approval-path issues; do not put customers on it yet.
@@ -54,7 +54,7 @@ Platform reality:
 
 ## Onboard vs support: the actual economics
 
-**£20 Quickstart per customer:**
+**£20 Basic per customer:**
 ```
 Revenue:                        £20.00
 Acquisition (enrich+call):      -£8-15  (unknown, estimated)
@@ -65,22 +65,29 @@ Third-party costs:              -£0-2
 Margin:                         -£10 to -£2.50  (LOSS)
 ```
 
-**£499 Standard per customer:**
+**Add-ons (£5-10 each):**
 ```
-Revenue:                        £499.00
-Acquisition:                    -£50-100
-Delivery (5 hrs):               -£150-250
-Support (1 hr):                 -£30-50
+Revenue:                        £5-10.00
+Delivery human time (15 min):   -£7.50
                                 ────────
-Margin:                         +£100 to +£270
+Margin:                         -£2.50 to +£2.50  (BREAK-EVEN)
 ```
 
-**Conclusion:** the £20 product loses money standalone at any realistic human-time level. It only works as acquisition spend — justified by referrals at zero CAC or upsell to support/lead-gen/custom work.
+**Integrated package (£50/month):**
+```
+Monthly revenue:                £50.00
+Ongoing support (30 min/mo):    -£15.00
+Third-party costs:              -£5-10
+                                ────────
+Monthly margin:                 +£25 to +£30
+```
+
+**Conclusion:** The £20 product loses money standalone at any realistic human-time level. It only works as acquisition spend — justified by referrals at zero CAC or upsell to add-ons and the £50/mo integrated package.
 
 Rules that follow:
 1. Support minutes per customer is the single most important metric. Median over 20 minutes → kill or reprice.
 2. The support window is the product. 7 days of good support converts to trust; trust converts to referrals and upsells.
 3. Cap the downside. Abuse limits before the first install, not after the first burnout.
-4. £499 funds the business; £20 funds growth. Don't confuse the two.
+4. £20 basic funds acquisition; add-ons and £50/mo integrated fund the business. Don't confuse the three.
 
 The flywheel is real but slow: onboard cheap → measure → prove → refer → upsell. Each loop takes 30–60 days. Plan cash accordingly.

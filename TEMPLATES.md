@@ -1,105 +1,110 @@
-# Per-Vertical Service Templates
+# TEMPLATES.md
 
-> What's core vs add-on for each vertical. All add-ons are optional upsells to the £499 Standard AI Setup.
+> Per-vertical service templates. Basic is £20 for everyone. Add-ons vary by vertical.
 
-## Templates
+## How to read this
+
+- **Basic (£20):** Every customer gets one priority workflow configured and taught.
+- **Add-ons:** Individual prices, purchased as needed.
+- **Integrated (£50/mo):** Ongoing monitoring, support, consulting, teaching.
+
+---
+
+## Tier 1 — Launch verticals
 
 ### Nails
 
-| Core (£499) | Recommended Add-ons | Vertical-Specific |
+| Basic (£20) | Recommended add-ons | Vertical-specific |
 |-------------|--------------------|--------------------|
-| Deposits on bookings, automated reminders, booking link in Instagram/TikTok bios, quick replies, rebooking workflow, review requests, GBP check, training, manual, 14-day support | Website + AI Chatbot (£199), AI Visibility Package (£149), Social Media Bio Optimisation (£49), Full Digital Audit (£79) | — |
+| 1 workflow: bookings OR enquiries | Website+Chatbot (£10), GBP (£10), AI Visibility (£10), Social Bios (£5) | — |
+| **Bundle: Starter = £40** | **Complete = £60** | |
 
-### Beauty
+### Beauty (facials, waxing, tinting)
 
-| Core (£499) | Recommended Add-ons | Vertical-Specific |
+| Basic (£20) | Recommended add-ons | Vertical-specific |
 |-------------|--------------------|--------------------|
-| Deposits on bookings, automated reminders, booking link in Instagram/TikTok bios, quick replies, patch-test workflow, rebooking workflow, review requests, GBP check, training, manual, 14-day support | Website + AI Chatbot (£199), AI Visibility Package (£149), Social Media Bio Optimisation (£49), Full Digital Audit (£79) | — |
+| 1 workflow: bookings OR enquiries | Website+Chatbot (£10), GBP (£10), AI Visibility (£10), Social Bios (£5) | — |
+| **Bundle: Starter = £40** | **Complete = £60** | |
 
 ### Hair
 
-| Core (£499) | Recommended Add-ons | Vertical-Specific |
+| Basic (£20) | Recommended add-ons | Vertical-specific |
 |-------------|--------------------|--------------------|
-| Deposits on bookings, automated reminders, booking link in Instagram/TikTok bios, quick replies, service area + travel fees, rebooking workflow, review requests, GBP check, training, manual, 14-day support | Website + AI Chatbot (£199), AI Visibility Package (£149), Social Media Bio Optimisation (£49), Full Digital Audit (£79) | — |
+| 1 workflow: bookings OR enquiries | Website+Chatbot (£10), GBP (£10), AI Visibility (£10), Social Bios (£5) | — |
+| **Bundle: Starter = £40** | **Complete = £60** | |
 
 ### Lashes
 
-| Core (£349) | Recommended Add-ons | Vertical-Specific |
+| Basic (£20) | Recommended add-ons | Vertical-specific |
 |-------------|--------------------|--------------------|
-| Deposits on bookings, automated reminders, booking link in Instagram/TikTok bios, quick replies, patch-test workflow, refill rebooking workflow, review requests, GBP check, training, manual, 14-day support | Website + AI Chatbot (£199), AI Visibility Package (£149), Social Media Bio Optimisation (£49), Full Digital Audit (£79) | — |
+| 1 workflow: bookings OR enquiries | Website+Chatbot (£10), GBP (£10), AI Visibility (£10), Social Bios (£5) | — |
+| **Bundle: Starter = £40** | **Complete = £60** | |
 
 ### Electrician
 
-| Core (£499) | Recommended Add-ons | Vertical-Specific |
+| Basic (£20) | Recommended add-ons | Vertical-specific |
 |-------------|--------------------|--------------------|
-| Missed-call capture + triage, automated quote follow-up, compliance tracker (Part P, EICR), booking link, quick replies, EICR cycle tracking, GBP check, training, manual, 14-day support | Website + AI Chatbot (£199), AI Visibility Package (£149), Full Digital Audit (£79) | OZEV Grant Landing Page (£49) |
+| 1 workflow: missed calls OR quotes | Website+Chatbot (£10), GBP (£10), AI Visibility (£10), Compliance (£10) | OZEV Grant Page (£10) |
+| **Bundle: Starter = £40** | **Professional = £60** | **Complete + OZEV = £70** |
 
 ### Car Detailers
 
-| Core (£499) | Recommended Add-ons | Vertical-Specific |
+| Basic (£20) | Recommended add-ons | Vertical-specific |
 |-------------|--------------------|--------------------|
-| Photo-led quote request, automated quote follow-up, repeat-service reminders, quick replies, deposit collection (high-value), weather-aware scheduling, GBP check, training, manual, 14-day support | Website + AI Chatbot (£199), AI Visibility Package (£149), Social Media Bio Optimisation (£49), Full Digital Audit (£79) | — |
-
-### Cleaners
-
-| Core (£499) | Recommended Add-ons | Vertical-Specific |
-|-------------|--------------------|--------------------|
-| Recurring cadences + skip handling, deposits for one-off cleans, automated reminders, payment chasing, win-back workflow, review requests, GBP check, training, manual, 14-day support | Website + AI Chatbot (£199), AI Visibility Package (£149), Social Media Bio Optimisation (£49), Full Digital Audit (£79) | — |
-
-### Dog Groomers
-
-| Core (£499) | Recommended Add-ons | Vertical-Specific |
-|-------------|--------------------|--------------------|
-| Breed-specific grooming intervals, automated reminders with prep instructions, waiting list for cancellations, rebooking workflow, deposits for new customers, review requests with dog's name, service summary + groom photo, marketplace-to-direct migration, GBP check, training, manual, 14-day support | Website + AI Chatbot (£199), AI Visibility Package (£149), Social Media Bio Optimisation (£49), Full Digital Audit (£79) | — |
+| 1 workflow: quote intake | Website+Chatbot (£10), GBP (£10), AI Visibility (£10) | — |
+| **Bundle: Starter = £40** | **Complete = £55** | |
 
 ### Driving Instructors
 
-| Core (£499) | Recommended Add-ons | Vertical-Specific |
+| Basic (£20) | Recommended add-ons | Vertical-specific |
 |-------------|--------------------|--------------------|
-| Lesson scheduling + waiting-list management, automated lesson reminders, progress tracking, quick replies, block-booking tracking, cancellation policy in confirmations, test-date coordination, GBP check, training, manual, 14-day support | Website + AI Chatbot (£199), AI Visibility Package (£149), Social Media Bio Optimisation (£49), Full Digital Audit (£79) | — |
+| 1 workflow: lesson scheduling | Website+Chatbot (£10), GBP (£10), AI Visibility (£10) | — |
+| **Bundle: Starter = £40** | **Complete = £55** | |
+
+---
+
+## Tier 2 — Growth verticals
+
+### Cleaners
+
+| Basic (£20) | Recommended add-ons | Vertical-specific |
+|-------------|--------------------|--------------------|
+| 1 workflow: recurring bookings | Website+Chatbot (£10), GBP (£10), Compliance (£10) | — |
+| **Bundle: Starter = £40** | **Complete = £55** | |
+
+### Dog Groomers
+
+| Basic (£20) | Recommended add-ons | Vertical-specific |
+|-------------|--------------------|--------------------|
+| 1 workflow: bookings OR waiting list | Website+Chatbot (£10), GBP (£10), AI Visibility (£10) | — |
+| **Bundle: Starter = £40** | **Complete = £55** | |
 
 ### Gardeners & Window Cleaners
 
-| Core (£499) | Recommended Add-ons | Vertical-Specific |
+| Basic (£20) | Recommended add-ons | Vertical-specific |
 |-------------|--------------------|--------------------|
-| Digitised round book, recurring bookings with seasonal adjustment, weather-dependent rescheduling, first-visit vs recurring pricing, payment chasing, round density alerts, review requests, GBP check, training, manual, 14-day support | Website + AI Chatbot (£199), AI Visibility Package (£149), Social Media Bio Optimisation (£49), Full Digital Audit (£79) | — |
+| 1 workflow: round management | Website+Chatbot (£10), GBP (£10), Compliance (£10) | — |
+| **Bundle: Starter = £40** | **Complete = £55** | |
 
 ### Weddings
 
-| Core (£499) | Recommended Add-ons | Vertical-Specific |
+| Basic (£20) | Recommended add-ons | Vertical-specific |
 |-------------|--------------------|--------------------|
-| Enquiry qualification workflow, automated proposal follow-up, deposit collection (25-40%), quick replies, cancellation terms in proposals, consultation scheduling, GBP check, training, manual, 14-day support | Website + AI Chatbot (£199), AI Visibility Package (£149), Social Media Bio Optimisation (£49), Full Digital Audit (£79) | — |
+| 1 workflow: lead qualification | Website+Chatbot (£10), GBP (£10), AI Visibility (£10), Social Bios (£5) | — |
+| **Bundle: Starter = £40** | **Complete = £60** | |
 
 ---
 
-## Bundle Recommendations by Vertical
+## Integrated package (all verticals) — £50/month
 
-| Vertical | Starter (£499) | Professional (£699) | Complete (£899) | Growth (£999) |
-|----------|---------------|--------------------|-----------------|--------------|
-| Nails | Core only | + Website + GBP + AI Visibility | + Social Bios + Audit | + 3 months GBP posting + AI check |
-| Beauty | Core only | + Website + GBP + AI Visibility | + Social Bios + Audit | + 3 months GBP posting + AI check |
-| Hair | Core only | + Website + GBP + AI Visibility | + Social Bios + Audit | + 3 months GBP posting + AI check |
-| Lashes | Core only | + Website + GBP + AI Visibility | + Social Bios + Audit | + 3 months GBP posting + AI check |
-| Electrician | Core only | + Website + GBP + AI Visibility | + Audit + OZEV page | + 3 months GBP posting + AI check |
-| Car Detailers | Core only | + Website + GBP + AI Visibility | + Social Bios + Audit | + 3 months GBP posting + AI check |
-| Cleaners | Core only | + Website + GBP + AI Visibility | + Social Bios + Audit | + 3 months GBP posting + AI check |
-| Dog Groomers | Core only | + Website + GBP + AI Visibility | + Social Bios + Audit | + 3 months GBP posting + AI check |
-| Driving Instructors | Core only | + Website + GBP + AI Visibility | + Social Bios + Audit | + 3 months GBP posting + AI check |
-| Gardeners | Core only | + Website + GBP + AI Visibility | + Social Bios + Audit | + 3 months GBP posting + AI check |
-| Weddings | Core only | + Website + GBP + AI Visibility | + Social Bios + Audit | + 3 months GBP posting + AI check |
+| Service | Included |
+|---------|----------|
+| Weekly workflow monitoring | Yes |
+| Tech support (1hr/month) | Yes |
+| Monthly consulting call | Yes |
+| Custom tools (2hrs/month) | Yes |
+| Teaching updates | Yes |
+| GBP monthly posting (4 posts) | Yes |
+| AI visibility re-check | Yes |
 
----
-
-## Vertical-Specific Add-ons
-
-### Electrician: OZEV Grant Landing Page
-
-**Price:** £49 one-off
-
-**What's included:**
-- Dedicated page explaining the £500 OZEV grant for EV charger installation
-- Eligibility checker
-- CTA to book installation
-- Can be hosted on the Website + AI Chatbot add-on
-
-**Why electricians need it:** EV charger installation is a high-margin job with government funding. A dedicated landing page captures leads that search for "OZEV grant near me".
+**The pitch:** "£20 to start. £10 for a website. £50/month to keep it all running. Less than a single day of a social media manager."

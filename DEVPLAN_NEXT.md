@@ -17,7 +17,7 @@ Everything below is sequenced to change exactly one of those zeroes at a time.
 
 ## 1. Phase 0 — Prove the unit works (now → first revenue)
 
-**Goal:** One £499 electrician install and one £20 nail-tech quickstart, both measured.
+**Goal:** One £20 electrician install and one £20 nail-tech quickstart, both measured.
 
 ### 1A. Sell (threads T1, T2, T3)
 
@@ -35,7 +35,7 @@ Everything below is sequenced to change exactly one of those zeroes at a time.
 3. Record: delivery hours, support minutes per day, failed connections, customer comprehension (can they demo the workflow back?), refund risk.
 4. Ask for referral + case-study permission. Accept no gracefully.
 
-**Gate:** If median support minutes exceed 20 on the £20 product, kill or reprice it. If the £499 install takes >8 hours, narrow its scope. Numbers decide, not optimism.
+**Gate:** If median support minutes exceed 20 on the £20 product, kill or reprice it. If the £20 install takes >8 hours, narrow its scope. Numbers decide, not optimism.
 
 ### 1C. Measure (threads T2, T4)
 
@@ -44,7 +44,7 @@ Everything below is sequenced to change exactly one of those zeroes at a time.
 3. Kill videos that don't move email. Double down on repeated chatbot questions.
 
 **Phase 0 exit criteria:**
-- [ ] 1 verified £499 install with measured hours + handover
+- [ ] 1 verified £20 install with measured hours + handover
 - [ ] 1 verified £20 install with measured support minutes
 - [ ] Funnel metrics exist (even if bad — bad numbers are data)
 - [ ] Go/no-go decision on both price points, in writing, in BUILD_NOTES
@@ -136,7 +136,7 @@ Order:
 |--------|--------|
 | 50 enriched prospects → 0 conversations | Rewrite pitch/channel, pause building |
 | £20 median support > 20 min after 5 installs | Kill or reprice to £49+ |
-| £499 install consistently > 8 hours | Narrow scope, split package |
+| £20 install consistently > 8 hours | Narrow scope, split package |
 | 0 referrals after 5 happy customers | Flywheel thesis wrong; investigate before scaling |
 | Muse UK delayed past Q2 2027 | Rebrand quickstart assistant-agnostic permanently |
 | Any phase's exit criteria unmet after 90 days | Retrospective: wrong goal, wrong method, or wrong market? |

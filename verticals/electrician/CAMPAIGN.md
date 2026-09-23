@@ -10,7 +10,7 @@ Verify Companies House status, public contact source, and marketing permission b
 
 ## Paid wedge
 
-Standard £499 pilot installation:
+Basic onboarding (£20):
 
 1. Existing email and calendar setup.
 2. Enquiry triage into a job record with photos and address.
