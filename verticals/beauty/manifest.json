@@ -3,6 +3,7 @@
   "display_name": "Beauty",
   "status": "pilot-pack-ready",
   "pilot_package": "standard-ai-setup",
+  "packages": ["standard-ai-setup", "muse-quickstart"],
   "public_offer": "../../OFFER.md",
   "proposed_subdomain": "beauty.aionboard.co.uk",
   "subdomain_status": "proposed",

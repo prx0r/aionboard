@@ -45,9 +45,15 @@ Local SQLite databases are backed up with `aionboard.backup`:
 
 1. Revoke affected credentials immediately.
 2. Identify scope: which clients, which records, which time window.
-3. Notify affected customers within 72 hours (UK GDPR).
-4. Record the incident in the audit log.
-5. Fix the root cause before reconnecting anything.
+3. Notify the ICO within 72 hours of awareness where the breach is notifiable (UK GDPR).
+4. Inform affected individuals without undue delay where the breach presents a high risk to them.
+5. If acting as processor, notify the controller without undue delay — the controller owns the ICO/individual notifications.
+6. Record the incident in the audit log.
+7. Fix the root cause before reconnecting anything.
+
+## International access
+
+Giving a separate overseas organisation access to UK customer data can constitute a restricted international transfer under UK GDPR and needs an appropriate safeguard. Access by an employee of the same legal entity is treated differently but still needs appropriate security. Map actual operating and contractual arrangements before processing live customer records — the rules above describe the framework, not a completed assessment.
 
 ## Customer rights
 

@@ -45,6 +45,8 @@ class VerticalPackTests(unittest.TestCase):
                 manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
                 self.assertEqual(manifest["vertical"], vertical.name)
                 self.assertEqual(manifest["pilot_package"], "standard-ai-setup")
+                self.assertIn("standard-ai-setup", manifest["packages"])
+                self.assertIn("muse-quickstart", manifest["packages"])
                 self.assertEqual(manifest["public_offer"], "../../OFFER.md")
                 self.assertTrue(
                     manifest["proposed_subdomain"].endswith(".aionboard.co.uk"),

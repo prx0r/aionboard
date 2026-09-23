@@ -14,8 +14,32 @@ from .crm import (
     record_stack_item,
     record_tps_check,
 )
+from .backup import create_backup, restore_backup, verify_backup
+from .businesses import (
+    create_business,
+    find_by_company_number,
+    get_business,
+    has_consent,
+    init_business_tables,
+    marketing_allowed,
+    new_business_id,
+    record_consent,
+)
 from .demo import run_demo
 from .handover import generate_handover, write_handover
+from .integrations import init_integration_tables, is_connected, list_integrations, record_integration
+from .manual import generate_manual
+from .onboarding import (
+    PACKAGES,
+    create_onboarding,
+    get_onboarding,
+    is_onboarded,
+    recipe_for,
+    set_onboarding_task,
+    support_active,
+    tasks_for,
+)
+from .support import init_support_tables, open_ticket, resolve_ticket, support_stats
 from .installs import (
     OPTIONAL_TASKS,
     REQUIRED_TASKS,
@@ -25,7 +49,16 @@ from .installs import (
     is_complete,
     set_task,
 )
-from .security import approve_action, assert_customer_isolation, execute_outbound, scan_text
+from .security import (
+    approve_action,
+    assert_customer_isolation,
+    audit_history,
+    execute_outbound,
+    init_approval_tables,
+    issue_approval,
+    redeem_approval,
+    scan_text,
+)
 from .website import canonical_domain, render_site, write_site
 
 __all__ = [
@@ -37,25 +70,56 @@ __all__ = [
     "approve_action",
     "assert_contact_allowed",
     "assert_customer_isolation",
+    "audit_history",
     "canonical_domain",
     "connect",
+    "create_backup",
+    "create_business",
     "create_install",
+    "create_onboarding",
     "execute_outbound",
+    "find_by_company_number",
     "generate_handover",
+    "generate_manual",
+    "get_business",
     "get_install",
+    "get_onboarding",
     "get_prospect",
+    "has_consent",
     "import_prospects",
+    "init_approval_tables",
+    "init_business_tables",
     "init_db",
+    "init_integration_tables",
+    "init_support_tables",
     "is_complete",
+    "is_connected",
+    "is_onboarded",
+    "issue_approval",
+    "list_integrations",
     "list_stack",
+    "marketing_allowed",
+    "new_business_id",
+    "open_ticket",
     "parse_region",
+    "record_consent",
     "record_contact_attempt",
+    "record_integration",
     "record_stack_item",
     "record_tps_check",
+    "redeem_approval",
     "render_site",
+    "resolve_ticket",
+    "restore_backup",
     "run_demo",
     "scan_text",
+    "set_onboarding_task",
     "set_task",
+    "support_active",
+    "support_stats",
+    "tasks_for",
+    "recipe_for",
+    "verify_backup",
     "write_handover",
     "write_site",
 ]

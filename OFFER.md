@@ -10,7 +10,7 @@ Performance figures, payback periods, missed-call rates, lead volumes, and AI-di
 
 ## Standard AI Setup — £499 one-off
 
-Includes:
+For 2–10 person businesses. Includes:
 
 1. Assistant setup for email and calendar workflows the customer already owns and authorizes.
 2. Enquiry-capture workflow using customer-approved contact details.
@@ -22,6 +22,20 @@ Includes:
 8. Fourteen days of fixes for configured workflows.
 
 Google verification remains `pending` until Google confirms it. API acceptance is not proof of verification.
+
+## Muse Quickstart — £20 one-off
+
+For sole traders. Tightly standardised:
+
+1. One priority workflow only (bookings, enquiries, quotations, or appointment admin).
+2. Guided connection to existing calendar, email, or booking software.
+3. Personalised assistant with the customer's services, prices, and hours.
+4. Basic income-and-expense organisation in supported accounting software. No bank-credential collection, no payment initiation, no tax filing by us.
+5. Training session plus personalised manual with ready-to-use prompts.
+6. Seven days of setup support: unlimited AI-assisted questions, one scheduled human session, human escalation only if the agreed installation doesn't work.
+7. Completion when the customer demonstrates the workflow unaided.
+
+Third-party software charges are shown before installation and paid by the customer. Support minutes, failed connections, refunds, and 7-day active use are recorded to validate the price.
 
 ## Explicitly excluded from the standard setup
 

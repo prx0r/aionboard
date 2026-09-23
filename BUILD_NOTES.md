@@ -229,6 +229,36 @@ Needed an honest answer to whether an automated existing-stack → integrated-st
 
 ---
 
+## Session 2026-09-23 — Peer-review checkpoint 2: quickstart product
+
+### Context
+Peer review found the CRM excluded sole traders, installs only supported one package, approvals and backups were documentary, and pricing didn't include the £20 product.
+
+### What was done
+- Canonical `business_id` with optional Companies House identity; sole traders supported.
+- Channel-specific marketing consent plus separate POW opportunity consent.
+- Package registry: `standard-ai-setup` (£499) and `muse-quickstart` (£20) across all 11 manifests.
+- Configurable onboarding engine with 3 recipes; vertical task overlays (nails no longer needs electrician quoting).
+- Completion separated from the 7-day support window.
+- Capability-aware integration inventory: offered/auth/tested/manual-never-connected-without-proof.
+- Manual generator with vertical prompts, checklist, privacy, troubleshooting, access removal.
+- Seven-day support workflow with guide/human/minutes tracking.
+- Authenticated approvals: customer-bound, payload-hashed, expiring, one-time, audited.
+- Backups via SQLite backup API + integrity_check + Fernet encryption + restore test.
+- DATA_POLICY breach rules corrected (ICO 72h, individuals without undue delay, controller notification, international transfers).
+- E2E test: fictional nail tech, no company number, full journey, POW consent stays off.
+
+### Current state
+- 41 tests pass.
+- No completed paying installation is recorded.
+
+### Next steps
+1. Validate one manual electrician installation.
+2. Validate one £20 nail-tech quickstart and measure support minutes.
+3. Build the remote HTTPS MCP server starting with read tools.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:

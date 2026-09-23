@@ -1,13 +1,23 @@
-"""Explicit approval and isolation checks for consequential actions."""
+"""Explicit approval and isolation checks for consequential actions.
+
+Two layers:
+- Prototype helpers (approve_action/execute_outbound): in-memory checks only.
+- Authenticated receipts (issue_approval/redeem_approval): customer-bound,
+  payload-hashed, expiring, one-time-use tokens with an audit trail.
+  Production flows must use the authenticated layer.
+"""
 
 from __future__ import annotations
 
 import hashlib
+import json
 import re
+import secrets
+import sqlite3
 import uuid
 from dataclasses import dataclass
-from datetime import datetime, timezone
-from typing import Iterable, Mapping
+from datetime import datetime, timedelta, timezone
+from typing import Any, Iterable, Mapping
 
 SECRET_PATTERNS = (
     re.compile(r"sk-[A-Za-z0-9]{20,}"),
@@ -107,3 +117,130 @@ def _as_tuple(value: object) -> Iterable[str]:
 def stable_client_fingerprint(client_id: str, created_at: str) -> str:
     payload = f"{client_id.strip()}|{created_at.strip()}".encode("utf-8")
     return hashlib.sha256(payload).hexdigest()
+
+
+def init_approval_tables(connection: sqlite3.Connection) -> None:
+    connection.executescript(
+        """
+        CREATE TABLE IF NOT EXISTS approvals (
+            token TEXT PRIMARY KEY,
+            business_id TEXT NOT NULL,
+            approver TEXT NOT NULL,
+            action TEXT NOT NULL,
+            target TEXT NOT NULL,
+            payload_hash TEXT NOT NULL,
+            expires_at TEXT NOT NULL,
+            used INTEGER NOT NULL DEFAULT 0,
+            created_at TEXT NOT NULL
+        );
+        CREATE TABLE IF NOT EXISTS audit_log (
+            id INTEGER PRIMARY KEY,
+            at TEXT NOT NULL,
+            business_id TEXT NOT NULL,
+            action TEXT NOT NULL,
+            detail TEXT NOT NULL DEFAULT ''
+        );
+        CREATE INDEX IF NOT EXISTS idx_audit_business ON audit_log(business_id);
+        """
+    )
+    connection.commit()
+
+
+def _payload_hash(payload: Mapping[str, Any] | None) -> str:
+    canonical = json.dumps(payload or {}, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+
+def _audit(connection: sqlite3.Connection, business_id: str, action: str, detail: str = "") -> None:
+    connection.execute(
+        "INSERT INTO audit_log (at, business_id, action, detail) VALUES (?, ?, ?, ?)",
+        (utcnow(), business_id.strip(), action.strip(), detail.strip()),
+    )
+    connection.commit()
+
+
+def issue_approval(
+    connection: sqlite3.Connection,
+    *,
+    business_id: str,
+    approver: str,
+    action: str,
+    target: str,
+    payload: Mapping[str, Any] | None = None,
+    ttl_seconds: int = 300,
+) -> str:
+    """Issue a one-time approval token bound to customer, action, and exact payload."""
+    business = business_id.strip()
+    if not business or not approver.strip() or not action.strip() or not target.strip():
+        raise ValueError("business_id, approver, action, and target are required")
+    if ttl_seconds <= 0:
+        raise ValueError("ttl_seconds must be positive")
+
+    token = secrets.token_urlsafe(32)
+    expires_at = (datetime.now(timezone.utc) + timedelta(seconds=ttl_seconds)).isoformat()
+    connection.execute(
+        """
+        INSERT INTO approvals
+        (token, business_id, approver, action, target, payload_hash, expires_at, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        """,
+        (
+            token,
+            business,
+            approver.strip(),
+            action.strip(),
+            target.strip(),
+            _payload_hash(payload),
+            expires_at,
+            utcnow(),
+        ),
+    )
+    connection.commit()
+    _audit(connection, business, "approval_issued", f"{action} -> {target}")
+    return token
+
+
+def redeem_approval(
+    connection: sqlite3.Connection,
+    *,
+    token: str,
+    business_id: str,
+    action: str,
+    target: str,
+    payload: Mapping[str, Any] | None = None,
+) -> dict:
+    """Redeem a token once. Mismatches, expiry, and replay all fail closed."""
+    row = connection.execute(
+        "SELECT * FROM approvals WHERE token = ?", (token,)
+    ).fetchone()
+    if row is None:
+        _audit(connection, business_id, "approval_rejected", "unknown token")
+        raise PermissionError("unknown approval token")
+    if int(row["used"]):
+        _audit(connection, business_id, "approval_rejected", "token already used")
+        raise PermissionError("approval token already used")
+    if row["business_id"] != business_id.strip():
+        _audit(connection, business_id, "approval_rejected", "wrong customer")
+        raise PermissionError("approval is bound to a different customer")
+    if row["action"] != action.strip() or row["target"] != target.strip():
+        _audit(connection, business_id, "approval_rejected", "action/target mismatch")
+        raise PermissionError("approval does not match the requested action")
+    if row["payload_hash"] != _payload_hash(payload):
+        _audit(connection, business_id, "approval_rejected", "payload mismatch")
+        raise PermissionError("approval does not match the exact payload")
+    if datetime.now(timezone.utc).isoformat() > row["expires_at"]:
+        _audit(connection, business_id, "approval_rejected", "token expired")
+        raise PermissionError("approval token expired")
+
+    connection.execute("UPDATE approvals SET used = 1 WHERE token = ?", (token,))
+    connection.commit()
+    _audit(connection, business_id, "approval_redeemed", f"{action} -> {target}")
+    return {"authorized": True, "sent": False, "dry_run": True, "approval": action}
+
+
+def audit_history(connection: sqlite3.Connection, business_id: str) -> list[dict]:
+    rows = connection.execute(
+        "SELECT at, action, detail FROM audit_log WHERE business_id = ? ORDER BY id",
+        (business_id.strip(),),
+    ).fetchall()
+    return [dict(row) for row in rows]

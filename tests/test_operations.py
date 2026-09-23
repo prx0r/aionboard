@@ -6,7 +6,17 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from aionboard import connect, import_prospects, list_stack, record_stack_item
+from aionboard import (
+    audit_history,
+    connect,
+    get_prospect,
+    import_prospects,
+    init_approval_tables,
+    issue_approval,
+    list_stack,
+    record_stack_item,
+    redeem_approval,
+)
 from aionboard.backup import create_backup, verify_backup
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -93,35 +103,71 @@ class StackCaptureTests(unittest.TestCase):
 
 
 class BackupTests(unittest.TestCase):
-    def test_backup_and_verify(self):
+    PASSPHRASE = "test-passphrase-for-encrypted-backups"
+
+    def _seed_db(self, db_path):
+        connection = connect(db_path)
+        import_prospects(
+            connection,
+            [sample_prospect()],
+            source="test-source",
+            source_path="test/path.csv",
+        )
+        connection.close()
+
+    def test_backup_verify_and_restore(self):
+        from aionboard.backup import restore_backup
+
         with tempfile.TemporaryDirectory() as directory:
             db_path = os.path.join(directory, "crm.sqlite3")
-            connection = connect(db_path)
-            import_prospects(
-                connection,
-                [sample_prospect()],
-                source="test-source",
-                source_path="test/path.csv",
-            )
-            connection.close()
+            self._seed_db(db_path)
 
             backup_dir = os.path.join(directory, "backups")
-            result = create_backup(db_path, backup_dir)
+            result = create_backup(db_path, backup_dir, passphrase=self.PASSPHRASE)
             self.assertTrue(os.path.isfile(result["backup"]))
             self.assertTrue(os.path.isfile(result["manifest"]))
-            self.assertTrue(verify_backup(result["backup"], result["manifest"]))
+            self.assertTrue(
+                verify_backup(result["backup"], result["manifest"], passphrase=self.PASSPHRASE)
+            )
+
+            restored = os.path.join(directory, "restored.sqlite3")
+            restore_backup(result["backup"], restored, passphrase=self.PASSPHRASE)
+            connection = connect(restored)
+            prospect = get_prospect(connection, "TEST12345")
+            connection.close()
+            self.assertIsNotNone(prospect)
 
     def test_verify_rejects_tampered_backup(self):
         with tempfile.TemporaryDirectory() as directory:
             db_path = os.path.join(directory, "crm.sqlite3")
-            connection = connect(db_path)
-            connection.close()
+            self._seed_db(db_path)
 
             backup_dir = os.path.join(directory, "backups")
-            result = create_backup(db_path, backup_dir)
+            result = create_backup(db_path, backup_dir, passphrase=self.PASSPHRASE)
             with open(result["backup"], "ab") as handle:
                 handle.write(b"tampered")
-            self.assertFalse(verify_backup(result["backup"], result["manifest"]))
+            self.assertFalse(
+                verify_backup(result["backup"], result["manifest"], passphrase=self.PASSPHRASE)
+            )
+
+    def test_wrong_passphrase_rejected(self):
+        from aionboard.backup import restore_backup
+
+        with tempfile.TemporaryDirectory() as directory:
+            db_path = os.path.join(directory, "crm.sqlite3")
+            self._seed_db(db_path)
+
+            backup_dir = os.path.join(directory, "backups")
+            result = create_backup(db_path, backup_dir, passphrase=self.PASSPHRASE)
+            self.assertFalse(
+                verify_backup(result["backup"], result["manifest"], passphrase="wrong-passphrase")
+            )
+            with self.assertRaises(ValueError):
+                restore_backup(
+                    result["backup"],
+                    os.path.join(directory, "restored.sqlite3"),
+                    passphrase="wrong-passphrase",
+                )
 
     def test_missing_database_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -129,7 +175,113 @@ class BackupTests(unittest.TestCase):
                 create_backup(
                     os.path.join(directory, "missing.sqlite3"),
                     os.path.join(directory, "backups"),
+                    passphrase=self.PASSPHRASE,
                 )
+
+    def test_passphrase_required(self):
+        with tempfile.TemporaryDirectory() as directory:
+            db_path = os.path.join(directory, "crm.sqlite3")
+            self._seed_db(db_path)
+            with self.assertRaises(ValueError):
+                create_backup(
+                    db_path, os.path.join(directory, "backups"), passphrase=""
+                )
+
+
+class AuthenticatedApprovalTests(unittest.TestCase):
+    def setUp(self):
+        self.connection = connect()
+        init_approval_tables(self.connection)
+
+    def _issue(self, **overrides):
+        params = {
+            "business_id": "biz-test-001",
+            "approver": "Fictional Owner",
+            "action": "send-quote",
+            "target": "quote-001",
+            "payload": {"total_gbp": 380},
+        }
+        params.update(overrides)
+        return issue_approval(self.connection, **params)
+
+    def test_redeem_happy_path(self):
+        token = self._issue()
+        receipt = redeem_approval(
+            self.connection,
+            token=token,
+            business_id="biz-test-001",
+            action="send-quote",
+            target="quote-001",
+            payload={"total_gbp": 380},
+        )
+        self.assertTrue(receipt["authorized"])
+        self.assertFalse(receipt["sent"])
+
+    def test_replay_rejected(self):
+        token = self._issue()
+        kwargs = {
+            "business_id": "biz-test-001",
+            "action": "send-quote",
+            "target": "quote-001",
+            "payload": {"total_gbp": 380},
+        }
+        redeem_approval(self.connection, token=token, **kwargs)
+        with self.assertRaises(PermissionError):
+            redeem_approval(self.connection, token=token, **kwargs)
+
+    def test_payload_mismatch_rejected(self):
+        token = self._issue()
+        with self.assertRaises(PermissionError):
+            redeem_approval(
+                self.connection,
+                token=token,
+                business_id="biz-test-001",
+                action="send-quote",
+                target="quote-001",
+                payload={"total_gbp": 9999},
+            )
+
+    def test_wrong_customer_rejected(self):
+        token = self._issue()
+        with self.assertRaises(PermissionError):
+            redeem_approval(
+                self.connection,
+                token=token,
+                business_id="biz-test-999",
+                action="send-quote",
+                target="quote-001",
+                payload={"total_gbp": 380},
+            )
+
+    def test_expired_token_rejected(self):
+        token = self._issue(ttl_seconds=1)
+        import time
+
+        time.sleep(1.1)
+        with self.assertRaises(PermissionError):
+            redeem_approval(
+                self.connection,
+                token=token,
+                business_id="biz-test-001",
+                action="send-quote",
+                target="quote-001",
+                payload={"total_gbp": 380},
+            )
+
+    def test_audit_trail_recorded(self):
+        token = self._issue()
+        redeem_approval(
+            self.connection,
+            token=token,
+            business_id="biz-test-001",
+            action="send-quote",
+            target="quote-001",
+            payload={"total_gbp": 380},
+        )
+        history = audit_history(self.connection, "biz-test-001")
+        actions = [entry["action"] for entry in history]
+        self.assertIn("approval_issued", actions)
+        self.assertIn("approval_redeemed", actions)
 
 
 class McpContractTests(unittest.TestCase):

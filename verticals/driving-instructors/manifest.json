@@ -4,6 +4,7 @@
   "status": "research-stub",
   "parent_vertical": null,
   "pilot_package": "standard-ai-setup",
+  "packages": ["standard-ai-setup", "muse-quickstart"],
   "public_offer": "../../OFFER.md",
   "proposed_subdomain": "instructors.aionboard.co.uk",
   "subdomain_status": "proposed",
