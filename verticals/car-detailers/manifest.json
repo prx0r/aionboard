@@ -1,0 +1,48 @@
+{
+  "vertical": "car-detailers",
+  "display_name": "Mobile Car Detailers",
+  "status": "research-stub",
+  "parent_vertical": null,
+  "pilot_package": "standard-ai-setup",
+  "public_offer": "../../OFFER.md",
+  "proposed_subdomain": "detailers.aionboard.co.uk",
+  "subdomain_status": "proposed",
+  "proposed_test_price_gbp": [349, 599],
+  "price_status": "hypothesis",
+  "sources": {
+    "cgraphuk_template": null,
+    "cgraphuk_teardown": null,
+    "cgraphuk_campaign": null,
+    "cgraphuk_voice_profile": null,
+    "influence_playbook": "influence/stevejobless/SKILL.md",
+    "bigquery_vertical": null,
+    "targets_row": "../../targets.md"
+  },
+  "coverage_note": "No dedicated upstream teardown, campaign, voice profile, or BigQuery vertical was found. Do not reuse another vertical as proof.",
+  "graph_entities": [
+    "customer",
+    "vehicle",
+    "quote_request",
+    "appointment",
+    "deposit",
+    "review"
+  ],
+  "workflows": [
+    "photo-quote-request",
+    "appointment-scheduling",
+    "repeat-service-offer"
+  ],
+  "required_evidence": [
+    "baseline_metrics",
+    "installation_checklist",
+    "handover",
+    "customer_permission_for_case_study"
+  ],
+  "excluded_from_standard_pilot": [
+    "website_build",
+    "live_voice_service",
+    "meta_production_integration",
+    "custom_integration",
+    "lead_generation"
+  ]
+}

@@ -1,6 +1,6 @@
 # Vertical packs
 
-Repeatable per-industry structure. Electrician is the first pilot pack.
+Repeatable per-industry structure. Electrician is the first pilot pack; beauty and the nine `targets.md` niches reuse the same skeleton.
 
 Pattern:
 
@@ -8,8 +8,16 @@ Pattern:
 verticals/
   _template/
   electrician/
-  plumber/
-  hvac/
+  beauty/
+  nails/
+  lashes/
+  hair/
+  dog-groomers/
+  cleaners/
+  gardeners-window-cleaners/
+  car-detailers/
+  driving-instructors/
+  weddings/
 ```
 
 Each vertical pack contains:

@@ -1,0 +1,49 @@
+{
+  "vertical": "lashes",
+  "display_name": "Lash and Brow Artists",
+  "status": "pilot-pack-ready",
+  "parent_vertical": "beauty",
+  "pilot_package": "standard-ai-setup",
+  "public_offer": "../../OFFER.md",
+  "proposed_subdomain": "lashes.aionboard.co.uk",
+  "subdomain_status": "proposed",
+  "proposed_test_price_gbp": [249, 349],
+  "price_status": "hypothesis",
+  "sources": {
+    "cgraphuk_template": "cgraphuk/graph/tpl/tpl-beauty-gb.json",
+    "cgraphuk_teardown": "cgraphuk/graph/pain/td-beauty-gb.json",
+    "cgraphuk_campaign": "cgraphuk/graph/campaigns/CAMP-BEAUTY-GB.md",
+    "cgraphuk_voice_profile": "cgraphuk/graph/profiles/beauty_gb.yaml",
+    "influence_playbook": "influence/stevejobless/SKILL.md",
+    "bigquery_vertical": "beauty",
+    "targets_row": "../../targets.md"
+  },
+  "graph_entities": [
+    "client",
+    "treatment",
+    "appointment",
+    "deposit",
+    "patch_test",
+    "allergy_record",
+    "rebooking_reminder",
+    "review"
+  ],
+  "workflows": [
+    "booking-patch-test-treatment-rebook",
+    "deposit-reminder-treatment",
+    "consent-based-follow-up"
+  ],
+  "required_evidence": [
+    "baseline_metrics",
+    "installation_checklist",
+    "handover",
+    "customer_permission_for_case_study"
+  ],
+  "excluded_from_standard_pilot": [
+    "website_build",
+    "live_voice_service",
+    "meta_production_integration",
+    "custom_integration",
+    "lead_generation"
+  ]
+}

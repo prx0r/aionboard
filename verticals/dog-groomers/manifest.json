@@ -1,0 +1,50 @@
+{
+  "vertical": "dog-groomers",
+  "display_name": "Dog Groomers",
+  "status": "pilot-pack-ready",
+  "parent_vertical": "petcare",
+  "pilot_package": "standard-ai-setup",
+  "public_offer": "../../OFFER.md",
+  "proposed_subdomain": "groomers.aionboard.co.uk",
+  "subdomain_status": "proposed",
+  "proposed_test_price_gbp": [349, 499],
+  "price_status": "hypothesis",
+  "sources": {
+    "cgraphuk_template": "cgraphuk/graph/tpl/tpl-petcare-gb.json",
+    "cgraphuk_teardown": "cgraphuk/graph/pain/td-petcare-gb.json",
+    "cgraphuk_campaign": "cgraphuk/graph/campaigns/CAMP-PETCARE-GB.md",
+    "cgraphuk_voice_profile": null,
+    "influence_playbook": "influence/stevejobless/SKILL.md",
+    "bigquery_vertical": "petcare",
+    "targets_row": "../../targets.md"
+  },
+  "graph_entities": [
+    "client",
+    "pet",
+    "appointment",
+    "deposit",
+    "medical_flag",
+    "behavior_flag",
+    "waiting_list_entry",
+    "review"
+  ],
+  "workflows": [
+    "booking-medical-behavior-check",
+    "deposit-reminder-appointment",
+    "waiting-list-fill",
+    "review-collection"
+  ],
+  "required_evidence": [
+    "baseline_metrics",
+    "installation_checklist",
+    "handover",
+    "customer_permission_for_case_study"
+  ],
+  "excluded_from_standard_pilot": [
+    "website_build",
+    "live_voice_service",
+    "meta_production_integration",
+    "custom_integration",
+    "lead_generation"
+  ]
+}

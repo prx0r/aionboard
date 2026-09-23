@@ -135,6 +135,30 @@ Beauty is a strong second pilot because missed calls, deposits, repeat bookings,
 
 ---
 
+## Session 2026-09-23 — Nine niche packs
+
+### Context
+The nine `targets.md` niches needed the same repeatable folder structure as electrician and beauty.
+
+### What was done
+- Added niche packs for nails, lashes, hair, dog groomers, cleaners, gardeners/window cleaners, car detailers, driving instructors, and weddings.
+- Reused the shared manifest, README, pains, stack, campaign, discovery, and install skeleton.
+- Marked car detailers, driving instructors, and wedding photography as research stubs where dedicated upstream assets are missing.
+- Kept all proposed public surfaces under `aionboard.co.uk`.
+
+### Current state
+- 23 tests pass.
+- Pilot verticals: electrician and beauty.
+- Niche packs: 9 research/pilot skeletons.
+- No completed paying installation is recorded.
+
+### Next steps
+1. Validate electrician first.
+2. Validate nails/lashes as the second pilot.
+3. Promote other niche packs from research stub to pilot only after dedicated discovery.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:
