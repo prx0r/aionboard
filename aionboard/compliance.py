@@ -8,11 +8,47 @@ certification, competence determinations, or compliance guarantees.
 
 from __future__ import annotations
 
+import json
 import sqlite3
+from pathlib import Path
 
 from .crm import utcnow
 
 RULES_VERSION = 1
+REGISTRY_PATH = Path(__file__).resolve().parents[1] / "regulations" / "registry.json"
+
+
+def load_registry() -> list[dict]:
+    """Load the combined regulations registry. Single source of truth."""
+    with open(REGISTRY_PATH, encoding="utf-8") as handle:
+        data = json.load(handle)
+    return data["rules"]
+
+
+def _registry_as_seed() -> list[dict]:
+    """Map registry entries onto the compliance_rules table schema."""
+    seeds = []
+    try:
+        entries = load_registry()
+    except (OSError, ValueError, KeyError):
+        return list(SEED_RULES)
+    for entry in entries:
+        industries = entry.get("industries", [])
+        seeds.append(
+            {
+                "rule_id": entry["id"],
+                "jurisdiction": entry.get("jurisdiction", "UK"),
+                "industry": ",".join(industries),
+                "title": entry.get("law", ""),
+                "detail": entry.get("detail", ""),
+                "source_url": entry.get("source_url", ""),
+                "review_date": entry.get("review_date", ""),
+                "applies_when": entry.get("applies_when", ""),
+                "owner_action": entry.get("owner_action", ""),
+                "escalation": entry.get("escalation", ""),
+            }
+        )
+    return seeds
 
 # Seed rules. Review dates force re-verification; stale rules are errors.
 SEED_RULES: tuple[dict[str, str], ...] = (
@@ -128,7 +164,7 @@ def init_compliance_tables(connection: sqlite3.Connection) -> None:
         CREATE INDEX IF NOT EXISTS idx_legal_business ON legal_review_queue(business_id);
         """
     )
-    for rule in SEED_RULES:
+    for rule in _registry_as_seed():
         connection.execute(
             """
             INSERT INTO compliance_rules

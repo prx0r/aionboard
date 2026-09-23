@@ -15,15 +15,6 @@ from .crm import (
     record_tps_check,
 )
 from .backup import create_backup, restore_backup, verify_backup
-from .compliance import (
-    HIGH_RISK_ACTIVITIES,
-    RULES_VERSION,
-    init_compliance_tables,
-    needs_legal_review,
-    queue_legal_review,
-    rules_for_industry,
-    stale_rules,
-)
 from .businesses import (
     create_business,
     find_by_company_number,
@@ -38,6 +29,7 @@ from .compliance import (
     HIGH_RISK_ACTIVITIES,
     RULES_VERSION,
     init_compliance_tables,
+    load_registry,
     needs_legal_review,
     queue_legal_review,
     rules_for_industry,
@@ -147,6 +139,7 @@ __all__ = [
     "issue_approval",
     "list_integrations",
     "list_stack",
+    "load_registry",
     "mark_untrusted",
     "marketing_allowed",
     "match_customers",

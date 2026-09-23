@@ -8,7 +8,7 @@ Pilot-only repository. There are no completed paying customer installations reco
 python3 -m unittest discover -s tests -v
 ```
 
-Expected: 53 tests pass.
+Expected: 81 tests pass.
 
 ## Narrow pilot scope
 

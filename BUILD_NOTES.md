@@ -353,6 +353,28 @@ Opportunity matching only answered "what work is coming." The inverse — "who n
 
 ---
 
+## Session 2026-09-23 — Combined regulations source
+
+### Context
+Needed one combined source for legislation, tax, finance, security, voice, marketing, and AI-agent rules that every vertical pack, manual, and prompt can read from.
+
+### What was done
+- `regulations/registry.json`: 36 rules — 26 imported from cgraphuk (attributed) + 10 new (VAT, CT, payroll/NICs, FCA payments, PECR, call recording, secrets, tenant isolation, Muse UK, ChatGPT MCP).
+- `regulations/README.md`: domains, review policy, honesty rules, read pattern.
+- `compliance.py` now seeds from the registry file (falls back to built-in seeds).
+- Tests enforce schema, parseable review dates, known verticals, honest design-rule labelling, DB seeding parity, staleness, and that every profile `legal[]` ID exists in the registry.
+
+### Current state
+- 81 tests pass.
+- No completed paying installation is recorded.
+
+### Next steps
+1. Validate one manual electrician installation.
+2. Validate one £20 nail-tech quickstart and measure support minutes.
+3. Re-verify registry entries on schedule; stale rules must not be used.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:

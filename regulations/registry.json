@@ -1,0 +1,726 @@
+{
+  "registry": "regulations/1",
+  "review_policy": "Every entry carries review_date. Entries past review_date are stale and must be re-verified before use, not silently trusted.",
+  "rules": [
+    {
+      "applies_when": "Unsupervised teaching or training of under-18s.",
+      "basis": "verified-2026",
+      "citation": "SVGA 2006 Sch 4 Pt 1; exact wording to confirm against DBS eligibility guidance",
+      "detail": "Enhanced DBS + Children's Barred List for unsupervised teaching/training of under-18s.",
+      "domain": "employment",
+      "escalation": "Confirm DBS eligibility before any unsupervised contact with minors.",
+      "failure_mode": "Unsafeguarded contact with minors; business-ending incident.",
+      "id": "LEG-SVGA-CHILD",
+      "industries": [
+        "tutor",
+        "petcare"
+      ],
+      "jurisdiction": "UK",
+      "law": "Regulated activity with children (teaching/training unsupervised)",
+      "owner_action": "Check DBS eligibility; obtain enhanced checks where required.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.legislation.gov.uk/ukpga/2006/47/schedule/4"
+    },
+    {
+      "applies_when": "Any gas installation, service, or maintenance work.",
+      "basis": "verified-2026",
+      "citation": "Gas Safety (Installation and Use) Regulations 1998, reg 3; HSE ACOP L56",
+      "detail": "No gas work unless competent; no employee/self-employed gas work unless in HSE-approved class (Gas Safe Register). Employers must ensure and monitor competence.",
+      "domain": "trade",
+      "escalation": "Stop the job; refer to a Gas Safe registered engineer.",
+      "failure_mode": "Criminal offence; invalidates insurance; employer liable.",
+      "id": "LEG-GSIUR",
+      "industries": [
+        "hvac",
+        "electrician"
+      ],
+      "jurisdiction": "UK",
+      "law": "Gas competence + Gas Safe Register membership",
+      "owner_action": "Verify Gas Safe registration before quoting or dispatching gas work.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.legislation.gov.uk/uksi/1998/2451/regulation/3"
+    },
+    {
+      "applies_when": "Installing, servicing, maintaining, leak-checking, recovering, or decommissioning refrigeration, AC, or heat-pump equipment containing F-gases.",
+      "basis": "verified-2026",
+      "citation": "Reg 2015/2067 (retained UK law); Fluorinated Greenhouse Gases Regulations 2015",
+      "detail": "Certificate required for F-gas work on stationary refrigeration, air conditioning, heat pumps, and refrigerated trucks/trailers.",
+      "domain": "trade",
+      "escalation": "Stop the job; refer to a certified handler.",
+      "failure_mode": "Criminal offence; failed F-Gas audit; fines.",
+      "id": "LEG-FGAS",
+      "industries": [
+        "hvac"
+      ],
+      "jurisdiction": "UK",
+      "law": "F-Gas qualification requirement",
+      "owner_action": "Verify F-gas certification before quoting or dispatching.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.regulated-professions.service.gov.uk/professions/f-gas-handler-for-stationary-refrigeration-air-conditioning-and-heat-pump-equipment-and-refrigerated-trucks-and-trailers"
+    },
+    {
+      "applies_when": "Construction work with principal-contractor or contractor roles.",
+      "basis": "verified-2026",
+      "citation": "Construction (Design and Management) Regulations 2015 (SI 2015/51), regs 12-15",
+      "detail": "Principal contractor plans, manages, and monitors; contractors SKET-check appointees; domestic-client duties default to the contractor in control.",
+      "domain": "trade",
+      "escalation": "Pause site work until duties are assigned in writing.",
+      "failure_mode": "Site shut down; directors liable; locked out of tenders.",
+      "id": "LEG-CDM",
+      "industries": [
+        "builder",
+        "electrician",
+        "hvac"
+      ],
+      "jurisdiction": "UK",
+      "law": "CDM principal-contractor + contractor duties",
+      "owner_action": "Assign CDM duties in writing before site work starts.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.legislation.gov.uk/uksi/2015/51/contents/made"
+    },
+    {
+      "applies_when": "Paying subcontractors in construction.",
+      "basis": "verified-2026",
+      "citation": "Finance Act 2004 ss58-59; HMRC CISR manuals",
+      "detail": "Verify subcontractors with HMRC; deduct 20% registered / 30% unregistered; file CIS300 monthly.",
+      "domain": "tax",
+      "escalation": "Paying at the wrong rate is the contractor's liability; correct immediately.",
+      "failure_mode": "CIS penalties; cash-flow shock from wrong deductions.",
+      "id": "LEG-CIS",
+      "industries": [
+        "builder",
+        "electrician",
+        "bookkeeping"
+      ],
+      "jurisdiction": "UK",
+      "law": "Construction Industry Scheme deductions",
+      "owner_action": "Verify every new subcontractor with HMRC before first payment.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.gov.uk/hmrc-internal-manuals/construction-industry-scheme-reform/cisr14020"
+    },
+    {
+      "applies_when": "Selling prepacked-for-direct-sale food.",
+      "basis": "verified-2026",
+      "citation": "Food Information (Amendment) (England) Regulations 2019 (SI 2019/1218), in force 1 Oct 2021",
+      "detail": "Name plus full ingredients with 14 allergens emphasised, on package or label.",
+      "domain": "trade",
+      "escalation": "Withdraw non-compliant products immediately.",
+      "failure_mode": "Allergic reaction without label trail; prosecution.",
+      "id": "LEG-NATASHA",
+      "industries": [
+        "restaurant",
+        "hotel",
+        "retail"
+      ],
+      "jurisdiction": "UK",
+      "law": "Natasha's Law: PPDS allergen labelling",
+      "owner_action": "Label every PPDS item before sale.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.legislation.gov.uk/uksi/2019/1218/made"
+    },
+    {
+      "applies_when": "Staff receive tips, gratuities, or service charges.",
+      "basis": "verified-2026",
+      "citation": "Employment (Allocation of Tips) Act 2023, in force 1 Oct 2024; ITEPA Reg 100",
+      "detail": "Allocate 100% of qualifying tips fairly with no deductions; written policy where non-occasional; independent tronc only if genuinely independent.",
+      "domain": "employment",
+      "escalation": "Tribunal exposure; correct allocations and document the policy.",
+      "failure_mode": "Unlawful deductions + NIC errors; tribunal exposure.",
+      "id": "LEG-TIPS",
+      "industries": [
+        "restaurant",
+        "hotel",
+        "barber",
+        "beauty"
+      ],
+      "jurisdiction": "UK",
+      "law": "Fair tips: 100% pass-through + written policy + tronc rules",
+      "owner_action": "Write the tips policy; allocate fairly; keep records.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.gov.uk/government/publications/e24-tips-gratuities-service-charges-and-troncs/guidance-on-tips-gratuities-service-charges-and-troncs"
+    },
+    {
+      "applies_when": "Sole trader or landlord above the qualifying-income threshold.",
+      "basis": "verified-2026",
+      "citation": "Finance (No.2) Act 2017; Income Tax (Digital Requirements) Regulations 2021",
+      "detail": "Digital records plus quarterly updates via compatible software: £50k+ from Apr 2026, £30k+ from Apr 2027, £20k+ from Apr 2028. Points accrue per missed deadline.",
+      "domain": "tax",
+      "escalation": "Refer to accountant when thresholds or scope are unclear.",
+      "failure_mode": "HMRC penalties (points-based); client churn at mandate dates.",
+      "id": "LEG-MTD-ITSA",
+      "industries": [
+        "bookkeeping",
+        "retail",
+        "gig_driver",
+        "tutor",
+        "reseller"
+      ],
+      "jurisdiction": "UK",
+      "law": "MTD for Income Tax: digital records + quarterly updates",
+      "owner_action": "Use compatible MTD software before the applicable mandate date.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.gov.uk/government/publications/extension-of-making-tax-digital-for-income-tax-self-assessment-to-sole-traders-and-landlords/making-tax-digital-for-income-tax-self-assessment-for-sole-traders-and-landlords"
+    },
+    {
+      "applies_when": "Providing accountancy services as a business.",
+      "basis": "verified-2026",
+      "citation": "Money Laundering Regulations 2017",
+      "detail": "Register with HMRC or a professional-body supervisor unless exempt (under £30k turnover, under 5% accountancy, supervised review).",
+      "domain": "finance",
+      "escalation": "Stop supervised work until registered; unregistered practice is criminal.",
+      "failure_mode": "Unsupervised practice = criminal offence; firm shutdown.",
+      "id": "LEG-MLR",
+      "industries": [
+        "bookkeeping"
+      ],
+      "jurisdiction": "UK",
+      "law": "AML supervision for accountancy service providers",
+      "owner_action": "Confirm supervision is in place before taking bookkeeping clients.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.gov.uk/guidance/money-laundering-regulations-accountancy-service-provider-registration"
+    },
+    {
+      "applies_when": "Operating a funeral business in scope of the CMA order.",
+      "basis": "verified-2026",
+      "citation": "CMA Funerals Market Investigation Order 2021 (Enterprise Act 2002)",
+      "detail": "Standardised Price List plus Attended/Unattended prices; ownership disclosure; ban on hospital/hospice/care-home inducements and coroner/police solicitation. No licensing regime in England/Wales yet.",
+      "domain": "trade",
+      "escalation": "CMA enforcement; never claim regulated status.",
+      "failure_mode": "CMA enforcement; reputational damage in a trust market.",
+      "id": "LEG-CMA-FUNERALS",
+      "industries": [
+        "funeral"
+      ],
+      "jurisdiction": "UK",
+      "law": "Funeral price transparency + inducement ban",
+      "owner_action": "Publish required price lists and ownership disclosure.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://assets.publishing.service.gov.uk/media/60c8b3c4e90e07439684be6b/Funerals_The_Funerals_Market_Investigation_Order_2021_150621.pdf"
+    },
+    {
+      "applies_when": "Tree work near protected trees or conservation areas.",
+      "basis": "well-established",
+      "citation": "Town and Country Planning Act 1990; TPO Regulations 2012",
+      "detail": "Check TPO/register status before quoting; correct notice or application per route; diary the statutory response window per case. Never hardcode one clock.",
+      "domain": "trade",
+      "escalation": "Illegal fell risks prosecution, unlimited fine, replanting orders.",
+      "failure_mode": "Illegal fell: prosecution, unlimited fine, replanting orders.",
+      "id": "LEG-TPO",
+      "industries": [
+        "tree_surgeon"
+      ],
+      "jurisdiction": "UK",
+      "law": "Tree Preservation Orders + conservation-area controls",
+      "owner_action": "Check protection status before quoting any tree work.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.legislation.gov.uk/ukpga/1990/8/contents"
+    },
+    {
+      "applies_when": "Climbing kit used for lifting persons; chainsaw work.",
+      "basis": "verified-2026",
+      "citation": "Lifting Operations and Lifting Equipment Regulations 1998; PUWER 1998",
+      "detail": "6-monthly thorough examination for climbing kit used for lifting persons; documented chainsaw training (NPTC route) for insurance and council work. No statutory 'chainsaw licence' exists.",
+      "domain": "trade",
+      "escalation": "Injury with lapsed inspection means the insurer walks away.",
+      "failure_mode": "Injury with lapsed inspection; insurer walks away.",
+      "id": "LEG-LOLER-CHAINSAW",
+      "industries": [
+        "tree_surgeon",
+        "builder"
+      ],
+      "jurisdiction": "UK",
+      "law": "LOLER inspections + chainsaw competence",
+      "owner_action": "Keep inspection and training records current and auditable.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.legislation.gov.uk/uksi/1998/2307/regulation/9"
+    },
+    {
+      "applies_when": "Any electrical installation, service, or maintenance work.",
+      "basis": "well-established",
+      "citation": "Electricity at Work Regulations 1989; Building Regulations 2010 Part P; Electrical Safety Standards (PRS England) Regulations 2020",
+      "detail": "Competent persons only; notifiable domestic work via registered scheme or building control; private rentals need valid 5-year EICR.",
+      "domain": "trade",
+      "escalation": "Injury liability; invalidated insurance; PRS prohibition on letting.",
+      "failure_mode": "Injury liability; invalidated insurance; PRS prohibition on letting.",
+      "id": "LEG-ELECTRICAL",
+      "industries": [
+        "electrician",
+        "builder"
+      ],
+      "jurisdiction": "UK",
+      "law": "Electrical competence + Part P + PRS 5-yearly EICRs",
+      "owner_action": "Verify competence and scheme membership before quoting notifiable work.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.legislation.gov.uk/uksi/1989/635/contents/made"
+    },
+    {
+      "applies_when": "Dispensing veterinary medicines or holding controlled drugs.",
+      "basis": "verified-2026",
+      "citation": "Veterinary Medicines Regulations 2013; Misuse of Drugs Regulations 2001; RCVS Practice Standards Scheme",
+      "detail": "Every dispense logged with batch and prescriber, 5-year retention; controlled-drug running balances with witnesses; PSS evidence pack always ready.",
+      "domain": "trade",
+      "escalation": "Failed unannounced RCVS inspection; dispensing prosecution.",
+      "failure_mode": "Failed unannounced RCVS inspection; dispensing prosecution.",
+      "id": "LEG-VETMEDS",
+      "industries": [
+        "vet"
+      ],
+      "jurisdiction": "UK",
+      "law": "VMR batch/prescriber/5yr retention + Schedule 2 CD register + PSS",
+      "owner_action": "Keep the CD register and PSS pack inspection-ready at all times.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.legislation.gov.uk/uksi/2013/2033"
+    },
+    {
+      "applies_when": "Handling client personal data or card payments.",
+      "basis": "well-established",
+      "citation": "UK GDPR + Data Protection Act 2018; PCI DSS (contractual via acquirers)",
+      "detail": "Lawful basis and minimisation for client data and photos; never store raw PANs; secrets as references, never values.",
+      "domain": "data",
+      "escalation": "ICO fines; card-scheme withdrawal; breach-notification duties.",
+      "failure_mode": "ICO fines; card-scheme withdrawal; breach-notification duties.",
+      "id": "LEG-DATAPAY",
+      "industries": [
+        "barber",
+        "beauty",
+        "medspa",
+        "restaurant",
+        "hotel",
+        "retail",
+        "msp",
+        "gp_surgery",
+        "it_helpdesk"
+      ],
+      "jurisdiction": "UK",
+      "law": "Data protection + card-data handling",
+      "owner_action": "Record lawful basis; minimise data; keep card data with the acquirer.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/"
+    },
+    {
+      "applies_when": "Driving for hire or reward.",
+      "basis": "well-established",
+      "citation": "Road Traffic Act 1988 s.143; AMAP rates",
+      "detail": "Hire-and-reward cover required (standard SDP excludes paid work); log all miles for AMAP (55p/mile to 10k from Apr 2026).",
+      "domain": "trade",
+      "escalation": "Uninsured driving is criminal; log miles or lose deductions.",
+      "failure_mode": "Uninsured driving (criminal); deactivation; SA underclaim.",
+      "id": "LEG-HIREREWARD",
+      "industries": [
+        "gig_driver"
+      ],
+      "jurisdiction": "UK",
+      "law": "Hire-and-reward insurance + mileage rules",
+      "owner_action": "Confirm hire-and-reward cover; log every mile.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.legislation.gov.uk/ukpga/1988/52/section/143"
+    },
+    {
+      "applies_when": "Boarding, daycare, or breeding animals.",
+      "basis": "well-established",
+      "citation": "Animal Welfare Act 2006; Animal Welfare (Licensing of Activities Involving Animals) (England) Regulations 2018",
+      "detail": "Local-authority licence required; 5-star rating criteria as ops checklist; incident protocol in place.",
+      "domain": "trade",
+      "escalation": "Unlicensed operation prosecution; incident without protocol.",
+      "failure_mode": "Unlicensed boarding/daycare prosecution; incident without protocol.",
+      "id": "LEG-ANIMAL",
+      "industries": [
+        "petcare"
+      ],
+      "jurisdiction": "UK",
+      "law": "Boarding/daycare licensing + welfare duty",
+      "owner_action": "Confirm licence status with the local authority before trading.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.legislation.gov.uk/ukpga/2006/45/contents"
+    },
+    {
+      "applies_when": "Operating hotels, venues, garages, or food premises.",
+      "basis": "well-established",
+      "citation": "Regulatory Reform (Fire Safety) Order 2005; DVSA MOT standards; Food Safety and Hygiene (England) Regulations 2013",
+      "detail": "Fire risk assessment with competent persons; honest MOT testing per DVSA standards; FHRS hygiene discipline.",
+      "domain": "trade",
+      "escalation": "Prohibition notices; invalid MOTs; hygiene ratings collapse.",
+      "failure_mode": "Prohibition notices; invalid MOTs; hygiene ratings collapse.",
+      "id": "LEG-SITEOPS",
+      "industries": [
+        "hotel",
+        "restaurant",
+        "garage"
+      ],
+      "jurisdiction": "UK",
+      "law": "Fire safety + MOT integrity + food hygiene baselines",
+      "owner_action": "Keep fire, MOT, and hygiene records inspection-ready.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.gov.uk/government/publications/fire-safety-risk-assessment-sleeping-accommodation"
+    },
+    {
+      "applies_when": "Selling goods to consumers or trading past the allowance.",
+      "basis": "well-established",
+      "citation": "Consumer Rights Act 2015; Consumer Contracts Regs 2013",
+      "detail": "Goods must be fit for purpose; 14-day distance-returns information; register with HMRC past £1,000 trading income.",
+      "domain": "consumer",
+      "escalation": "Chargebacks and returns spiral; unregistered trading.",
+      "failure_mode": "Chargebacks + returns spiral; trading past allowance unregistered.",
+      "id": "LEG-CONSUMER",
+      "industries": [
+        "dropship",
+        "reseller",
+        "retail"
+      ],
+      "jurisdiction": "UK",
+      "law": "Consumer rights + distance selling + trading allowance",
+      "owner_action": "Publish returns information; register past £1k trading income.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.legislation.gov.uk/ukpga/2015/15/contents"
+    },
+    {
+      "applies_when": "Clinical decisions supported by machine triage.",
+      "basis": "well-established",
+      "citation": "GMC Good Medical Practice; duty of candour (HSCA Reg 20)",
+      "detail": "Agent handles admin and navigation only; every clinical decision traceable to a registered clinician; open disclosure on harm.",
+      "domain": "ai-agent",
+      "escalation": "Wrong decision on machine-triaged case; fragmented record.",
+      "failure_mode": "Clinician decides wrongly on machine-triaged case; record fragmented.",
+      "id": "LEG-CLINICAL-BOUNDARY",
+      "industries": [
+        "gp_surgery",
+        "vet",
+        "medspa"
+      ],
+      "jurisdiction": "UK",
+      "law": "Clinical judgment stays with registered clinicians; duty of candour on harm",
+      "owner_action": "Restrict agent to admin; route every clinical decision to a clinician.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice"
+    },
+    {
+      "applies_when": "Using tints, bleach, or salon chemicals.",
+      "basis": "well-established",
+      "citation": "COSHH Regulations 2002 (salon chemicals); industry patch-test duty of care",
+      "detail": "COSHH assessments for tints and bleach; patch test plus record before colour services.",
+      "domain": "trade",
+      "escalation": "Reaction without patch-test record; HSE notice.",
+      "failure_mode": "Reaction without patch-test record; HSE notice.",
+      "id": "LEG-COSHH-PATCH",
+      "industries": [
+        "barber",
+        "beauty",
+        "medspa"
+      ],
+      "jurisdiction": "UK",
+      "law": "Chemical safety + patch-test records in hair/beauty",
+      "owner_action": "Record patch-test date and result before every colour service.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.hse.gov.uk/coshh/"
+    },
+    {
+      "applies_when": "Using cleaning chemicals or working at height.",
+      "basis": "well-established",
+      "citation": "Control of Substances Hazardous to Health Regulations 2002; Work at Height Regulations 2005",
+      "detail": "COSHH assessments for bleach, solvents, and detergents; risk assessment and controls for ladder and window work; competent persons only.",
+      "domain": "trade",
+      "escalation": "Chemical injury without assessment; fall without controls.",
+      "failure_mode": "Chemical injury without assessment; fall from height without controls.",
+      "id": "LEG-CLEANCHEM",
+      "industries": [
+        "cleaning",
+        "window_cleaner"
+      ],
+      "jurisdiction": "UK",
+      "law": "COSHH + Work at Height for cleaning trades",
+      "owner_action": "Assess chemicals and heights before quoting the job.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": "https://www.hse.gov.uk/coshh/"
+    },
+    {
+      "applies_when": "Creating business social accounts.",
+      "basis": "template-analysis",
+      "citation": "Platform ToS (contract, not statute)",
+      "detail": "Social account creation is human-only. The agent maps, guides, verifies, and connects — it never creates accounts. Explicitly NOT law.",
+      "domain": "ai-agent",
+      "escalation": "Banned accounts; lost handles; no legal recourse.",
+      "failure_mode": "Banned accounts; lost handles; no legal recourse.",
+      "id": "NONLAW-SOCIAL-CREATION",
+      "industries": [
+        "all"
+      ],
+      "jurisdiction": "UK",
+      "law": "Social account creation is human-only (PLATFORM RULE, not legislation)",
+      "owner_action": "Customer claims every handle personally.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": ""
+    },
+    {
+      "applies_when": "Any spend, payment, or financial commitment.",
+      "basis": "template-analysis",
+      "citation": "OWASP agent-security guidance + kernel invariant (design rule, not statute)",
+      "detail": "Money moves only on human-issued, parameter-bound, single-use, expiring capability. Explicitly NOT statute.",
+      "domain": "ai-agent",
+      "escalation": "Unauthorised spend.",
+      "failure_mode": "Unauthorised spend.",
+      "id": "NONLAW-MONEY-APPROVAL",
+      "industries": [
+        "all"
+      ],
+      "jurisdiction": "UK",
+      "law": "Money moves on human approval (DESIGN RULE, not legislation)",
+      "owner_action": "Approve each spend with exact amount and destination.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json",
+      "source_url": ""
+    },
+    {
+      "applies_when": "Registering taxable turnover.",
+      "basis": "well-established",
+      "citation": "VATA 1994; gov.uk VAT registration thresholds",
+      "detail": "Register at £90,000 taxable turnover over a rolling 12 months. MTD for VAT returns. Non-established UK suppliers can have different obligations.",
+      "domain": "tax",
+      "escalation": "Late registration penalties; backdated VAT liability.",
+      "failure_mode": "Trading above threshold unregistered.",
+      "id": "TAX-VAT-90K",
+      "industries": [
+        "all"
+      ],
+      "jurisdiction": "UK",
+      "law": "VAT registration at £90,000 rolling turnover",
+      "owner_action": "Monitor rolling turnover monthly; register before breaching.",
+      "review_date": "2026-09-23",
+      "source": "aionboard-research",
+      "source_url": "https://www.gov.uk/vat-registration-thresholds"
+    },
+    {
+      "applies_when": "Operating through a limited company.",
+      "basis": "well-established",
+      "citation": "Corporation Tax Act 2009/2010",
+      "detail": "Corporation Tax on company profits; digital records for year end; main rate applies above thresholds with marginal relief below.",
+      "domain": "tax",
+      "escalation": "Late filing penalties; incorrect relief claims.",
+      "failure_mode": "Late or incorrect company tax filing.",
+      "id": "TAX-CT",
+      "industries": [
+        "all"
+      ],
+      "jurisdiction": "UK",
+      "law": "Corporation Tax on company profits",
+      "owner_action": "Keep digital records; file via accountant or compatible software.",
+      "review_date": "2026-09-23",
+      "source": "aionboard-research",
+      "source_url": "https://www.gov.uk/limited-company-formation"
+    },
+    {
+      "applies_when": "Employing staff.",
+      "basis": "well-established",
+      "citation": "ITEPA 2003 (PAYE); Social Security Contributions and Benefits Act 1992; Pensions Act 2008",
+      "detail": "Operate PAYE, deduct Income Tax and Class 1 NICs, auto-enrol eligible staff into pensions. National Minimum/Living Wage floors apply.",
+      "domain": "employment",
+      "escalation": "HMRC payroll penalties; employment tribunal exposure.",
+      "failure_mode": "Non-compliant payroll; underpaid staff.",
+      "id": "TAX-NIC-PAYROLL",
+      "industries": [
+        "all"
+      ],
+      "jurisdiction": "UK",
+      "law": "PAYE, NICs, pensions, and wage floors for employers",
+      "owner_action": "Run payroll through compliant software or a bureau before each payday.",
+      "review_date": "2026-09-23",
+      "source": "aionboard-research",
+      "source_url": "https://www.gov.uk/employing-staff"
+    },
+    {
+      "applies_when": "Reading bank transactions or initiating payments through software.",
+      "basis": "verified-2026",
+      "citation": "Payment Services Regulations 2017; FCA authorisation regime",
+      "detail": "Account-information and payment-initiation services are regulated activities. Use an appropriately authorised provider; never collect customer banking credentials.",
+      "domain": "finance",
+      "escalation": "Unregulated payment activity; credential compromise.",
+      "failure_mode": "Unregulated payment activity; credential compromise.",
+      "id": "FIN-FCA-AISP-PISP",
+      "industries": [
+        "all"
+      ],
+      "jurisdiction": "UK",
+      "law": "FCA authorisation for account and payment initiation",
+      "owner_action": "Use authorised providers only; keep banking credentials out of AI tooling.",
+      "review_date": "2026-09-23",
+      "source": "aionboard-research",
+      "source_url": "https://www.fca.org.uk/"
+    },
+    {
+      "applies_when": "Sending promotional emails, WhatsApp messages, or social DMs.",
+      "basis": "well-established",
+      "citation": "Privacy and Electronic Communications Regulations 2003; ICO direct-marketing guidance",
+      "detail": "Sole traders and some partnerships are individual subscribers: unsolicited electronic marketing generally needs consent unless a valid soft opt-in applies. Screen live calls against TPS/CTPS.",
+      "domain": "marketing",
+      "escalation": "ICO enforcement; reputational damage.",
+      "failure_mode": "Unlawful marketing; ICO enforcement.",
+      "id": "MKT-PECR",
+      "industries": [
+        "all"
+      ],
+      "jurisdiction": "UK",
+      "law": "PECR consent and soft opt-in for electronic marketing",
+      "owner_action": "Record channel-specific consent; screen TPS/CTPS; honour objections immediately.",
+      "review_date": "2026-09-23",
+      "source": "aionboard-research",
+      "source_url": "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications-guide/"
+    },
+    {
+      "applies_when": "Recording business calls.",
+      "basis": "template-analysis",
+      "citation": "UK GDPR; RIPA business exemption requires notification and lawful basis",
+      "detail": "Inform all parties that calls are recorded; state the purpose; store securely with retention limits. Confirm the exact position with legal advice before deploying.",
+      "domain": "voice",
+      "escalation": "Unlawful interception claims; ICO complaints.",
+      "failure_mode": "Recorded calls without notification or basis.",
+      "id": "VOICE-RECORDING",
+      "industries": [
+        "all"
+      ],
+  "jurisdiction": "UK",
+  "law": "Call-recording notification and lawful basis (DESIGN GUIDANCE, not legislation)",
+      "owner_action": "Play a recording notice; document purpose and retention.",
+      "review_date": "2026-09-23",
+      "source": "aionboard-research",
+      "source_url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/"
+    },
+    {
+      "applies_when": "Storing or transmitting business or customer data.",
+      "basis": "template-analysis",
+      "citation": "OWASP agent-security guidance; kernel invariant",
+      "detail": "No secrets in prompts, logs, handovers, or backups metadata. Secrets live in customer-owned vaults or OS keychains, referenced never valued.",
+      "domain": "security",
+      "escalation": "Credential leak; cross-customer exposure.",
+      "failure_mode": "Secrets in prompts, logs, or handovers.",
+      "id": "SEC-SECRETS",
+      "industries": [
+        "all"
+      ],
+      "jurisdiction": "UK",
+      "law": "Secrets handling (DESIGN RULE, not legislation)",
+      "owner_action": "Scan every generated artifact for secret patterns before delivery.",
+      "review_date": "2026-09-23",
+      "source": "aionboard-research",
+      "source_url": ""
+    },
+    {
+      "applies_when": "Serving more than one customer from shared infrastructure.",
+      "basis": "template-analysis",
+      "citation": "Kernel invariant: tenant-scoped queries and disjoint storage",
+      "detail": "Every row acted on must belong to the expected customer. Cross-tenant reads or writes fail closed.",
+      "domain": "security",
+      "escalation": "Cross-customer data exposure.",
+      "failure_mode": "Cross-customer data exposure.",
+      "id": "SEC-TENANT-ISOLATION",
+      "industries": [
+        "all"
+      ],
+      "jurisdiction": "UK",
+      "law": "Tenant isolation (DESIGN RULE, not legislation)",
+      "owner_action": "Enforce tenant checks on every result set before acting.",
+      "review_date": "2026-09-23",
+      "source": "aionboard-research",
+      "source_url": ""
+    },
+    {
+      "applies_when": "Letting an AI assistant act for a UK business.",
+      "basis": "verified-2026",
+      "citation": "Meta announcement 8 Sep 2026; Muse Connector Platform review process",
+      "detail": "Muse is US-only with no confirmed UK date. Connectors need functional, security, and legal review. Custom connectors are unreviewed. Never promise directory placement.",
+      "domain": "ai-agent",
+      "escalation": "Selling access that does not exist.",
+      "failure_mode": "Selling Muse access or integrations that do not exist.",
+      "id": "AI-MUSE-UK",
+      "industries": [
+        "all"
+      ],
+      "jurisdiction": "UK",
+      "law": "Muse availability and connector review (PLATFORM REALITY, not legislation)",
+      "owner_action": "Sell assistant-agnostic workflows; track Muse eligibility per customer.",
+      "review_date": "2026-09-23",
+      "source": "aionboard-research",
+      "source_url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
+    },
+    {
+      "applies_when": "Connecting ChatGPT to customer systems.",
+      "basis": "verified-2026",
+      "citation": "OpenAI MCP and plugin documentation; ChatGPT Learn MCP docs",
+      "detail": "MCP is real but gated: Developer Mode plus paid plan, remote HTTPS endpoints only, per-action confirmation. Old 2023 plugins are deprecated. Availability varies by plan, region, workspace, and role.",
+      "domain": "ai-agent",
+      "escalation": "Selling ChatGPT access the customer cannot enable.",
+      "failure_mode": "Selling ChatGPT integrations the customer cannot enable.",
+      "id": "AI-CHATGPT-MCP",
+      "industries": [
+        "all"
+      ],
+      "jurisdiction": "UK",
+      "law": "ChatGPT MCP gating (PLATFORM REALITY, not legislation)",
+      "owner_action": "Verify plan, region, workspace policy, and endpoint reachability first.",
+      "review_date": "2026-09-23",
+      "source": "aionboard-research",
+      "source_url": "https://learn.chatgpt.com/docs/extend/mcp"
+    },
+    {
+      "id": "LEG-SVGA-ADULT",
+      "domain": "employment",
+      "jurisdiction": "UK",
+      "industries": [
+        "care",
+        "gp_surgery"
+      ],
+      "law": "Regulated activity with adults + DBS barred-list checks",
+      "detail": "Enhanced DBS + Adults' Barred List for personal care, healthcare under direction/supervision, social work, day-to-day management of those doing it; Regulated Activity Providers have a legal duty to refer",
+      "citation": "Safeguarding Vulnerable Groups Act 2006 (amended PoFA 2012); gov.uk DBS guidance",
+      "source_url": "https://www.gov.uk/government/publications/dbs-guidance-leaflets",
+      "basis": "verified-2026",
+      "failure_mode": "Barred person employed; RAP fails in duty to refer; CQC questions fitness",
+      "applies_when": "Operating in the regulated activity described.",
+      "owner_action": "Confirm registration, checks, and standards before trading.",
+      "escalation": "Enforcement and referral loss.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json"
+    },
+    {
+      "id": "LEG-HSCA-REGS",
+      "domain": "employment",
+      "jurisdiction": "UK",
+      "industries": [
+        "care",
+        "gp_surgery"
+      ],
+      "law": "CQC fundamental standards + fit and proper persons",
+      "detail": "Reg 19: robust recruitment, relevant checks, ongoing fitness monitoring; Regs 9-20A: person-centred care, consent, safe care, safeguarding, staffing, governance, duty of candour",
+      "citation": "Health and Social Care Act 2008 (Regulated Activities) Regulations 2014 (SI 2014/2936), Regs 9-20A",
+      "source_url": "https://www.cqc.org.uk/guidance-regulation/providers/regulations-service-providers-and-managers/health-social-care-act/regulation-19",
+      "basis": "verified-2026",
+      "failure_mode": "Refused registration; enforcement; rating drop kills referrals",
+      "applies_when": "Operating in the regulated activity described.",
+      "owner_action": "Confirm registration, checks, and standards before trading.",
+      "escalation": "Enforcement and referral loss.",
+      "review_date": "2026-09-23",
+      "source": "cgraphuk/graph/law/legislation.json"
+    }
+  ]
+}
