@@ -96,8 +96,10 @@ from .website import (
     build_knowledge_bundle,
     canonical_domain,
     render_chat_page,
+    render_dashboard,
     render_site,
     write_chat_page,
+    write_dashboard,
     write_site,
 )
 
@@ -172,6 +174,7 @@ __all__ = [
     "record_tps_check",
     "redeem_approval",
     "render_chat_page",
+    "render_dashboard",
     "render_site",
     "digest",
     "resolve_ticket",
@@ -192,6 +195,7 @@ __all__ = [
     "tasks_for",
     "verify_backup",
     "write_chat_page",
+    "write_dashboard",
     "write_handover",
     "write_site",
 ]

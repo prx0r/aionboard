@@ -1,0 +1,61 @@
+{
+  "connector": "aionboard-onboard-buddy",
+  "status": "draft-not-submitted",
+  "product": {
+    "name": "AI Onboard Buddy",
+    "tagline": "Your trade business, answered from its own verified setup.",
+    "description": "The onboard buddy answers a business owner's questions from their own verified installation: services, prices, workflows, and rules. Read-only. It cannot send messages, move money, or change bookings. Every consequential action requires explicit owner approval through a separate receipt."
+  },
+  "capabilities": [
+    {
+      "name": "business_lookup",
+      "kind": "read",
+      "description": "Return the calling business's verified profile: services, prices, hours, workflows."
+    },
+    {
+      "name": "pain_lookup",
+      "kind": "read",
+      "description": "Return research-backed pain points for the business's vertical, with verification basis."
+    },
+    {
+      "name": "install_status",
+      "kind": "read",
+      "description": "Return installation checklist state: verified, pending, or blocked per task."
+    },
+    {
+      "name": "opportunity_digest",
+      "kind": "read",
+      "description": "Return scored local opportunity signals with localities and dates. Signals, not confirmed jobs."
+    },
+    {
+      "name": "draft_quote",
+      "kind": "write-gated",
+      "description": "Draft a quote from the approved price book. Never sends. Returns an approval receipt the owner must redeem."
+    }
+  ],
+  "auth": {
+    "model": "OAuth 2.1",
+    "scopes": ["profile:read", "installs:read", "quotes:draft"],
+    "notes": "Customer-owned accounts only. No passwords held. Scopes are least-privilege per capability."
+  },
+  "privacy": {
+    "data_retained": "Configuration and evidence only. No passwords, no banking credentials, no raw inbox contents.",
+    "tenant_isolation": "Every query scoped to the calling business. Cross-tenant reads fail closed.",
+    "retention": "Transcripts 90 days, then swept. Suppression tombstones retained to prevent re-contact.",
+    "audit": "Every tool call logged with identity, parameters, and approval ID."
+  },
+  "review_readiness": {
+    "functional_tests": "tests/test_buddy.py, tests/test_acceptance.py — all passing in CI",
+    "security": "TRUST_MODEL.md: five guarantees; approvals customer-bound, payload-hashed, expiring, one-time",
+    "legal": "regulations/registry.json: UK GDPR, PECR, MTD, trade compliance per vertical",
+    "end_to_end": "Fictional nail-tech journey tested; no live customer data used in tests"
+  },
+  "pricing": {
+    "customer_cost": "Free with £20 quickstart or £499 standard setup. No per-message Muse charges from AI Onboard; Meta's own pricing applies separately."
+  },
+  "limitations": [
+    "US-only until Meta launches Muse in the UK; UK customers use the standalone buddy meanwhile.",
+    "Read-only except approval-gated drafts. The connector can never send, book, pay, or change customer systems.",
+    "No guaranteed placement, ranking, or recommendations from any assistant."
+  ]
+}

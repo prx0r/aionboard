@@ -176,3 +176,61 @@ def write_chat_page(path: str = "site/chat.html") -> str:
     with open(path, "w", encoding="utf-8") as handle:
         handle.write(render_chat_page())
     return path
+
+
+def render_dashboard() -> str:
+    return """<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Onboard — Customer dashboard (demo layout)</title>
+  <meta name="description" content="Demo layout of the customer dashboard. All data shown is fictional." />
+</head>
+<body>
+  <main>
+    <h1>Your dashboard</h1>
+    <p><strong>Demo layout.</strong> Every value below is fictional placeholder
+    data showing what a live dashboard will display once connected.</p>
+
+    <h2>Installation status — DEMO DATA</h2>
+    <ul>
+      <li>Discovery: verified</li>
+      <li>Booking workflow: verified</li>
+      <li>Google Business Profile: pending (awaiting Google)</li>
+      <li>Training: not started</li>
+      <li>Handover: not started</li>
+    </ul>
+
+    <h2>Support window — DEMO DATA</h2>
+    <p>6 days remaining. 2 questions asked, both resolved by the guide, 0 human minutes used.</p>
+
+    <h2>Opportunities near you — DEMO DATA</h2>
+    <ul>
+      <li>Planning approval: single-storey extension, M14 [relevance 2] — signal, not a confirmed job</li>
+      <li>Procurement: facilities maintenance tender, M15 [relevance 1] — signal, not a confirmed job</li>
+    </ul>
+    <p>Reply APPROVE before we contact anyone on your behalf.</p>
+
+    <h2>Your buddy</h2>
+    <p><a href="chat.html">Ask the demo assistant</a> — answers from published research with sources shown.</p>
+
+    <h2>Add-ons (separately priced, separately consented)</h2>
+    <ul>
+      <li>Lead alerts — weekly scored signals</li>
+      <li>Ad creation — TikTok slideshows via our content pipeline</li>
+      <li>Analytics — views → chats → emails → installs per creative</li>
+    </ul>
+    <p><a href="index.html">Back to AI Onboard pilot</a></p>
+  </main>
+</body>
+</html>
+"""
+
+
+def write_dashboard(path: str = "site/dashboard.html") -> str:
+    directory = os.path.dirname(os.path.abspath(path))
+    os.makedirs(directory, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as handle:
+        handle.write(render_dashboard())
+    return path

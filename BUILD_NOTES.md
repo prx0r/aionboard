@@ -419,6 +419,29 @@ Reuse influence's pi harness pattern (per-business kernel, read-only tools, deci
 
 ---
 
+## Session 2026-09-23 — Connector, dashboard, add-ons (no overbuild)
+
+### Context
+Cloned prx0r/aoc (TikTok slideshow factory with per-vertical segments). The wedge: automated ad creation + analytics + Muse-monitored add-ons, with an aionboard connector and customer dashboard — built minimally.
+
+### What was done
+- `connector/`: Muse submission pack (manifest + README), status draft-not-submitted with 5 preconditions before submitting.
+- `site/dashboard.html` (generated): static mock with DEMO DATA labels, install/support/opportunities/buddy/add-ons sections.
+- `ADDONS.md`: add-on ladder with build triggers, vertical→aoc-segment mapping, lead monitoring rules, Muse-as-interface strategy.
+- 9 new tests (connector validity, dashboard structure); fixed 3 tests that flagged our own disclaimers.
+
+### Current state
+- 108 tests pass.
+- No completed paying installation is recorded.
+- aoc remains the ad factory; aionboard consumes pains and feeds back winners. No code shared.
+
+### Next steps
+1. Validate one manual electrician installation.
+2. Validate one £20 nail-tech quickstart and measure support minutes.
+3. Produce the first 5 TikToks from aoc using vertical pains.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:
