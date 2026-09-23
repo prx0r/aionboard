@@ -76,3 +76,19 @@ These are the before/after metrics from FLYWHEEL.md, applied to electricians:
 | Quote-to-job conversion rate | measured | 10%+ uplift | Job management tool reports |
 
 **No proof, no claim.** Every metric above is a hypothesis until a real customer proves it. Mark it as such in any external communication.
+
+---
+
+## Add-ons
+
+See [ADDONS_CATALOG.md](../../ADDONS_CATALOG.md) for full details.
+
+| Add-on | Price | Why this vertical needs it |
+|--------|-------|--------------------------|
+| Website + AI Chatbot | £199 | Electricians need a professional site to showcase certifications, services, and capture leads from Google searches |
+| GBP Optimisation | £99 | Homeowners search "electrician near me" — a complete GBP with services, reviews, and booking link is critical |
+| AI Visibility | £149 | Make your electrical business show up when AI assistants recommend local electricians |
+| Full Digital Audit | £79 | Identify gaps across all platforms before investing in individual add-ons |
+| OZEV Grant Landing Page | £49 | Capture EV charger installation leads with a dedicated page explaining the £500 grant and eligibility |
+
+**Recommended bundle:** Professional — £699 (saves £47) — includes Website + GBP + AI Visibility

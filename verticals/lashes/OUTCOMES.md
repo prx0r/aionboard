@@ -77,3 +77,18 @@ These are the before/after metrics from FLYWHEEL.md, applied to lashes:
 | Patch-test compliance | unknown | 100% of chemical treatments | Manual audit |
 
 **No proof, no claim.** Every metric above is a hypothesis until a real customer proves it. Mark it as such in any external communication.
+
+---
+
+## Add-ons
+
+See [ADDONS_CATALOG.md](../../ADDONS_CATALOG.md) for full details.
+
+| Add-on | Price | Why this vertical needs it |
+|--------|-------|--------------------------|
+| Website + AI Chatbot | £199 | Lash artists rely on Instagram; a website with before/after gallery and chatbot captures bookings from Google searches |
+| GBP Optimisation | £99 | Clients search "lash extensions near me" — a complete GBP with services, photos, and booking link drives local traffic |
+| AI Visibility | £149 | Make your lash business show up when AI assistants recommend local lash techs |
+| Full Digital Audit | £79 | Identify gaps across all platforms before investing in individual add-ons |
+
+**Recommended bundle:** Professional — £549 (saves £47) — includes Website + GBP + AI Visibility (core is £349)

@@ -91,3 +91,12 @@ If the customer doesn't have a price book, stop. Help them create one first. The
 - Customer can withdraw at any point. Data deleted per DATA_POLICY.md.
 - All data is customer-owned. We are processor, not controller, for their client data.
 - Pet medical and behaviour data is collected during onboarding, not intake — it requires owner consent and detail.
+
+### Optional: Add-ons interested in
+
+- [ ] Website + AI Chatbot (£199)
+- [ ] Google Business Profile Optimisation (£99)
+- [ ] AI Visibility Package (£149)
+- [ ] Social Media Bio Optimisation (£49)
+- [ ] Full Digital Footprint Audit (£79)
+- [ ] Not sure — include in consultation

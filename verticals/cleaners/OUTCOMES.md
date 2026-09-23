@@ -76,3 +76,18 @@ These are the before/after metrics from FLYWHEEL.md, applied to cleaning:
 | DM response time | hours | under 5 min | Manual check |
 
 **No proof, no claim.** Every metric above is a hypothesis until a real customer proves it. Mark it as such in any external communication.
+
+---
+
+## Add-ons
+
+See [ADDONS_CATALOG.md](../../ADDONS_CATALOG.md) for full details.
+
+| Add-on | Price | Why this vertical needs it |
+|--------|-------|--------------------------|
+| Website + AI Chatbot | £199 | Cleaners need a professional site to showcase services, pricing, and capture leads from Google searches |
+| GBP Optimisation | £99 | Homeowners search "cleaner near me" — a complete GBP with services, reviews, and booking link is critical |
+| AI Visibility | £149 | Make your cleaning business show up when AI assistants recommend local cleaners |
+| Full Digital Audit | £79 | Identify gaps across all platforms before investing in individual add-ons |
+
+**Recommended bundle:** Professional — £699 (saves £47) — includes Website + GBP + AI Visibility

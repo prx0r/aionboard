@@ -77,3 +77,18 @@ These are the before/after metrics from FLYWHEEL.md, applied to dog grooming:
 | Direct vs marketplace booking ratio | 100% marketplace | measured increase in direct | Compare booking sources |
 
 **No proof, no claim.** Every metric above is a hypothesis until a real customer proves it. Mark it as such in any external communication.
+
+---
+
+## Add-ons
+
+See [ADDONS_CATALOG.md](../../ADDONS_CATALOG.md) for full details.
+
+| Add-on | Price | Why this vertical needs it |
+|--------|-------|--------------------------|
+| Website + AI Chatbot | £199 | Dog groomers need a site with breed galleries, pricing, and chatbot to capture bookings from Google searches |
+| GBP Optimisation | £99 | Dog owners search "dog groomer near me" — a complete GBP with services, photos, and booking link is essential |
+| AI Visibility | £149 | Make your grooming business show up when AI assistants recommend local groomers |
+| Full Digital Audit | £79 | Identify gaps across all platforms before investing in individual add-ons |
+
+**Recommended bundle:** Professional — £699 (saves £47) — includes Website + GBP + AI Visibility

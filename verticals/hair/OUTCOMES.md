@@ -77,3 +77,18 @@ These are the before/after metrics from FLYWHEEL.md, applied to hair:
 | Out-of-area enquiries declined cleanly | unknown | 100% | Manual audit |
 
 **No proof, no claim.** Every metric above is a hypothesis until a real customer proves it. Mark it as such in any external communication.
+
+---
+
+## Add-ons
+
+See [ADDONS_CATALOG.md](../../ADDONS_CATALOG.md) for full details.
+
+| Add-on | Price | Why this vertical needs it |
+|--------|-------|--------------------------|
+| Website + AI Chatbot | £199 | Hairdressers rely on word-of-mouth; a website with style gallery and chatbot captures new clients from Google |
+| GBP Optimisation | £99 | Clients search "hairdresser near me" — a complete GBP with services, photos, and booking link is essential |
+| AI Visibility | £149 | Make your hair business show up when AI assistants recommend local hairdressers |
+| Full Digital Audit | £79 | Identify gaps across all platforms before investing in individual add-ons |
+
+**Recommended bundle:** Professional — £699 (saves £47) — includes Website + GBP + AI Visibility

@@ -75,3 +75,18 @@ These are the before/after metrics from FLYWHEEL.md, applied to driving instruct
 | Cancellation disputes | measured | zero | Manual check |
 
 **No proof, no claim.** Every metric above is a hypothesis until a real customer proves it. Mark it as such in any external communication.
+
+---
+
+## Add-ons
+
+See [ADDONS_CATALOG.md](../../ADDONS_CATALOG.md) for full details.
+
+| Add-on | Price | Why this vertical needs it |
+|--------|-------|--------------------------|
+| Website + AI Chatbot | £199 | Driving instructors need a site with pricing, lesson packages, and chatbot to capture bookings from Google searches |
+| GBP Optimisation | £99 | Learners search "driving instructor near me" — a complete GBP with services, reviews, and booking link is critical |
+| AI Visibility | £149 | Make your driving instruction business show up when AI assistants recommend local instructors |
+| Full Digital Audit | £79 | Identify gaps across all platforms before investing in individual add-ons |
+
+**Recommended bundle:** Professional — £699 (saves £47) — includes Website + GBP + AI Visibility

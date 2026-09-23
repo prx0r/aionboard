@@ -77,3 +77,18 @@ These are the before/after metrics from FLYWHEEL.md, applied to beauty treatment
 | Patch-test compliance | unknown | 100% of chemical treatments | Manual audit |
 
 **No proof, no claim.** Every metric above is a hypothesis until a real customer proves it. Mark it as such in any external communication.
+
+---
+
+## Add-ons
+
+See [ADDONS_CATALOG.md](../../ADDONS_CATALOG.md) for full details.
+
+| Add-on | Price | Why this vertical needs it |
+|--------|-------|--------------------------|
+| Website + AI Chatbot | £199 | Beauty treatments are visual — a website with before/after gallery and chatbot drives bookings from Google searches |
+| GBP Optimisation | £99 | Clients search "beauty treatment near me" — a complete GBP with services, photos, and booking link is critical |
+| AI Visibility | £149 | Make your beauty business show up when AI assistants recommend local beauty treatments |
+| Full Digital Audit | £79 | Identify gaps across all platforms before investing in individual add-ons |
+
+**Recommended bundle:** Professional — £699 (saves £47) — includes Website + GBP + AI Visibility

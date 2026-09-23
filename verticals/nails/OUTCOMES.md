@@ -74,3 +74,18 @@ These are the before/after metrics from FLYWHEEL.md, applied to nails:
 | Enquiries from bio links | 0 | measured | UTM tracking or manual count |
 
 **No proof, no claim.** Every metric above is a hypothesis until a real customer proves it. Mark it as such in any external communication.
+
+---
+
+## Add-ons
+
+See [ADDONS_CATALOG.md](../../ADDONS_CATALOG.md) for full details.
+
+| Add-on | Price | Why this vertical needs it |
+|--------|-------|--------------------------|
+| Website + AI Chatbot | £199 | Nail techs rely on Instagram/TikTok; a website with chatbot captures bookings from Google searches and gives a professional presence |
+| GBP Optimisation | £99 | Clients search "nail salon near me" — a complete GBP with services, photos, and booking link drives local traffic |
+| AI Visibility | £149 | Make your nail business show up when AI assistants like ChatGPT recommend local nail techs |
+| Full Digital Audit | £79 | Identify gaps across all platforms before investing in individual add-ons |
+
+**Recommended bundle:** Professional — £699 (saves £47) — includes Website + GBP + AI Visibility
