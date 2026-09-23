@@ -37,6 +37,14 @@ For sole traders. Tightly standardised:
 
 Third-party software charges are shown before installation and paid by the customer. Support minutes, failed connections, refunds, and 7-day active use are recorded to validate the price.
 
+## Support allowance (muse-quickstart)
+
+- Unlimited automated-guide questions during the 7-day window, with sensible abuse limits (rate-limited, no bulk or off-topic use).
+- One scheduled human session included.
+- Human escalation only when the agreed installation doesn't work.
+- Unrestricted bespoke development is never included.
+- Delivery and support minutes are measured before any allowance expansion.
+
 ## Explicitly excluded from the standard setup
 
 Separate deliverables with separate pricing and customer-paid supplier costs:

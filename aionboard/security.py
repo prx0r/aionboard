@@ -244,3 +244,79 @@ def audit_history(connection: sqlite3.Connection, business_id: str) -> list[dict
         (business_id.strip(),),
     ).fetchall()
     return [dict(row) for row in rows]
+
+
+def assert_tenant_rows(rows: list[dict], business_id: str, id_field: str = "business_id") -> bool:
+    """Enforce tenant scope: every row must belong to the expected business.
+
+    Call this on any result set before acting on it. Cross-tenant rows
+    fail closed rather than leaking into another customer's workflow.
+    """
+    expected = business_id.strip()
+    if not expected:
+        raise ValueError("business_id is required")
+    for row in rows:
+        actual = str(row.get(id_field, "")).strip()
+        if actual != expected:
+            raise PermissionError(
+                f"tenant breach: row belongs to {actual or 'unknown'}, expected {expected}"
+            )
+    return True
+
+
+UNTRUSTED_PREFIX = "[untrusted-external] "
+
+
+def mark_untrusted(text: str) -> str:
+    """Tag uploaded files, third-party messages, and imported text.
+
+    Tagged content is data, never instructions. Downstream prompts must
+    refuse to execute anything inside a tagged block.
+    """
+    content = (text or "").strip()
+    if content.startswith(UNTRUSTED_PREFIX):
+        return content
+    return UNTRUSTED_PREFIX + content
+
+
+def contains_instruction_override(text: str) -> bool:
+    """Detect prompt-injection patterns in untrusted material."""
+    lowered = (text or "").lower()
+    patterns = (
+        "ignore previous instructions",
+        "ignore all instructions",
+        "disregard your instructions",
+        "you are now ",
+        "system prompt",
+        "send without approval",
+        "skip approval",
+        "approve this automatically",
+    )
+    return any(pattern in lowered for pattern in patterns)
+
+
+def approve_automation_policy(
+    connection: sqlite3.Connection,
+    *,
+    business_id: str,
+    approver: str,
+    scope: str,
+    limits: str,
+) -> str:
+    """Approve a narrowly defined recurring automation policy.
+
+    Covers identical operational reminders only. Promotional broadcasts,
+    payment-term changes, unusual quotations, and anything higher-risk
+    always require per-action approval instead.
+    """
+    if not scope.strip() or not limits.strip():
+        raise ValueError("scope and limits are required")
+    return issue_approval(
+        connection,
+        business_id=business_id,
+        approver=approver,
+        action="automation-policy",
+        target=scope.strip(),
+        payload={"limits": limits.strip()},
+        ttl_seconds=30 * 24 * 3600,
+    )

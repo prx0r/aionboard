@@ -15,6 +15,15 @@ from .crm import (
     record_tps_check,
 )
 from .backup import create_backup, restore_backup, verify_backup
+from .compliance import (
+    HIGH_RISK_ACTIVITIES,
+    RULES_VERSION,
+    init_compliance_tables,
+    needs_legal_review,
+    queue_legal_review,
+    rules_for_industry,
+    stale_rules,
+)
 from .businesses import (
     create_business,
     find_by_company_number,
@@ -25,9 +34,25 @@ from .businesses import (
     new_business_id,
     record_consent,
 )
+from .compliance import (
+    HIGH_RISK_ACTIVITIES,
+    RULES_VERSION,
+    init_compliance_tables,
+    needs_legal_review,
+    queue_legal_review,
+    rules_for_industry,
+    stale_rules,
+)
 from .demo import run_demo
 from .handover import generate_handover, write_handover
-from .integrations import init_integration_tables, is_connected, list_integrations, record_integration
+from .integrations import (
+    CAPABILITY_STATES,
+    init_integration_tables,
+    is_connected,
+    list_integrations,
+    record_integration,
+    set_capability_state,
+)
 from .manual import generate_manual
 from .onboarding import (
     PACKAGES,
@@ -35,6 +60,7 @@ from .onboarding import (
     get_onboarding,
     is_onboarded,
     recipe_for,
+    resume_onboarding,
     set_onboarding_task,
     support_active,
     tasks_for,
@@ -51,28 +77,39 @@ from .installs import (
 )
 from .security import (
     approve_action,
+    approve_automation_policy,
     assert_customer_isolation,
+    assert_tenant_rows,
     audit_history,
+    contains_instruction_override,
     execute_outbound,
     init_approval_tables,
     issue_approval,
+    mark_untrusted,
     redeem_approval,
     scan_text,
 )
 from .website import canonical_domain, render_site, write_site
 
 __all__ = [
-    "SCHEMA_VERSION",
+    "CAPABILITY_STATES",
+    "HIGH_RISK_ACTIVITIES",
     "OPTIONAL_TASKS",
+    "PACKAGES",
     "REQUIRED_TASKS",
+    "RULES_VERSION",
+    "SCHEMA_VERSION",
     "STATUSES",
     "add_contact",
     "approve_action",
+    "approve_automation_policy",
     "assert_contact_allowed",
     "assert_customer_isolation",
+    "assert_tenant_rows",
     "audit_history",
     "canonical_domain",
     "connect",
+    "contains_instruction_override",
     "create_backup",
     "create_business",
     "create_install",
@@ -89,6 +126,7 @@ __all__ = [
     "import_prospects",
     "init_approval_tables",
     "init_business_tables",
+    "init_compliance_tables",
     "init_db",
     "init_integration_tables",
     "init_support_tables",
@@ -98,10 +136,13 @@ __all__ = [
     "issue_approval",
     "list_integrations",
     "list_stack",
+    "mark_untrusted",
     "marketing_allowed",
+    "needs_legal_review",
     "new_business_id",
     "open_ticket",
     "parse_region",
+    "queue_legal_review",
     "record_consent",
     "record_contact_attempt",
     "record_integration",
@@ -111,14 +152,18 @@ __all__ = [
     "render_site",
     "resolve_ticket",
     "restore_backup",
+    "resume_onboarding",
+    "recipe_for",
+    "rules_for_industry",
     "run_demo",
     "scan_text",
+    "set_capability_state",
     "set_onboarding_task",
     "set_task",
+    "stale_rules",
     "support_active",
     "support_stats",
     "tasks_for",
-    "recipe_for",
     "verify_backup",
     "write_handover",
     "write_site",

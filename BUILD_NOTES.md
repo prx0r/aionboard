@@ -259,6 +259,35 @@ Peer review found the CRM excluded sole traders, installs only supported one pac
 
 ---
 
+## Session 2026-09-23 — Full devplan implementation
+
+### Context
+Saved the competitive research + dev brief as `devplan.md`, then implemented Checkpoints A–J.
+
+### What was done
+- Checkpoint A: `muse-quickstart` (£20) alongside `standard-ai-setup` in OFFER, CHECKPOINTS, website, all 11 manifests. Support allowance + abuse limits documented.
+- Checkpoint B: canonical `business_id` CRM already existed; verified sole-trader support, channel-specific marketing consent, separate POW consent.
+- Checkpoint C: capability registry upgraded with supplier/region/plan/scopes/method/charges/review states; `set_capability_state` with verified-gate.
+- Checkpoint D: onboarding tasks gained prerequisites, execution method, recovery actions; `resume_onboarding` for idempotent resume.
+- Checkpoint E: tenant-scope enforcement, untrusted-input marking, prompt-injection detection, long-lived automation policies.
+- Checkpoint F: export/delete procedures; suppression tombstones (not indefinite); breach policy already corrected.
+- Checkpoint G: capability-filtered vertical prompts; uploadable non-sensitive manual version.
+- Checkpoint H: support issue categories + error codes.
+- Checkpoint I: versioned compliance registry (6 seed rules) + legal-review queue + staleness check.
+- Checkpoint J: 12 new acceptance tests including 5 fictional installs, Booksy no-migration, unsupported connector, failed auth, tenant isolation, modified quote, financial draft-only, marketing refusal, export/revocation, interrupted setup, support closure.
+
+### Current state
+- 53 tests pass.
+- No completed paying installation is recorded.
+- PEER_REVIEW pricing block superseded by OFFER.md.
+
+### Next steps
+1. Validate one manual electrician installation.
+2. Validate one £20 nail-tech quickstart and measure support minutes.
+3. Build the remote HTTPS MCP server starting with read tools.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:

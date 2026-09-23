@@ -4,25 +4,30 @@
 
 ## Checkpoint 1: narrow pilot install (current)
 
-**Goal:** One verified paying installation, delivered manually, with evidence.
+**Goal:** One verified paying installation per package, delivered manually, with evidence.
 
-**In scope:**
-- Standard £499 setup per `OFFER.md`
+**Packages (canonical definition in `OFFER.md`):**
+- `standard-ai-setup` (£499): bespoke electrician/complex-business installations, 14 days of fixes.
+- `muse-quickstart` (£20): tightly standardised sole-trader onboarding, 7 days of support, one agreed workflow only.
+
+**In scope (both packages):**
 - Existing-stack capture (integrate/import, never replace unnecessarily)
 - Owner approval before every outbound action
 - Written handover with working/pending/blocked items
-- 14 days of fixes
+
+**Quickstart delivery bar:** one agreed workflow configured and demonstrated, accurate personalised manual supplied, customer understands what they connected.
 
 **Evidence required:**
 - Completed install checklist (all required tasks `verified`)
 - Handover document with revocation instructions
-- Measured delivery hours
+- Measured delivery hours and support minutes
 - Customer permission before any case study
 
-**Explicitly out of scope:**
-- Live voice service
-- Meta/WhatsApp production integration
+**Explicitly out of scope for £20:**
+- Universal live AI receptionist
 - Website builds
+- Accounting migrations
+- WhatsApp Cloud API deployment
 - Custom integrations
 - Lead generation
 - Ongoing subscriptions

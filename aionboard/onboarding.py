@@ -89,6 +89,50 @@ VERTICAL_TASKS: dict[str, tuple[str, ...]] = {
         "google_profile_assistance",
         "fourteen_day_fixes",
     ),
+    "beauty": (
+        "booking_workflow",
+        "service_menu_approval",
+        "deposit_reminder_preparation",
+        "rebooking_workflow",
+        "google_profile_assistance",
+        "fourteen_day_fixes",
+    ),
+    "gardeners-window-cleaners": (
+        "repeat_visit_workflow",
+        "route_organization",
+        "service_menu_approval",
+        "payment_reminder_preparation",
+        "review_workflow",
+        "google_profile_assistance",
+        "fourteen_day_fixes",
+    ),
+    "car-detailers": (
+        "quote_request_workflow",
+        "service_menu_approval",
+        "appointment_scheduling",
+        "deposit_preparation",
+        "review_workflow",
+        "google_profile_assistance",
+        "fourteen_day_fixes",
+    ),
+    "driving-instructors": (
+        "lesson_scheduling_workflow",
+        "service_menu_approval",
+        "waiting_list_workflow",
+        "progress_record_organization",
+        "review_workflow",
+        "google_profile_assistance",
+        "fourteen_day_fixes",
+    ),
+    "weddings": (
+        "enquiry_qualification_workflow",
+        "service_menu_approval",
+        "proposal_deposit_contract_workflow",
+        "portfolio_organization",
+        "review_workflow",
+        "google_profile_assistance",
+        "fourteen_day_fixes",
+    ),
 }
 
 # Three underlying recipes; verticals map to the closest one.
@@ -152,9 +196,12 @@ def create_onboarding(
             task TEXT NOT NULL,
             owner TEXT NOT NULL DEFAULT '',
             authorization TEXT NOT NULL DEFAULT '',
+            prerequisites TEXT NOT NULL DEFAULT '',
+            execution_method TEXT NOT NULL DEFAULT '',
             action TEXT NOT NULL DEFAULT '',
             verification TEXT NOT NULL DEFAULT '',
             evidence TEXT NOT NULL DEFAULT '',
+            recovery_action TEXT NOT NULL DEFAULT '',
             status TEXT NOT NULL DEFAULT 'not_started',
             updated_at TEXT NOT NULL,
             UNIQUE(onboarding_id, task)
@@ -184,9 +231,12 @@ def set_onboarding_task(
     status: str,
     owner: str = "",
     authorization: str = "",
+    prerequisites: str = "",
+    execution_method: str = "",
     action: str = "",
     verification: str = "",
     evidence: str = "",
+    recovery_action: str = "",
 ) -> None:
     """Advance an onboarding task. Same evidence rules as installs."""
     row = connection.execute(
@@ -205,29 +255,67 @@ def set_onboarding_task(
         raise ValueError(f"unknown status: {status}")
     owner = owner.strip()
     authorization = authorization.strip()
+    prerequisites = prerequisites.strip()
+    execution_method = execution_method.strip()
     action = action.strip()
     verification = verification.strip()
     evidence = evidence.strip()
+    recovery_action = recovery_action.strip()
     if status in {"in_progress", "blocked", "verified"}:
         if not owner or owner not in OWNER_TYPES:
             raise ValueError("valid owner is required")
         if not authorization or not action:
             raise ValueError("authorization and action are required")
-    if status == "verified" and not (verification and evidence):
-        raise ValueError("verification and evidence are required")
+    if status == "verified":
+        if not verification or not evidence:
+            raise ValueError("verification and evidence are required")
+        if not recovery_action:
+            raise ValueError("recovery_action is required for verified tasks")
 
     cursor = connection.execute(
         """
         UPDATE onboarding_tasks
-        SET owner = ?, authorization = ?, action = ?, verification = ?,
-            evidence = ?, status = ?, updated_at = ?
+        SET owner = ?, authorization = ?, prerequisites = ?, execution_method = ?,
+            action = ?, verification = ?, evidence = ?, recovery_action = ?,
+            status = ?, updated_at = ?
         WHERE onboarding_id = ? AND task = ?
         """,
-        (owner, authorization, action, verification, evidence, status, utcnow(), onboarding_id, task),
+        (
+            owner,
+            authorization,
+            prerequisites,
+            execution_method,
+            action,
+            verification,
+            evidence,
+            recovery_action,
+            status,
+            utcnow(),
+            onboarding_id,
+            task,
+        ),
     )
     if cursor.rowcount == 0:
         raise ValueError("unknown onboarding task")
     connection.commit()
+
+
+def resume_onboarding(connection: sqlite3.Connection, onboarding_id: int) -> dict:
+    """Resume an interrupted setup without duplicating external actions.
+
+    Verified tasks are skipped; blocked tasks surface their recovery
+    actions; pending tasks are safe to attempt. Re-running is idempotent.
+    """
+    state = get_onboarding(connection, onboarding_id)
+    result: dict[str, list[str]] = {"skip_verified": [], "needs_recovery": [], "pending": []}
+    for task in state["tasks"]:
+        if task["status"] == "verified":
+            result["skip_verified"].append(task["task"])
+        elif task["status"] == "blocked":
+            result["needs_recovery"].append(task["task"])
+        else:
+            result["pending"].append(task["task"])
+    return result
 
 
 def get_onboarding(connection: sqlite3.Connection, onboarding_id: int) -> dict:

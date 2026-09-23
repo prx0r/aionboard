@@ -7,6 +7,7 @@ import os
 SITE_DOMAIN = "aionboard.co.uk"
 BOOKING_EMAIL = "hello@aionboard.co.uk"
 STANDARD_PRICE_GBP = 499
+QUICKSTART_PRICE_GBP = 20
 
 
 def canonical_domain() -> str:
@@ -39,7 +40,10 @@ def render_site() -> str:
       <li>Fourteen days of fixes for configured workflows</li>
     </ul>
 
-    <h2>Not included</h2>
+    <h2>Muse Quickstart — £{QUICKSTART_PRICE_GBP} one-off</h2>
+    <p>For sole traders. One priority workflow, guided connection to apps you already use, personalised assistant setup, training, personalised manual, and seven days of setup support. Third-party software charges are shown before installation.</p>
+
+    <h2>Not included in either package</h2>
     <ul>
       <li>New or rebuilt website</li>
       <li>Live voice service</li>

@@ -150,22 +150,12 @@ Each onboarded business gets a graph:
 
 ### What we charge
 
-```
-ONE-OFF SETUP: £499
-  - Meta Business Stack (WhatsApp, Facebook, Instagram)
-  - Google Business Profile optimization
-  - ChatGPT listing optimization
-  - Website with AI chat
-  - Voice agent for calls
-  - Training session (1 hour)
-  - Written handover
-  - 14 days of fixes
+Canonical pricing lives in `OFFER.md` — this older block is superseded:
 
-OPTIONAL ADD-ONS (after setup):
-  - Lead generation: £149/month
-  - Custom integrations: £750+
-  - Ongoing consulting: £299/month
-```
+- `standard-ai-setup` (£499): narrow pilot per `OFFER.md`. Website builds,
+  live voice, Meta production integration, and custom work are separate.
+- `muse-quickstart` (£20): tightly standardised sole-trader onboarding,
+  seven days of support, one agreed workflow.
 
 ### What we DON'T charge
 

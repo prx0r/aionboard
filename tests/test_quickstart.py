@@ -26,6 +26,7 @@ from aionboard.onboarding import (
     create_onboarding,
     get_onboarding,
     is_onboarded,
+    resume_onboarding,
     tasks_for,
 )
 from aionboard.onboarding import set_onboarding_task
@@ -86,11 +87,20 @@ class NailTechQuickstartTest(unittest.TestCase):
                 status="verified",
                 owner="agent",
                 authorization="customer",
+                prerequisites="Customer present with account access.",
+                execution_method="manual",
                 action=f"Configured {task} with the customer present.",
                 verification="Customer demonstrated the workflow unaided.",
                 evidence=f"demo-evidence-{task}",
+                recovery_action=f"Re-run {task} from handover; no external duplicate.",
             )
         self.assertTrue(is_onboarded(connection, onboarding_id))
+
+        # 4b. Resume is idempotent: verified work is skipped, never re-executed.
+        resumed = resume_onboarding(connection, onboarding_id)
+        self.assertEqual(set(resumed["skip_verified"]), expected_tasks)
+        self.assertEqual(resumed["needs_recovery"], [])
+        self.assertEqual(resumed["pending"], [])
 
         # 5. Record integration states; nothing is marked connected without proof.
         record_integration(

@@ -28,7 +28,7 @@
 | Contact attempts | 3 years (legitimate-interest evidence) | Delete on request |
 | Call transcripts | 90 days (per influence kernel default) | Sweep quarterly with `confirm:true` |
 | Installation handovers | Duration of customer relationship + 1 year | Delete on request |
-| Suppression list | **Indefinitely** | Never delete (do-not-contact must persist) |
+| Suppression tombstones | Retain while needed to prevent further unwanted marketing; review periodically | Minimal identifier + flag only; never used for marketing |
 | Audit logs | 3 years | Delete on request unless legal hold |
 
 ## Backups

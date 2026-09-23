@@ -12,6 +12,16 @@ import sqlite3
 from .crm import utcnow
 
 TICKET_STATUSES = {"open", "resolved", "escalated"}
+ISSUE_CATEGORIES = {
+    "booking",
+    "reminder",
+    "quote",
+    "payment",
+    "account_access",
+    "review",
+    "rebooking",
+    "other",
+}
 
 
 def init_support_tables(connection: sqlite3.Connection) -> None:
@@ -21,6 +31,8 @@ def init_support_tables(connection: sqlite3.Connection) -> None:
             id INTEGER PRIMARY KEY,
             business_id TEXT NOT NULL,
             question TEXT NOT NULL,
+            category TEXT NOT NULL DEFAULT 'other',
+            error_code TEXT NOT NULL DEFAULT '',
             resolved_by TEXT NOT NULL DEFAULT '',
             human_minutes INTEGER NOT NULL DEFAULT 0,
             status TEXT NOT NULL DEFAULT 'open',
@@ -33,12 +45,21 @@ def init_support_tables(connection: sqlite3.Connection) -> None:
     connection.commit()
 
 
-def open_ticket(connection: sqlite3.Connection, *, business_id: str, question: str) -> int:
+def open_ticket(
+    connection: sqlite3.Connection,
+    *,
+    business_id: str,
+    question: str,
+    category: str = "other",
+    error_code: str = "",
+) -> int:
     if not business_id.strip() or not question.strip():
         raise ValueError("business_id and question are required")
+    if category not in ISSUE_CATEGORIES:
+        raise ValueError(f"unsupported category: {category}")
     cursor = connection.execute(
-        "INSERT INTO support_tickets (business_id, question, opened_at) VALUES (?, ?, ?)",
-        (business_id.strip(), question.strip(), utcnow()),
+        "INSERT INTO support_tickets (business_id, question, category, error_code, opened_at) VALUES (?, ?, ?, ?, ?)",
+        (business_id.strip(), question.strip(), category, error_code.strip(), utcnow()),
     )
     connection.commit()
     return int(cursor.lastrowid)
