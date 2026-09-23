@@ -8,7 +8,9 @@
       "name": "vertical_lookup",
       "kind": "read",
       "description": "Return a vertical pack manifest and profile.",
-      "scopes": ["verticals:read"],
+      "scopes": [
+        "verticals:read"
+      ],
       "approval": "none",
       "evidence": "none"
     },
@@ -16,7 +18,9 @@
       "name": "pain_lookup",
       "kind": "read",
       "description": "Return pain mappings for a vertical, with verification basis.",
-      "scopes": ["verticals:read"],
+      "scopes": [
+        "verticals:read"
+      ],
       "approval": "none",
       "evidence": "none"
     },
@@ -24,7 +28,9 @@
       "name": "stack_lookup",
       "kind": "read",
       "description": "Return current-software intelligence for a vertical.",
-      "scopes": ["verticals:read"],
+      "scopes": [
+        "verticals:read"
+      ],
       "approval": "none",
       "evidence": "none"
     },
@@ -32,7 +38,9 @@
       "name": "install_status",
       "kind": "read",
       "description": "Return installation checklist state for a business.",
-      "scopes": ["installs:read"],
+      "scopes": [
+        "installs:read"
+      ],
       "approval": "none",
       "evidence": "none"
     },
@@ -40,7 +48,9 @@
       "name": "handover_read",
       "kind": "read",
       "description": "Return a generated handover record. Never returns secrets.",
-      "scopes": ["installs:read"],
+      "scopes": [
+        "installs:read"
+      ],
       "approval": "none",
       "evidence": "none"
     },
@@ -48,7 +58,9 @@
       "name": "record_contact_attempt",
       "kind": "write",
       "description": "Record a contact attempt. Blocked by TPS/CTPS and suppression.",
-      "scopes": ["crm:write"],
+      "scopes": [
+        "crm:write"
+      ],
       "approval": "explicit per-action approval",
       "evidence": "contact source, permission, TPS/CTPS result"
     },
@@ -56,7 +68,9 @@
       "name": "set_install_task",
       "kind": "write",
       "description": "Advance an installation checklist task. Verified status requires evidence.",
-      "scopes": ["installs:write"],
+      "scopes": [
+        "installs:write"
+      ],
       "approval": "explicit per-action approval",
       "evidence": "owner, authorization, action, verification, evidence"
     },
@@ -64,7 +78,9 @@
       "name": "generate_handover",
       "kind": "write",
       "description": "Generate a customer handover. Rejected if secrets are detected.",
-      "scopes": ["installs:write"],
+      "scopes": [
+        "installs:write"
+      ],
       "approval": "explicit per-action approval",
       "evidence": "complete installation state"
     },
@@ -72,9 +88,61 @@
       "name": "draft_quote",
       "kind": "write",
       "description": "Draft a quote from an approved price book. Never auto-sends.",
-      "scopes": ["jobs:write"],
+      "scopes": [
+        "jobs:write"
+      ],
       "approval": "explicit per-action approval",
       "evidence": "price book reference, owner approval"
+    },
+    {
+      "name": "postcode_lookup",
+      "kind": "read",
+      "description": "Validate a UK postcode; return area, coords, region. Free, no key.",
+      "scopes": [
+        "localinfo:read"
+      ],
+      "approval": "none",
+      "evidence": "none"
+    },
+    {
+      "name": "bank_holiday_check",
+      "kind": "read",
+      "description": "Is a date a UK bank holiday? For surcharge and availability logic.",
+      "scopes": [
+        "localinfo:read"
+      ],
+      "approval": "none",
+      "evidence": "none"
+    },
+    {
+      "name": "weather_outlook",
+      "kind": "read",
+      "description": "7-day rain probability + temps for outdoor go/no-go decisions.",
+      "scopes": [
+        "localinfo:read"
+      ],
+      "approval": "none",
+      "evidence": "none"
+    },
+    {
+      "name": "daylight_hours",
+      "kind": "read",
+      "description": "Sunrise/sunset/day length for sizing the working day.",
+      "scopes": [
+        "localinfo:read"
+      ],
+      "approval": "none",
+      "evidence": "none"
+    },
+    {
+      "name": "job_clustering",
+      "kind": "read",
+      "description": "Cluster jobs by proximity into van rounds. Estimates, not navigation.",
+      "scopes": [
+        "localinfo:read"
+      ],
+      "approval": "none",
+      "evidence": "none"
     }
   ]
 }
