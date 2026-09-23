@@ -1,0 +1,14 @@
+{
+  "total": 70,
+  "matched": 70,
+  "errors": 989,
+  "by_vertical": {
+    "nails": 20,
+    "electrician": 20,
+    "dog_groomers": 20,
+    "cleaners": 10
+  },
+  "by_city": {
+    "Manchester": 70
+  }
+}
