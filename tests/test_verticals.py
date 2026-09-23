@@ -74,6 +74,13 @@ class VerticalPackTests(unittest.TestCase):
                 for mapping in profile["pain_mappings"]:
                     for key in ("pain_id", "pain_name", "category", "verification", "autonomy", "current_stack", "service", "method"):
                         self.assertIn(key, mapping)
+                pipeline = profile["integration_pipeline"]
+                self.assertTrue(pipeline)
+                for step in pipeline:
+                    for key in ("tool", "current_state", "target_state", "method", "approval", "evidence", "status"):
+                        self.assertIn(key, step)
+                    self.assertIn(step["method"], {"export", "oauth", "manual"})
+                    self.assertIn(step["status"], {"manual", "assisted", "automated"})
                 readiness = profile["agent_readiness"]
                 self.assertIn("muse_status", readiness)
                 self.assertIn("chatgpt_status", readiness)

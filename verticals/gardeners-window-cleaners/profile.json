@@ -140,6 +140,28 @@
       "basis": "well-established"
     }
   ],
+  "integration_pipeline": [
+    {
+      "tool": "Cleaner Planner / Work Planner / Manage My Round",
+      "current_state": "Round lives on paper or partially in round ops tool",
+      "target_state": "Digitized round with skip/credit/debt tracking",
+      "method": "export",
+      "mcp_tool": null,
+      "approval": "Customer provides round data; agent never edits live billing without approval",
+      "evidence": "Digitized round export + verification walkthrough in handover",
+      "status": "manual"
+    },
+    {
+      "tool": "GoCardless / Stripe",
+      "current_state": "Payments taken ad hoc or unchased",
+      "target_state": "Direct Debit mandates for round customers; card backup for first cleans",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer sets up mandates in their own account",
+      "evidence": "Mandate status screenshot in handover",
+      "status": "manual"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

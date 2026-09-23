@@ -61,6 +61,18 @@
       "basis": "TODO-basis"
     }
   ],
+  "integration_pipeline": [
+    {
+      "tool": "TODO-tool",
+      "current_state": "TODO-what the customer has today",
+      "target_state": "TODO-what integrated looks like",
+      "method": "TODO-export|oauth|manual",
+      "mcp_tool": "TODO-mcp-tool-or-null",
+      "approval": "TODO-who approves what",
+      "evidence": "TODO-how completion is proven",
+      "status": "TODO-manual|assisted|automated"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

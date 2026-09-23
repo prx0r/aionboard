@@ -157,6 +157,38 @@
       "basis": "well-established"
     }
   ],
+  "integration_pipeline": [
+    {
+      "tool": "Booksy / Fresha / Square Appointments",
+      "current_state": "Bookings, deposits, and reminders live in the booking platform",
+      "target_state": "Deposit rules and reminders configured; booking link in social bios",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer configures in their own account; agent guides, never holds login",
+      "evidence": "Screenshot of deposit policy + reminder settings in handover",
+      "status": "manual"
+    },
+    {
+      "tool": "Xero / QuickBooks",
+      "current_state": "Fresha syncs bookings and payments where connected",
+      "target_state": "Accounting sync verified or export routine established",
+      "method": "export",
+      "mcp_tool": null,
+      "approval": "Customer authorizes sync or performs export",
+      "evidence": "Sync status or export receipt recorded",
+      "status": "manual"
+    },
+    {
+      "tool": "WhatsApp Business app",
+      "current_state": "DMs and enquiries handled ad hoc",
+      "target_state": "Business profile, catalog of top services, quick replies, labels",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer owns the number and approves every template",
+      "evidence": "Screenshot of profile + catalog in handover",
+      "status": "manual"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

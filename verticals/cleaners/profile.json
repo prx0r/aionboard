@@ -154,6 +154,38 @@
       "basis": "well-established"
     }
   ],
+  "integration_pipeline": [
+    {
+      "tool": "ZenMaid / BookingKoala / Cleenie / ProCleanerUK",
+      "current_state": "Plans, schedules, and client lists live in round ops tool",
+      "target_state": "Recurring cadences configured; client export routine established",
+      "method": "export",
+      "mcp_tool": null,
+      "approval": "Customer performs export; agent never holds login",
+      "evidence": "Export receipt + cadence settings in handover",
+      "status": "manual"
+    },
+    {
+      "tool": "GoCardless / Stripe",
+      "current_state": "Payments taken ad hoc or unchased",
+      "target_state": "Direct Debit mandates for repeat plans; card backup for one-offs",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer sets up mandates in their own account",
+      "evidence": "Mandate status screenshot in handover",
+      "status": "manual"
+    },
+    {
+      "tool": "QuickBooks / Xero / FreeAgent",
+      "current_state": "Accounting package holds invoices and expenses",
+      "target_state": "Read-only review with customer; agent never moves money",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer grants read access or shares exports",
+      "evidence": "Access method recorded; no credentials stored",
+      "status": "manual"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

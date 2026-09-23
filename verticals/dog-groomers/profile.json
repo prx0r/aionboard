@@ -140,6 +140,28 @@
       "basis": "well-established"
     }
   ],
+  "integration_pipeline": [
+    {
+      "tool": "Time To Pet / TendPets / Rover / Wag",
+      "current_state": "Bookings scattered across marketplaces and own tools",
+      "target_state": "Repeat clients identified for direct booking; marketplace kept for discovery",
+      "method": "export",
+      "mcp_tool": null,
+      "approval": "Customer performs export; direct migration only with client consent",
+      "evidence": "Export receipt + migration list in handover",
+      "status": "manual"
+    },
+    {
+      "tool": "Stripe / Square / GoCardless",
+      "current_state": "Payments taken ad hoc",
+      "target_state": "Deposits on long appointments; repeat-plan billing configured",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer sets up in their own account",
+      "evidence": "Deposit policy screenshot in handover",
+      "status": "manual"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

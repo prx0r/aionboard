@@ -207,6 +207,28 @@ Each vertical needed legislation detail plus what businesses normally use for mo
 
 ---
 
+## Session 2026-09-23 — Integration pipelines and checkpoints
+
+### Context
+Needed an honest answer to whether an automated existing-stack → integrated-stack pipeline exists, plus checkpoint definitions for pilot vs retention.
+
+### What was done
+- Added `integration_pipeline` to the profile schema: tool, current_state, target_state, method, mcp_tool, approval, evidence, status.
+- Backfilled all 11 verticals. Every step is honestly marked `manual`; no MCP server is deployed and no OAuth flows exist yet.
+- Added `CHECKPOINTS.md`: checkpoint 1 (manual pilot with evidence) vs checkpoint 2 (retention wedge with separate consent/pricing).
+
+### Current state
+- 32 tests pass.
+- Control plane exists (CRM, installs, handover, approvals). Connectors do not.
+- No completed paying installation is recorded.
+
+### Next steps
+1. Validate one manual electrician installation.
+2. Automate one integration step at a time with customer evidence.
+3. Only then build checkpoint 2 retention features.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:

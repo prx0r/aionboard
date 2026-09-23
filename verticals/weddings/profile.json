@@ -110,6 +110,28 @@
       "basis": "well-established"
     }
   ],
+  "integration_pipeline": [
+    {
+      "tool": "Customer-owned booking tool",
+      "current_state": "To be discovered per supplier",
+      "target_state": "Enquiry, availability, and deposit workflow documented against actual tool",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer approves workflow before any live use",
+      "evidence": "Discovery notes + tool name in handover",
+      "status": "manual"
+    },
+    {
+      "tool": "Stripe / GoCardless",
+      "current_state": "Deposits and balances taken ad hoc",
+      "target_state": "Written deposit, balance, and cancellation terms configured",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer and couple sign terms before money moves",
+      "evidence": "Signed terms + deposit policy in handover",
+      "status": "manual"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

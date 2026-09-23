@@ -103,6 +103,28 @@
       "basis": "well-established"
     }
   ],
+  "integration_pipeline": [
+    {
+      "tool": "Customer-owned scheduling tool",
+      "current_state": "To be discovered per instructor",
+      "target_state": "Lesson and waiting-list workflow documented against actual tool",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer approves workflow before any live use",
+      "evidence": "Discovery notes + tool name in handover",
+      "status": "manual"
+    },
+    {
+      "tool": "GoCardless / Stripe",
+      "current_state": "Lesson payments taken ad hoc",
+      "target_state": "Block-booking billing configured with explicit cancellation terms",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer sets up in their own account",
+      "evidence": "Billing policy screenshot in handover",
+      "status": "manual"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

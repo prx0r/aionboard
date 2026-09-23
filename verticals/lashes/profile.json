@@ -141,6 +141,28 @@
       "basis": "well-established"
     }
   ],
+  "integration_pipeline": [
+    {
+      "tool": "Booksy / Fresha / Square Appointments",
+      "current_state": "Bookings and deposits live in the booking platform",
+      "target_state": "Deposit rules, reminders, and patch-test flags configured",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer configures in their own account",
+      "evidence": "Screenshot of deposit policy + patch-test workflow in handover",
+      "status": "manual"
+    },
+    {
+      "tool": "WhatsApp Business app",
+      "current_state": "DMs handled ad hoc",
+      "target_state": "Preparation checklists and quick replies in use",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer owns the number and approves every template",
+      "evidence": "Quick-reply list recorded in handover",
+      "status": "manual"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

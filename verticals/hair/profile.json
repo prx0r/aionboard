@@ -141,6 +141,28 @@
       "basis": "well-established"
     }
   ],
+  "integration_pipeline": [
+    {
+      "tool": "Booksy / Fresha / Square Appointments",
+      "current_state": "Bookings and deposits live in the booking platform",
+      "target_state": "Service-area profile, deposits, reminders, portfolio links configured",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer configures in their own account",
+      "evidence": "Screenshot of service-area profile + deposit policy in handover",
+      "status": "manual"
+    },
+    {
+      "tool": "Instagram / Facebook",
+      "current_state": "Portfolio scattered across posts",
+      "target_state": "Booking link in bios; portfolio organized by service",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer owns accounts; agent guides, never posts",
+      "evidence": "Bio screenshots recorded in handover",
+      "status": "manual"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",

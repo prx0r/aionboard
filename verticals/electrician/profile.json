@@ -174,6 +174,38 @@
       "basis": "well-established"
     }
   ],
+  "integration_pipeline": [
+    {
+      "tool": "Tradify / Fergus / Jobber",
+      "current_state": "Quotes, jobs, and invoices live in the trade job tool",
+      "target_state": "Customer export received; agent drafts quotes from exported price book",
+      "method": "export",
+      "mcp_tool": "draft_quote",
+      "approval": "Customer performs the export; owner approves every draft before sending",
+      "evidence": "Export file hash + row count recorded in stack_items",
+      "status": "manual"
+    },
+    {
+      "tool": "Xero / QuickBooks / FreeAgent",
+      "current_state": "Accounting package holds invoices, expenses, and tax records",
+      "target_state": "Read-only bank-feed review with customer; agent never moves money",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer grants read access or shares exports; no payment capability connected",
+      "evidence": "Access method recorded; no credentials stored",
+      "status": "manual"
+    },
+    {
+      "tool": "WhatsApp Business app",
+      "current_state": "Enquiries arrive in personal or unstructured business chats",
+      "target_state": "Business profile complete; quick replies and labels in use",
+      "method": "manual",
+      "mcp_tool": null,
+      "approval": "Customer owns the number and approves every template",
+      "evidence": "Screenshot of profile + quick-reply list in handover",
+      "status": "manual"
+    }
+  ],
   "agent_readiness": {
     "muse_status": "US-only; no confirmed UK date; not included",
     "chatgpt_status": "No guaranteed listing or placement",
