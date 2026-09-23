@@ -96,25 +96,33 @@
 
 ---
 
-## Second session (after they give us access)
+## Second session (we send connection links, they approve)
 
-### What we need from them
+### How we get access (industry standard — never ask for passwords)
 
-| What | Why | How we get it |
-|------|-----|---------------|
-| Booking system login | To set up deposits, reminders, patch tests | Ask: "Can you show me your booking system? I need to configure a few things." |
-| WhatsApp Business account | To set up automated messages | Ask: "Do you use WhatsApp Business? If not, I'll help you set it up." |
-| Google Business Profile admin | To complete profile, add photos | Ask: "Can you log into your Google Business Profile? I'll guide you through it." |
-| Instagram login | To add booking link to bio | Ask: "Can you open Instagram on your phone? I'll show you where to add it." |
+| Platform | How we get access | What they do |
+|----------|------------------|-------------|
+| **Google GBP** | Send them Business Profile Manager link → they add us as Manager | Click "Add Manager" → enter our email → we edit profile |
+| **Instagram** | Send Meta Business Suite connection link | They log in → approve → we manage via tool |
+| **WhatsApp** | Meta Business Suite share or Embedded Signup | They share WABA with us → we send messages |
+| **Booking system** | Guide them through settings | We tell them exactly what to change |
+
+**The flow:**
+1. We send a connection link
+2. They log in on THEIR device
+3. They approve specific permissions
+4. We get a scoped token
+5. We never see their password
 
 ### What we do in second session
 
-1. **Set up deposits** in their booking system (if supported)
-2. **Set up automated reminders** (48hr + 2hr before)
-3. **Set up patch test flags** (if applicable)
-4. **Complete GBP** (add all fields, photos, services)
-5. **Add booking link to Instagram** (together on their phone)
-6. **Verify schema/llms.txt** on their website
+1. **Send connection links** for GBP, Instagram, WhatsApp
+2. **They approve** (5 minutes on their phone)
+3. **We complete GBP** (add all fields, photos, services)
+4. **We add booking link to Instagram** (via Meta Business Suite)
+5. **We set up deposits** in booking system (guide them)
+6. **We set up automated reminders** (guide them)
+7. **We verify schema/llms.txt** on their website
 
 ---
 
