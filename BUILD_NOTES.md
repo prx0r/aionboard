@@ -535,6 +535,22 @@ Per DEVPLAN_NEXT.md Phase 0: sell (T3), deliver (T1/T2), measure (T4).
 
 ---
 
+## Session 2026-09-23 — Phase 0 sales pack
+
+### Context
+"Go" = execute Phase 0. First autonomous slice: the Manchester call pack.
+
+### What was done
+- `prospects_manchester_top50.csv`: 508 Greater Manchester active prospects found (105 outward areas); top 50 scored by SIC diversity. Fixed two bugs en route: region parser truncates M-postcodes, and a `\b` regex silently dropped satellite towns.
+- `SALES_EMAIL_01.md`: first-touch + one follow-up template with non-negotiable send rules.
+- Verified CRM import of the shortlist: 50 imported, 0 consents created (research ≠ permission).
+- 147 tests green.
+
+### Current state
+- Call pack ready. Next human action: enrich numbers, TPS-screen, start calling (thread T3).
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:
