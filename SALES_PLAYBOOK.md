@@ -29,6 +29,31 @@
 
 ---
 
+## Electrician segments (from SPARKIES.md — adapted)
+
+Pitch the segment, not the software. Full detail in `ELECTRICIAN_INTEL.md`.
+
+| Segment | Signal | Pitch angle |
+|---------|--------|-------------|
+| Busy local (2–5 staff) | NICEIC/NAPIT listed, 4.5★+, diary full | Overflow cover + zero admin |
+| Newly qualified (1-man) | Thin reviews, new profiles, Instagram starters | Leads + backend + reputation from zero |
+| EICR/landlord spark | Letting-agent suppliers, EICR-heavy profiles | EV bolt-on on visits already happening |
+
+Start with ONE busy-local. Quality over quantity until first jobs land.
+
+## Lead-first outreach (no cold SaaS pitch)
+
+Every touch carries proof or books proof. Funnel math (plan): 50 → 15 replies → 5 calls → 2 trials → 1 partner.
+
+1. **Email:** subject carries cluster + goods. Attach a sample scope pack. One ask: 10-min call. B2B to published addresses, opt-out honored.
+2. **Calls:** 10-min script — capacity, day-rate, EV experience, Part P, area. Goal: 5 deep conversations.
+3. **Warm-transfer the first TWO leads free** with full scope pack. Free means free — "more where that came from."
+4. **Close with ONE.** Then stop recruiting and deliver.
+
+If replies <10: list or subject is wrong — fix once, then re-evaluate.
+
+---
+
 ## Contact compliance
 
 Before live marketing contact, verify contact details, record permission or legal basis, screen against TPS, CTPS, and the internal suppression list, and respect objections immediately. Do not market to research-only records.

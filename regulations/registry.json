@@ -721,6 +721,25 @@
       "escalation": "Enforcement and referral loss.",
       "review_date": "2026-09-23",
       "source": "cgraphuk/graph/law/legislation.json"
+    },
+    {
+      "applies_when": "EV charger installations where grant funding is sought.",
+      "basis": "verified-2026",
+      "citation": "OZEV EV chargepoint grant, 75% to £500 cap; scheme ends 31 Mar 2027",
+      "detail": "Authorised-installer plus approved-hardware required. Eligibility is decided by OZEV, never by the installer or AI Onboard. Never guarantee approval.",
+      "domain": "trade",
+      "escalation": "Rejected grant claims; mis-sold eligibility.",
+      "failure_mode": "Guaranteed grant that OZEV refuses; installer liable for the gap.",
+      "id": "LEG-OZEV-GRANT",
+      "industries": [
+        "electrician"
+      ],
+      "jurisdiction": "UK",
+      "law": "OZEV EV chargepoint grant (£500/socket to 31 Mar 2027)",
+      "owner_action": "Apply for authorised-installer status; pre-check eligibility; submit, never promise.",
+      "source_url": "https://www.gov.uk/government/collections/government-grants-for-low-emission-vehicles",
+      "review_date": "2026-09-23",
+      "source": "ab/businesses/evspark/PLAN.md"
     }
   ]
 }

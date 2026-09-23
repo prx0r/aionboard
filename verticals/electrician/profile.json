@@ -116,11 +116,12 @@
       "signal": "Private rentals need valid 5-year EICRs; letting agents need compliant contractors",
       "powuk_source": "planning_apps, ch_capacity"
     },
-    {
-      "name": "EV charger installs",
-      "signal": "Electrification demand; complex quotes and parts follow-up",
-      "powuk_source": "ons_skills, gov_grants"
-    },
+ {
+  "name": "EV charger installs",
+  "signal": "OZEV £500/socket grant to 31 Mar 2027 drives highest-intent demand; complex quotes and parts follow-up. Eligibility decided by OZEV, never by us.",
+  "powuk_source": "ons_skills, gov_grants",
+  "price_book": "ELECTRICIAN_INTEL.md (sparky v2: £350 EV labour, £90 fault; owner must confirm all figures)"
+ },
     {
       "name": "Public procurement",
       "signal": "Government electrical-services contracts",

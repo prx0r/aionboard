@@ -551,6 +551,23 @@ Per DEVPLAN_NEXT.md Phase 0: sell (T3), deliver (T1/T2), measure (T4).
 
 ---
 
+## Session 2026-09-23 — Electrician intel from ab/evspark/cmail
+
+### Context
+Surveyed `/root/ab` (EvSpark EV-charger business), `/root/cmail` (domain/email infra) for electrician-usable material. No `/root/evspark` exists standalone — it lives at `ab/businesses/evspark/`.
+
+### What was done
+- `ELECTRICIAN_INTEL.md`: sparky price book (£350 EV labour, £90 fault), OZEV £500/socket window to Mar 2027, 4 prospect segments, lead-first outreach sequence, demand stack, labour context, kill conditions — all attributed, hypotheses marked.
+- Electrician profile: EV opportunity enriched with OZEV specifics + price-book pointer.
+- `SALES_PLAYBOOK.md`: segments table + lead-first outreach section (funnel math as plan, not evidence).
+- `regulations/registry.json`: new `LEG-OZEV-GRANT` rule (37 rules total, schema test caught a missing `source_url` — fixed).
+- 147 tests green.
+
+### Next steps
+Per DEVPLAN_NEXT.md Phase 0: enrich numbers, TPS-screen, start calling.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:
