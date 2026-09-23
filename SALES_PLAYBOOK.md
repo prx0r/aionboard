@@ -9,8 +9,8 @@
 ### Opening (phone)
 
 > "Hi [Name], I'm [Your Name] from AI Onboard. I help electrical businesses
-> get their existing email, enquiries and quotes working better together,
-> without replacing the software they already use.
+> get a WhatsApp AI agent that answers enquiries, drafts quotes, and follows up
+> automatically — using Meta Business Agent, which is live in UK now.
 >
 > How are you currently handling enquiries — WhatsApp, email, phone, or a mix?"
 

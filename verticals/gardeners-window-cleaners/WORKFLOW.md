@@ -1,5 +1,7 @@
 # Gardeners & window cleaners workflow
 
+> **Live platform:** Meta Business Agent (WhatsApp Business app) — available in UK now. Muse personal agent is US-only, no UK date.
+
 > The actual day-to-day. What happens, where the pain is, what the AI does.
 
 ## The day (research-backed)

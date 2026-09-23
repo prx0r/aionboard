@@ -106,5 +106,6 @@
 | Teaching updates | Yes |
 | GBP monthly posting (4 posts) | Yes |
 | AI visibility re-check | Yes |
+| Meta Business Agent setup | Included | We configure your WhatsApp AI agent |
 
 **The pitch:** "£20 to start. £10 for a website. £50/month to keep it all running. Less than a single day of a social media manager."

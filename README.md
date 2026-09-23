@@ -1,6 +1,6 @@
 # AI Onboard
 
-One-fee AI setup for UK trades and beauty businesses. Pilot only — zero paying customers. Everything unvalidated is marked as such.
+One-fee AI setup for UK trades and beauty businesses via Meta Business Agent (WhatsApp Business app). Pilot only — zero paying customers. Everything unvalidated is marked as such.
 
 ## What it does
 
@@ -44,7 +44,7 @@ regulations/          36-rule combined registry
 tests/                147 tests
 site/                 Generated static pages
 mcp/                  Tool contracts (designed, not deployed)
-connector/            Muse submission pack (draft, not submitted)
+connector/            Meta Business Agent / Muse connector pack (draft, not submitted)
 data/                 Local databases, handovers (gitignored)
 archive/              Superseded reference docs
 ```

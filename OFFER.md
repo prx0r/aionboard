@@ -108,7 +108,7 @@ For businesses that want ongoing support, monitoring, and growth. Requires Basic
 |---|---|
 | Existing email/calendar workflows | Available after customer authorization |
 | Google Business Profile assistance | Manual through Google's ordinary UI |
-| Meta/WhatsApp production integration | Blocked until access, review, and verification completed |
+| Meta/WhatsApp production integration | Meta Business Agent is live in UK (WhatsApp Business app). Muse personal agent is US-only, no UK date. |
 | Live voice service | Experimental; supplier costs separate |
 | Website + chatbot | Static site on Cloudflare; AI chatbot from knowledge bundle |
 

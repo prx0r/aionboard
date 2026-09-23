@@ -20,6 +20,7 @@ We have 11 verticals built from research. We need to prove them with real busine
 ### Included (FREE, worth £20+)
 
 - Basic onboarding: 1 workflow configured and taught
+- Meta Business Agent setup: WhatsApp AI agent configured and live
 - WhatsApp AI receptionist: answers enquiries 24/7
 - Booking link: added to Instagram/TikTok/Facebook bios
 - Deposit system: if applicable

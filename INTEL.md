@@ -311,4 +311,23 @@ Lead-delivery and booking webhooks documented for strategic accounts only. Ordin
 
 ---
 
+## Meta Business Agent (live in UK)
+
+- Launched: June 3, 2026 (Conversations event, London)
+- Available: Global — UK included
+- Where: WhatsApp Business app → Tools → Your Business AI
+- Cost: Free for now (paid tiers coming)
+- What it does: Answers customer queries, recommends products, books appointments, qualifies leads
+- Integrations: Shopify, Zendesk, Shopee (Business Agent Platform, June 12)
+- Status: **Live. Selling onboarding today.**
+
+## Muse (personal agent) — US-only
+
+- Launched: September 8, 2026 (US only)
+- UK status: No date, no waitlist, no country list beyond US
+- Connector Platform: Opened September 18 — submit at muse.ai/platform
+- Status: **Monitor. Prepare connector. Don't wait.**
+
+---
+
 *Extracted from archived research docs. All content is research, not proof.*
