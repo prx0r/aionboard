@@ -77,14 +77,4 @@ def run_demo() -> dict:
     }
 
 
-def demo_summary(result: dict | None = None) -> str:
-    result = result or run_demo()
-    quote = result["steps"][1]["quote"]
-    return (
-        "FICTIONAL ELECTRICIAN DEMO\n"
-        f"Business: {result['business']['name']}\n"
-        f"Customer: {result['customer']['name']}\n"
-        f"Quote draft: £{quote['labour_low_gbp']}-£{quote['labour_high_gbp']} labour, status={quote['status']}\n"
-        f"Live external sends: {result['live_external_sends']}\n"
-        "Owner approval remains required before any outbound message."
-    )
+

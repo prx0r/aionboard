@@ -44,9 +44,52 @@
 
 ---
 
-## Production notes
+## The funnel
+
+```
+TikTok / Instagram video
+  "I asked AI what my nail business is losing to no-shows"
+        ↓
+Link in bio → aionboard.co.uk/chat.html
+        ↓
+Free demo assistant answers from published research
+(no accounts, no sends, sources shown on every answer)
+        ↓
+"Want this configured for your business? £20 one-off."
+        ↓
+Book via hello@aionboard.co.uk
+        ↓
+Manual pilot installation + handover
+```
+
+### Why it works
+
+1. **Zero marginal cost.** Static page + JSON bundle. No model bills, no backend, no accounts to breach.
+2. **Self-qualifying.** Visitors who ask about deposits, reminders, and MTD are telling us their pains before we ever call.
+3. **Trust-first demo.** The assistant visibly cites sources and admits ignorance. That *is* the sales pitch.
+4. **Content engine.** Every support question that recurs becomes a TikTok script.
+
+### Conversion mechanics
+
+- Chat page tracks nothing personal. No cookies, no analytics beyond page views.
+- Booking is email-only (`hello@aionboard.co.uk`). No forms harvesting data.
+- Every chat answer links back to the £20 offer scope in `OFFER.md`.
+- The demo never claims to be live AI, Muse, or ChatGPT. It says "demo assistant" on the page.
+
+### Metrics that matter
+
+| Metric | Target | Meaning |
+|--------|--------|---------|
+| Video views → chat visits | >2% | Content resonates |
+| Chat visits → booking emails | >5% | Demo convinces |
+| Booking emails → paid installs | >30% | Sales call works |
+| Install → referral | >20% | Flywheel spins |
+
+Measure weekly. Kill videos that don't move visit-to-email. Double down on questions the chatbot gets asked repeatedly — that's the market telling us what to sell.
+
+### Production notes
 
 - Slideshows via the aoc pipeline (hook → PNGs → ZIP → human approve → manual post).
 - Pick trending audio inside TikTok at post time. Never automate posting.
-- Measure per FUNNEL.md: views → chat visits → booking emails. Kill underperformers weekly.
+- Measure per metrics above. Kill underperformers weekly.
 - If any stat here is challenged, check the source line first — these are the receipts.

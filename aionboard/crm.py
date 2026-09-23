@@ -9,7 +9,7 @@ from __future__ import annotations
 import re
 import sqlite3
 from datetime import datetime, timezone
-from typing import Iterable, Mapping, MutableMapping
+from typing import Iterable, Mapping
 
 SCHEMA_VERSION = 1
 ALLOWED_CHANNELS = {"phone", "email", "linkedin"}
@@ -433,7 +433,3 @@ def list_stack(connection: sqlite3.Connection, company_number: str) -> list[dict
         (company_number.strip().upper(),),
     ).fetchall()
     return [dict(row) for row in rows]
-
-
-def serialize_row(row: MutableMapping[str, object] | sqlite3.Row) -> dict:
-    return dict(row)

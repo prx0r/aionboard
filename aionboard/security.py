@@ -114,11 +114,6 @@ def _as_tuple(value: object) -> Iterable[str]:
     return (text,) if text else ()
 
 
-def stable_client_fingerprint(client_id: str, created_at: str) -> str:
-    payload = f"{client_id.strip()}|{created_at.strip()}".encode("utf-8")
-    return hashlib.sha256(payload).hexdigest()
-
-
 def redact_args(arguments: Mapping[str, Any] | None) -> dict:
     """Redact tool arguments for audit logging.
 

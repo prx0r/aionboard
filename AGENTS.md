@@ -37,7 +37,8 @@ regulations/          36-rule combined registry (registry.json + README)
 mcp/                  Tool contracts (tools.json) — designed, not deployed
 connector/            Muse submission pack — draft, not submitted
 site/                 Generated static pages (index, chat, dashboard, knowledge)
-docs/                 MUSE_SECURITY.md (security agent's channel design)
+data/                 Local databases, handovers (gitignored)
+archive/              Superseded reference docs (VISION, SERVICE_DEFINITIONS, etc.)
 tests/                147 tests, all must pass
 ```
 
@@ -48,7 +49,7 @@ tests/                147 tests, all must pass
 | CRM, installs, onboarding, handover, manual, support, fleet report | Working code, tested |
 | Approvals, isolation, secret scan, audit helpers, rate limiter | Working code, tested — **not deployed as a gateway** |
 | Encrypted backups with restore verify | Working code, tested |
-| Redteam suite + security audits | **Moved to `prx0r/aocsec`** — no longer in this repo |
+| Redteam suite + security audits | **Moved to `prx0r/aocsec`** (vestigial dirs removed from this repo) |
 | Per-target chatbot + powuk bridge + live dashboard | Working code, tested (assistant agent) |
 | Booking-link verifier, prospect import, support metrics | Working code, tested |
 | MCP tool contracts | Designed (`mcp/tools.json`), **no server running** |
@@ -95,9 +96,11 @@ Lesson from the merge: when multiple agents push, rebase carefully and run the F
 | The pilot flow | `CHECKPOINTS.md`, `AUTOMATION_PLAYBOOK.md` |
 | Per-vertical intel | `verticals/<slug>/` (profile.json is machine-readable) |
 | Regulations | `regulations/registry.json` |
-| The funnel | `FUNNEL.md`, `ADDONS.md` |
+| Marketing + funnel | `TIKTOK_BATCH_01.md` (5 scripts + funnel + metrics) |
+| Add-ons | `ADDONS.md` |
 | Strategy + economics | `STRATEGY.md`, `GEO_OPPORTUNITIES.md` |
+| Electrician intel | `ELECTRICIAN_INTEL.md` |
 | Build history | `BUILD_NOTES.md` |
 | Open threads | `THREADS.md` (T1–T12, start here for what to do next) |
 | What's next | `DEVPLAN_NEXT.md` (phases 0–4, gates, kill criteria) |
-| Peer critiques | `PEER_REVIEW.md`, `devplan.md` |
+| Old research | `archive/` (superseded but useful: VISION, SERVICE_DEFINITIONS, devplan, etc.) |

@@ -4,6 +4,30 @@
 
 ---
 
+## Session 2026-09-23 — Repo cleanup
+
+### Context
+33 markdown files at root, heavy overlaps, stale references, vestigial directories. Repo was hard to navigate for incoming agents or humans.
+
+### What was done
+- **Archived 8 superseded docs** to `archive/`: VISION.md, SERVICE_DEFINITIONS.md, PEER_REVIEW.md, INTEGRATION.md, REPORT.md, devplan.md, FLYWHEEL.md, FUNNEL.md
+- **Merged** FUNNEL.md content (funnel diagram, conversion mechanics, metrics) into TIKTOK_BATCH_01.md
+- **Removed vestigial dirs**: `aionboard/redteam/`, `aionboard/security_audit/` (empty, moved to aocsec earlier)
+- **Removed dead code**: `serialize_row` (crm.py), `stable_client_fingerprint` (security.py), `demo_summary` (demo.py)
+- **Removed unused import**: `MutableMapping` from crm.py
+- **Rewrote README.md** as proper entry point with repo structure, quick start, and doc index
+- **Updated AGENTS.md** repo map and key-docs table to reflect new layout
+- 147 tests still passing
+
+### Files changed
+- Moved: VISION.md, SERVICE_DEFINITIONS.md, PEER_REVIEW.md, INTEGRATION.md, REPORT.md, devplan.md, FLYWHEEL.md, FUNNEL.md → `archive/`
+- Created: `archive/README.md` (index of archived docs)
+- Modified: README.md (rewritten), AGENTS.md (updated), TIKTOK_BATCH_01.md (merged funnel), BUILD_NOTES.md (this entry)
+- Deleted: `aionboard/redteam/`, `aionboard/security_audit/`
+- Edited: aionboard/crm.py, aionboard/security.py, aionboard/demo.py (dead code removal)
+
+---
+
 ## Session 2026-09-23 — Initial setup + research
 
 ### Context
