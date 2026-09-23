@@ -39,6 +39,9 @@
     "handover",
     "customer_permission_for_case_study"
   ],
+  "rulebook": "RULEBOOK.md",
+  "intake_form": "INTAKE.md",
+  "outcomes": "OUTCOMES.md",
   "excluded_from_standard_pilot": [
     "website_build",
     "live_voice_service",
