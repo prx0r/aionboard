@@ -6,7 +6,7 @@
 
 ## Executive Summary
 
-You don't need to build AI Onboard from scratch. The infrastructure already exists across four repositories and one BigQuery dataset. The work is packaging, not engineering.
+Much of the needed research and implementation infrastructure already exists across four repositories and one BigQuery dataset. The remaining checkpoint work is packaging, verification, and customer evidence. Current pilot scope is defined in `OFFER.md`.
 
 ```
 ographuk    → FIND prospects (UK business intelligence)
@@ -98,12 +98,14 @@ tpl/tpl-electrician-gb.json               — electrician template
 
 **Purpose:** Business identity provisioning, email, phone, job management, automation.
 
-**What it has:**
+**What the separate influence project reports:**
 - Domain management (Porkbun/Name.com integration)
 - Email provisioning (Cloudflare Workers)
 - Phone/Telnyx integration
 - WhatsApp Cloud API integration
 - LiveKit voice agent infrastructure
+
+These remain external dependencies requiring access, authorization, customer-owned accounts, supplier charges, and a security audit before customer deployment.
 - Job management (lead → qualified → quoted → scheduled → done → invoiced)
 - Quote builder
 - Invoice generation
@@ -287,47 +289,38 @@ Before any client deployment:
 ## Data Flow
 
 ```
-Customer signs up
+Customer agrees to the pilot scope in `OFFER.md`
         ↓
-AI Onboard creates prospect record (BigQuery)
+AI Onboard creates a local prospect record with provenance
         ↓
-Uses cgraphuk playbook to identify pain points
+Uses cgraphuk playbooks to prioritize likely pain points
         ↓
-Uses influence to provision domain/email/phone
+Manually provisions or assists with customer-owned accounts
         ↓
-Uses influence to configure voice agent/WhatsApp
+Configures only authorized pilot workflows
         ↓
-Customer starts receiving enquiries
+Customer tests each workflow before handover
         ↓
-AI Onboard monitors (influence dashboard)
+Written handover records working, pending, and blocked items
         ↓
-Uses powuk data to find additional leads
-        ↓
-Customer gets more jobs
-        ↓
-Customer pays monthly subscription
+Any additional monthly service requires a separate written agreement
 ```
 
 ---
 
-## Revenue Model (revised)
+## Revenue Model (pilot)
 
-| Service | Price | What you're doing |
-|---------|-------|-------------------|
-| AI Business Setup | £499 one-off | Installation (influence infrastructure) |
-| Advisory Support | £79/month | Monitoring + adjustments |
-| Lead Generation | £149/month | powuk data → targeted leads |
-| Invoice/Payment | 2.5% of invoices | Transaction revenue |
-| Custom Development | £750+ | Bespoke integrations |
+Current canonical offer is in `OFFER.md`:
 
-**Year 1 target (100 installations):**
-```
-80 × £499 = £39,920
-20 × £79/mo × 6 months = £9,480
-10 × £149/mo × 6 months = £8,940
-─────────────────────────────
-Total: ~£58,340
-```
+| Service | Price | Status |
+|---------|-------|--------|
+| Standard AI Setup | £499 one-off | Current pilot product |
+| Advisory Support | Separate quote | Future optional service |
+| Lead Generation | Separate quote | Future optional service |
+| Invoice/Payment | Separate quote | Future optional service |
+| Custom Development | Separate quote | Future optional service |
+
+Earlier 100-installation forecasts were planning hypotheses. They are not current sales targets or evidence.
 
 ---
 
@@ -338,17 +331,17 @@ Total: ~£58,340
 | Prospect database | powuk (10K+ electrical businesses) | ✅ Ready |
 | Pain points | cgraphuk (72 pains, 24 verticals) | ✅ Ready |
 | Campaign briefs | cgraphuk (24 campaigns) | ✅ Ready |
-| Installation infra | influence (email, phone, jobs, invoices) | ⚠️ Needs security audit |
-| Market intelligence | BigQuery (verticals, graph, observations) | ✅ Ready |
-| Lead generation | powuk (labour, procurement, planning) | ✅ Ready |
+| Installation infra | influence (email, phone, jobs, invoices) | ⚠️ Research only; needs security audit, customer-owned accounts, and verified integration |
+| Market intelligence | BigQuery (verticals, graph, observations) | ✅ Research available; not a delivered customer product |
+| Lead generation | powuk (labour, procurement, planning) | ⚠️ Research data only; product not built or validated |
 
-**You don't need another large software project. You need to turn selected parts of this existing work into a repeatable, paid installation.**
+**The remaining work is packaging, verification, and customer evidence, not another large software project.**
 
 ---
 
-## The Advertising Wedge
+## Future advertising and relationship roadmap
 
-The real business isn't onboarding. It's the relationship.
+This roadmap is untested. The only current product is the narrow pilot in `OFFER.md`.
 
 ### The insight
 
@@ -361,45 +354,27 @@ Every trades business has the same problems:
 
 **AI Onboard solves the first two problems (finding and converting customers) using data.** That's the wedge. Once you're in the door, you become their trusted advisor for everything else.
 
-### The services ladder
+### Current and future services
+
+Current pilot: £499 standard setup in `OFFER.md`.
+
+Possible future ladder, untested:
 
 ```
-FREE (acquisition)
-  Market intelligence report
-  "Here's what's happening in your area"
-  Source: powuk data (planning apps, procurement, labour demand)
+Future free research summary
+  General area research from powuk where available
         ↓
-£499 (setup)
-  AI Business Setup
-  Email, phone, calendar, AI assistant
-  Source: influence infrastructure
+£499 pilot setup
+  Authorized email/calendar workflows, enquiry and quote preparation,
+  Business Profile assistance, training, and handover
         ↓
-£79/month (retainer)
-  Monthly check-in
-  Workflow adjustments
-  1 hour support
+Future optional retainer
         ↓
-£149/month (lead generation)
-  Weekly lead alerts
-  Procurement opportunities
-  Planning application signals
-  Source: powuk data (contracts_finder, planning_apps)
+Future optional lead generation
         ↓
-£299/month (consulting)
-  Legal questions (via AI + human review)
-  Advertising creation
-  Google Business Profile optimization
+Future optional consulting
         ↓
-£499/month (growth)
-  Business strategy
-  Hiring support
-  Supplier negotiations
-  Custom integrations
-        ↓
-£999/month (full service)
-  Everything above
-  + dedicated account manager
-  + priority support
+Future optional growth services
 ```
 
 ### How the data powers each service
@@ -431,10 +406,11 @@ We know their business
 
 ### Revenue projection
 
-| Year | Customers | Avg monthly | Annual revenue |
-|------|-----------|-------------|----------------|
-| 1 | 100 | £99 | £119K |
-| 2 | 200 | £149 | £358K |
-| 3 | 300 | £199 | £716K |
+Earlier forecasts were hypotheses. They are retained as planning scenarios only and are not evidence:
 
-**The setup fee is a loss leader. The monthly retainer is the business.**
+| Scenario | Customers | Basis |
+|------|-----------|-------|
+| Founding pilot | 3 | First measured installations |
+| Initial repeatable offer | To be determined after delivery-time measurement | Customer evidence |
+
+Do not present these figures as expected revenue.

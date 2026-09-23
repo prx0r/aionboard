@@ -87,6 +87,31 @@ Sales playbook ready
 
 ---
 
+## Session 2026-09-23 — Peer-review checkpoint
+
+### Context
+The peer review found untested API claims, expanded-bundle pricing, unverified sales outcomes, and missing executable software.
+
+### What was done
+- Added canonical narrow pilot scope in `OFFER.md`.
+- Corrected Google, Meta, OpenMuse/Muse, pricing, discovery, prospect, and sales claims.
+- Added `verticals/electrician/` and a reusable vertical template.
+- Built local SQLite CRM, install state machine, fictional demo, handover generator, approval/isolation checks, and static pilot website.
+- Added 19 acceptance tests and GitHub Actions CI.
+- Marked website builds, live voice, Meta production integration, custom integrations, and lead generation as separate future deliverables.
+
+### Current state
+- 19 tests pass.
+- No completed paying installation is recorded.
+- Public prospect CSV remains research-only, with no verified phone numbers, permission, or TPS/CTPS results.
+
+### Next steps
+1. Validate OAuth, Google, and Meta access manually before promising automation.
+2. Run the fictional demo during one qualified sales conversation.
+3. Record delivery time for the first real pilot before changing pricing.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:

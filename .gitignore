@@ -1,0 +1,14 @@
+# Local runtime data
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+data/handovers/
+build/
+__pycache__/
+.pytest_cache/
+.env
+handover-*.md
+*-handover.md

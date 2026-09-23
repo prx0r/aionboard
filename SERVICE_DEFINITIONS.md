@@ -1,6 +1,8 @@
 # SERVICE_DEFINITIONS.md
 
-> Crystal clear offerings. No ambiguity. No subscription bullshit.
+> Service research catalog. The only current product is the narrow pilot in `OFFER.md`.
+
+No pilot installation has been completed yet. Outcome figures below are targets or hypotheses, not measured results.
 
 ---
 
@@ -14,7 +16,9 @@ They already have:
 - A website (it just doesn't get found)
 - Software (they just don't use it properly)
 
-We don't replace anything. We make what they have work better with AI.
+We don't replace anything unnecessarily. We make what they have work better where their permissions and platform access allow.
+
+Benefit statements in this research catalog are targets. They must not be presented as measured pilot results.
 
 ---
 
@@ -26,7 +30,7 @@ Based on 72 pain points across 24 industries.
 
 ### SERVICE 1: Missed Call Recovery
 
-**Pain it solves:** Trades miss 60% of calls while on tools. Caller rings next trade within 60 seconds.
+**Research hypothesis:** Missed inbound calls can send work to competitors. This service has not yet been validated with a paying pilot customer.
 
 **What we do:**
 - Set up call forwarding from their existing number
@@ -260,31 +264,11 @@ Based on 72 pain points across 24 industries.
 
 ---
 
-## BUNDLE PRICING
+## Pricing status
 
-### Starter Bundle (£299)
-Pick 2 services from:
-- Missed Call Recovery
-- Review Engine
-- WhatsApp Business Setup
+Current pilot: £499 standard setup in `OFFER.md`.
 
-### Business Bundle (£499)
-Pick 4 services from:
-- All Starter services
-- Google Business Profile Optimization
-- AI Discovery Setup
-- Quote Follow-Up
-
-### Premium Bundle (£799)
-Pick 6 services from:
-- All Business services
-- No-Show Elimination
-- Compliance Tracker
-- Win-Back Engine
-- Direct Booking Migration
-
-### Full Setup (£1,499)
-All 10 services included.
+The bundles and individual add-ons elsewhere in this file are future roadmap options. They are not current products, have no measured delivery times, and must be quoted separately after pilot validation.
 
 ---
 
@@ -307,19 +291,15 @@ All 10 services included.
 
 ## THE PITCH
 
-> "We fix the 3 things costing you the most money:
-> 1. Missed calls (lost customers)
-> 2. No-shows (lost revenue)
-> 3. Low reviews (lost trust)
+> "The pilot configures the email, enquiry, quotation, scheduling, and profile-assistance workflows described in `OFFER.md`.
 >
-> One setup, one fee, no subscription.
-> We fix it, teach you, and leave."
+> One pilot setup, one pilot fee, no implied guarantee of customers, rankings, or revenue."
 
 ---
 
-## SUCCESS METRICS
+## PILOT SUCCESS TARGETS
 
-After 30 days, we prove:
+These targets require a real customer and dated evidence. None has been measured yet:
 - Calls answered: 90%+ (was 40%)
 - No-shows: <2% (was 8%)
 - Reviews: 5+ new (was 0)

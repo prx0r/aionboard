@@ -4,22 +4,14 @@
 
 ---
 
-## Muse Infrastructure
+## Capability distinction
 
-OpenMuse (github.com/CopilotKit/OpenMuse) provides:
-- **Chat interface** — CopilotKit headless chat with AG-UI events
-- **Agent computer** — persistent browser, Linux terminal, file workspace
-- **Gmail & Calendar** — Google OAuth adapters, mail threads, event creation
-- **Activity** — task plans, progress, approvals, receipts
-- **Documents** — PDF processing, form filling, attachments
-- **Finance** — transaction CSV import, spending summaries
-- **Goals & Tracking** — recurring checks, price alerts, change detection
+Current pilot scope is defined in `OFFER.md`.
 
-**Meta Business integration adds:**
-- WhatsApp Cloud API
-- Facebook/Instagram messaging
-- Business call handling
-- Unified inbox across all channels
+- **Meta Muse:** Meta’s assistant ecosystem. Access and UK availability depend on Meta; it is not included in the pilot setup.
+- **OpenMuse:** A separate open-source personal-agent project. Installing or studying it does not provide Meta Muse access.
+- **WhatsApp Cloud API and Meta business management:** Require access, business verification, review, payment terms, and explicit customer authorization. They are separate from the pilot.
+- **OpenMuse capabilities below are reference architecture only**, not delivered pilot features unless the customer separately authorizes access and pays the relevant supplier charges.
 
 ---
 
@@ -55,29 +47,25 @@ OpenMuse (github.com/CopilotKit/OpenMuse) provides:
 
 ---
 
-## Service Packages
+## Current pilot package
 
-### Package 1: AI Business Setup (£499 one-off)
+The standard AI Setup is £499 one-off and is defined in `OFFER.md`:
 
-**What we do:**
-1. Configure email, calendar, WhatsApp integration
-2. Set up voice agent for missed calls
-3. Create quote builder workflow
-4. Connect to existing software (Tradify, Xero, etc.)
-5. Train owner on AI assistant
-6. 14 days of fixes
+1. Setup for existing email and calendar workflows the customer authorizes.
+2. Enquiry-capture preparation using customer-approved contacts.
+3. Quotation drafting from the customer-approved price book, with owner approval.
+4. Google Business Profile assistance through Google’s ordinary interface.
+5. Live training.
+6. Written handover.
+7. Fourteen days of fixes for configured workflows.
 
-**Muse capabilities used:**
-- Gmail integration (enquiry detection)
-- Calendar integration (scheduling)
-- WhatsApp Cloud API (customer comms)
-- Task management (quote follow-up)
+Website development, live voice service, Meta production integration, custom integrations, and lead generation are separate future offerings.
 
-**Delivery time:** 4-6 hours
+## Future service roadmap
 
 ---
 
-### Package 2: Lead Generation (£149/month)
+### Future offering: Lead Generation (£149/month, not in pilot)
 
 **What we do:**
 1. Weekly lead alerts from powuk data
@@ -94,7 +82,7 @@ OpenMuse (github.com/CopilotKit/OpenMuse) provides:
 
 ---
 
-### Package 3: AI Consulting (£299/month)
+### Future offering: AI Consulting (£299/month, not in pilot)
 
 **What we do:**
 1. Monthly business review
@@ -111,7 +99,7 @@ OpenMuse (github.com/CopilotKit/OpenMuse) provides:
 
 ---
 
-### Package 4: Growth Strategy (£499/month)
+### Future offering: Growth Strategy (£499/month, not in pilot)
 
 **What we do:**
 1. Business strategy sessions
@@ -128,7 +116,7 @@ OpenMuse (github.com/CopilotKit/OpenMuse) provides:
 
 ---
 
-### Package 5: Full Service (£999/month)
+### Future offering: Full Service (£999/month, not in pilot)
 
 **What we do:**
 1. Everything above
@@ -148,13 +136,13 @@ OpenMuse (github.com/CopilotKit/OpenMuse) provides:
 - EICR compliance tracking
 - Quote follow-up automation
 
-**Muse setup:**
+**Illustrative future configuration:**
 - Voice agent answers missed calls
 - WhatsApp sends quote follow-ups
 - Calendar blocks EICR reminders
 - Gmail monitors enquiry threads
 
-**First 30 days:**
+**Illustrative sequence:**
 1. Voice agent live (day 1)
 2. Quote builder configured (day 3)
 3. WhatsApp template ready (day 5)
@@ -170,13 +158,13 @@ OpenMuse (github.com/CopilotKit/OpenMuse) provides:
 - Client reactivation poor
 - Product recommendations missed
 
-**Muse setup:**
+**Illustrative future configuration:**
 - Deposit system for bookings
 - SMS reminders at 24h + 2h
 - Win-back engine for lapsed clients
 - Product recommendation engine
 
-**First 30 days:**
+**Illustrative sequence:**
 1. Deposit system live (day 1)
 2. SMS reminders active (day 2)
 3. Client import complete (day 3)
@@ -192,13 +180,13 @@ OpenMuse (github.com/CopilotKit/OpenMuse) provides:
 - Walk-in management poor
 - Review collection weak
 
-**Muse setup:**
+**Illustrative future configuration:**
 - Booking page with deposits
 - Walk-in queue management
 - Post-cut review requests
 - Referral programme
 
-**First 30 days:**
+**Illustrative sequence:**
 1. Booking page live (day 1)
 2. Deposit system active (day 2)
 3. Review requests automated (day 3)
@@ -209,34 +197,32 @@ OpenMuse (github.com/CopilotKit/OpenMuse) provides:
 
 ## Pricing strategy
 
-### Founding client offer
+The current pilot offer is the £499 standard setup in `OFFER.md`. Monthly packages and add-ons below are future roadmap items, not current products.
 
-- **£299** (instead of £499) for first 3 customers
-- In exchange for: feedback, referral, case study permission
-- Goal: prove delivery time and value
+### Future monthly packages
 
-### Standard pricing
+| Package | Monthly |
+|---------|---------|
+| Lead Generation | £149 |
+| AI Consulting | £299 |
+| Growth Strategy | £499 |
+| Full Service | £999 |
 
-| Package | Monthly | Annual (discount) |
-|---------|---------|-------------------|
-| Lead Generation | £149 | £1,490 (17% off) |
-| AI Consulting | £299 | £2,990 (17% off) |
-| Growth Strategy | £499 | £4,990 (17% off) |
-| Full Service | £999 | £9,990 (17% off) |
+### Future add-ons
 
-### Add-ons
-
-| Service | Price | What it is |
-|---------|-------|------------|
-| Extra voice agent | £29/mo | Additional phone number |
-| SMS package | £19/mo | 500 SMS/month |
-| WhatsApp API | £39/mo | Business WhatsApp |
-| Custom integration | £750 one-off | Bespoke workflow |
-| Emergency support | £99/call | Out-of-hours support |
+| Service | Price | Status |
+|---------|-------|--------|
+| Extra voice agent | Separate quote | Separate supplier costs apply |
+| SMS package | Separate quote | Separate supplier costs apply |
+| WhatsApp API | Separate quote | Blocked/approval required |
+| Custom integration | Separate quote | Separate deliverable |
+| Emergency support | Separate quote | Separate deliverable |
 
 ---
 
 ## Success metrics
+
+These are targets to validate with a real customer, not current results.
 
 ### Per customer
 

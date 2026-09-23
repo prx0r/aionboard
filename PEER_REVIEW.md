@@ -10,7 +10,9 @@
 
 The wedge isn't "pay us monthly." The wedge is:
 
-> "We'll make your business AI-native. You'll appear in ChatGPT, Google Maps, and every AI assistant. We set it up, teach you how to use it, and leave."
+> Earlier draft positioning: "We'll make your business AI-native."
+>
+> Corrected offer: "We make public business information accurate, accessible, and understandable. We cannot guarantee ChatGPT, Maps, or other AI-assistant placement." See `OFFER.md`.
 
 Then optional: lead generation, custom builds, consulting.
 
@@ -57,11 +59,11 @@ Then optional: lead generation, custom builds, consulting.
 
 | Service | What it does | Price |
 |---------|--------------|-------|
-| WhatsApp Business setup | Professional profile, automated greetings, quick replies | £149 |
-| Facebook Business Page | Complete profile, services, reviews, posts | £99 |
-| Instagram Business | Profile, highlights, content strategy | £99 |
-| Messenger chatbot | AI-powered responses, lead capture | £199 |
-| **Meta Business Stack** | All of the above | **£399** |
+| WhatsApp Business setup | Professional profile assistance, subject to Meta access, verification, and approval | Separate quote |
+| Facebook Business Page | Manual profile completion, subject to customer ownership and approval | Separate quote |
+| Instagram Business | Manual profile completion, subject to customer ownership and approval | Separate quote |
+| Messenger chatbot | Only with explicit scope, authorization, testing, and supplier charges | Separate quote |
+| **Meta Business Stack** | Separate package after access and prerequisites are established | **Separate quote** |
 
 ### The AI-native play
 
@@ -75,10 +77,10 @@ ChatGPT searches:
   - Website with AI chat ✓ (we set this up)
   - Reviews and ratings ✓ (we help collect these)
 
-Result: our client appears in AI assistant recommendations
+Possible outcome: accurate, accessible information may make the business easier for search engines and AI services to understand. No recommendation, ranking, or inclusion is guaranteed.
 ```
 
-**This is the wedge.** We don't just set up a website. We make the business discoverable by AI agents.
+**The current wedge is narrower:** make public information accurate and accessible while preserving the customer’s accounts, permissions, and supplier costs.
 
 ---
 
@@ -116,28 +118,28 @@ Each onboarded business gets a graph:
 
 ```json
 {
-  "business_id": "elec-manchester-001",
-  "name": "WN Networks Ltd",
+  "business_id": "DEMO-ELEC-MANCHESTER-001",
+  "name": "Fictional Manchester Electrical Co.",
   "vertical": "electrician",
-  "postcode": "S5 9LG",
+  "postcode": "M1 1AA",
   "platforms": {
-    "google_business": "configured",
-    "whatsapp_business": "configured",
-    "facebook": "configured",
-    "instagram": "configured",
-    "website": "live",
-    "chatgpt_listing": "optimized"
+    "google_business": "assistance-only",
+    "whatsapp_business": "separate-deliverable",
+    "facebook": "separate-deliverable",
+    "instagram": "separate-deliverable",
+    "website": "separate-deliverable",
+    "chatgpt_listing": "no-guarantee"
   },
   "voice_agent": {
-    "status": "active",
-    "phone": "+44 114 123 4567",
-    "answer_rate": 0.92
+    "status": "separate-deliverable",
+    "phone": "+44 7700 900078",
+    "answer_rate": null
   },
   "ai_assistant": {
-    "status": "configured",
-    "capabilities": ["quote_drafting", "scheduling", "follow_up"]
+    "status": "demo-only",
+    "capabilities": ["quote_drafting", "scheduling_proposal"]
   },
-  "installed_at": "2026-09-23",
+  "installed_at": "DEMO-DATE",
   "installed_by": "ai_onboard"
 }
 ```
@@ -324,4 +326,4 @@ We optimize their presence across ALL platforms AI assistants check:
 
 ## The one-liner
 
-> **AI Onboard makes trades businesses AI-native. We set you up on every platform, teach you how to use it, and leave. One fee, no subscription, no bullshit.**
+> **AI Onboard’s pilot configures authorized workflows, teaches the owner, documents the installation, and leaves. One pilot fee; no outcome guarantees.**

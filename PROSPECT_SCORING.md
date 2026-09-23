@@ -48,9 +48,11 @@ Observable signs of expansion.
 | Signal | Score |
 |--------|-------|
 | Multiple postcodes | 10 |
-| EV charger SIC (43210) | 5 |
-| Solar SIC (35110) | 5 |
-| Active hiring (ONS data) | 5 |
+| Electrical installation SIC (43210) | 5 |
+| Related construction SIC | 5 |
+| Independently verified hiring signal | 5 |
+
+SIC 43210 means electrical installation. It does not prove EV-charger capability. Regional labour data does not prove that an individual business is hiring.
 
 ---
 
@@ -58,16 +60,16 @@ Observable signs of expansion.
 
 | Score | Priority | Action |
 |-------|----------|--------|
-| 80-100 | HOT | Call immediately |
-| 60-79 | WARM | Call this week |
-| 40-59 | COOL | Add to nurture sequence |
+| 80-100 | HOT | Verify contact source and permission, screen TPS/CTPS, then call |
+| 60-79 | WARM | Verify contact source and permission this week, then call |
+| 40-59 | COOL | Add to research monitoring only |
 | <40 | COLD | Monitor, don't call yet |
 
 ---
 
 ## Greater Manchester prospects
 
-From powuk data, Greater Manchester postcode areas:
+Approximate regional counts from a powuk research snapshot. They are not verified call lists, customer qualifications, or marketing permissions:
 
 | Postcode | Area | Businesses | Score |
 |----------|------|------------|-------|
@@ -115,6 +117,6 @@ Before calling a prospect, verify:
     "phone_valid": true,
     "services_match": true
   },
-  "notes": "No website — opportunity for AI-generated site"
+  "notes": "Website status needs independent verification before any sales claim"
 }
 ```

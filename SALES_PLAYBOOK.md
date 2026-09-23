@@ -9,24 +9,18 @@
 ### Opening (phone)
 
 > "Hi [Name], I'm [Your Name] from AI Onboard. I help electrical businesses
-> like yours get their email, enquiries and quotes working together with AI,
-> without needing to learn new software.
+> get their existing email, enquiries and quotes working better together,
+> without replacing the software they already use.
 >
-> I noticed you're based in [Area] — there's actually quite a lot of activity
-> there at the moment. Are you currently handling enquiries through WhatsApp,
-> email, or phone?"
+> How are you currently handling enquiries — WhatsApp, email, phone, or a mix?"
 
 ### If they're interested
 
-> "Great. We've helped businesses like yours capture every enquiry,
-> even when you're on the tools. The setup takes about an hour,
-> and we charge £499 for the installation.
+> "The pilot installation is £499 and currently covers assisted setup,
+> training, and fourteen days of fixes. I can show a fictional-business
+> demonstration so you can see the workflow.
 >
-> We also send weekly market intelligence — things like planning applications
-> and procurement opportunities in your area. That's £149/month, but
-> the first month is free with the setup.
->
-> Would you like to see a quick demo?"
+> Would you like to see the demo?"
 
 ### If they're not interested
 
@@ -35,15 +29,19 @@
 
 ---
 
+## Contact compliance
+
+Before live marketing contact, verify contact details, record permission or legal basis, screen against TPS, CTPS, and the internal suppression list, and respect objections immediately. Do not market to research-only records.
+
 ## Objection handling
 
 | Objection | Response |
 |-----------|----------|
-| "I already use Tradify" | "Perfect — we don't replace it. We connect it to AI so your assistant can use your email, calendar and quotes together. Most Tradify users tell us they're only using 30% of it." |
-| "I don't need AI" | "Fair enough. Most of our clients didn't think they did either. But when they saw they were missing 60% of calls while on the tools, they changed their mind. Would you like to see how that works?" |
-| "Too expensive" | "I understand. The setup is £499, but our clients typically see that back in the first week from captured enquiries. And we offer a £299 founding-client rate for the first three customers. Want to be one of them?" |
-| "I'm too busy" | "That's exactly why this works. You're on the tools, we handle the admin. Takes an hour to set up, then it runs itself. Can we do it Friday afternoon?" |
-| "I don't trust AI" | "Neither do most of our clients. That's why everything goes through you for approval. AI drafts the quote, you check it and send it. You're always in control." |
+| "I already use Tradify" | "We don't replace it. The pilot can use your existing Tradify setup where practical, subject to what its access and export options support." |
+| "I don't need AI" | "That's understandable. Would you like to see the fictional-business demo and judge whether the enquiry and quotation workflow would help?" |
+| "Too expensive" | "The standard pilot is £499. We do not promise a specific payback period or revenue result." |
+| "I'm too busy" | "The pilot focuses on your existing workflows. We can schedule installation and training at a time that suits you." |
+| "I don't trust AI" | "Owner approval is required before any quote, booking, payment, or customer-facing message." |
 
 ---
 
@@ -83,12 +81,8 @@
 
 ### Day 1 (after demo)
 
-> "Hi [Name], thanks for the demo earlier. As promised, here's the market
-> intelligence report for [Area]. I found 3 planning applications for
-> EV chargers in your postcode this month.
->
-> If you'd like to proceed with the £299 founding-client rate, just reply
-> to this email and we can schedule the setup."
+> "Hi [Name], thanks for the demo. If you would like to proceed with the
+> pilot installation, reply to this email and we can schedule setup."
 
 ### Day 3
 
@@ -125,11 +119,9 @@
 
 ### After installation
 
-> "You're all set! Here's what we've configured:
-> - Voice agent answering missed calls
-> - Quote builder connected to your email
-> - Calendar blocking for appointments
-> - Weekly market intelligence report
+> "The configured pilot workflows are now active. Your written handover lists
+> exactly what was configured, tested, left pending, and any supplier charges
+> you need to pay directly.
 >
 > I'll check in next week to make sure everything's working.
 > Any questions in the meantime, just reply to this email."
@@ -143,6 +135,6 @@ After successful installation (day 30):
 > "Hi [Name], hope everything's working well! Quick question —
 > do you know any other electricians who might benefit from this?
 >
-> For every referral that signs up, we'll give you both a free month
-> of lead generation (worth £149). Just have them mention your name
-> when they contact us."
+> If you know another business that may benefit, ask them to mention your
+> name when they contact us. We will confirm any referral offer in writing
+> before starting work."

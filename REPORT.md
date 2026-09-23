@@ -13,7 +13,7 @@ POWUK has been collecting UK physical economy data for months. This data is dire
 3. **Geographic targeting** — regional business density, planning applications, procurement signals
 4. **Competitive intelligence** — who's hiring, who's expanding, who's in which trade
 
-This report maps every relevant POWUK dataset to AI Onboard's needs.
+This report maps relevant POWUK datasets to AI Onboard research needs. It is research and planning, not proof that the datasets are sufficient for automated prospecting or that the proposed pipeline is built.
 
 ---
 
@@ -40,7 +40,7 @@ Each record contains:
 
 | Use case | How |
 |----------|-----|
-| Cold-call list | Company name + postcode → Google for phone number |
+| Research shortlist | Company name + postcode → independently verify contact details, permission, TPS/CTPS, and suppression before any contact |
 | Business age | Incorporation date → established vs new |
 | Geographic targeting | Postcode → region, city, area |
 | Service inference | SIC codes → what they do (electrical, HVAC, solar) |
@@ -358,25 +358,15 @@ POWUK (data collection)
 | Sole traders with integration | 18% | Business Data Survey |
 | Average AI Onboard package | £499 | Vision doc |
 
-### Conservative revenue model
+### Planning scenarios, not targets
+
+These calculations test arithmetic, not demand:
 
 ```
-Year 1 target: 100 installations
-├── 80 × £499 (standard) = £39,920
-├── 15 × £999 (team) = £14,985
-├── 5 × £750 (custom) = £3,750
-└── Monthly support: 20 × £79/mo = £18,960/year
-
-Total Year 1: ~£77,615
+100 hypothetical installations × £499 = £49,900
 ```
 
-### Growth opportunity
-
-If powuk can identify and score 10,000+ electrical businesses, and AI Onboard can convert even 1%:
-```
-10,000 prospects × 1% conversion = 100 installations
-100 × £499 average = £49,900
-```
+Do not use them as revenue forecasts, conversion-rate evidence, or sales claims.
 
 ---
 
