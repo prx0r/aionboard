@@ -1,0 +1,70 @@
+{
+  "vertical": "car-detailers",
+  "display_name": "Mobile Car Detailers",
+  "status": "research-stub",
+  "onboarding_difficulty": {
+    "rank": 7,
+    "level": "medium",
+    "reasons": [
+      "Photo intake and scheduling are automatable",
+      "Condition assessment needs human control",
+      "Travel and weather compete with scheduling",
+      "No dedicated upstream teardown yet"
+    ]
+  },
+  "pain_mappings": [
+    {
+      "pain_id": "DISCOVERY-QUOTE-INTAKE",
+      "pain_name": "Incomplete vehicle, location, condition, and timing details",
+      "category": "data_visibility_gaps",
+      "verification": "PROPOSED",
+      "autonomy": 3,
+      "current_stack": ["WhatsApp Business app", "Google Calendar", "Stripe / Square"],
+      "service": "Photo-led quote request workflow",
+      "method": [
+        "Request vehicle, location, condition, and timing",
+        "Draft quote from owner-approved rates",
+        "Require owner approval before sending"
+      ],
+      "evidence_note": "Discovery hypothesis; no dedicated teardown."
+    },
+    {
+      "pain_id": "DISCOVERY-REPEAT",
+      "pain_name": "Repeat services are not systematically offered",
+      "category": "silent_churn_lapse",
+      "verification": "PROPOSED",
+      "autonomy": 4,
+      "current_stack": ["Google Calendar", "WhatsApp Business app"],
+      "service": "Repeat-service follow-up",
+      "method": [
+        "Track service intervals with customer permission",
+        "Send consent-based reminders",
+        "Require approval before broadcasts"
+      ],
+      "evidence_note": "Discovery hypothesis; no dedicated teardown."
+    }
+  ],
+  "current_stack": [
+    {"tool": "Customer-owned booking tool", "category": "to be discovered", "use": "import-from", "source": "customer"},
+    {"tool": "Google Calendar", "category": "scheduling", "use": "integrate", "source": "customer-owned"},
+    {"tool": "Stripe / Square", "category": "payments", "use": "integrate", "source": "customer-owned"},
+    {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"}
+  ],
+  "agent_readiness": {
+    "muse_status": "US-only; no confirmed UK date; not included",
+    "chatgpt_status": "No guaranteed listing or placement",
+    "connector_requirements": [
+      "customer-owned accounts",
+      "explicit authorization",
+      "verification",
+      "supplier-paid costs"
+    ],
+    "approval_rules": [
+      "quotes",
+      "bookings",
+      "deposits",
+      "payments",
+      "outbound customer messages"
+    ]
+  }
+}

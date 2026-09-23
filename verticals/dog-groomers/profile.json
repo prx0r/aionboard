@@ -1,0 +1,100 @@
+{
+  "vertical": "dog-groomers",
+  "display_name": "Dog Groomers",
+  "status": "pilot-pack-ready",
+  "onboarding_difficulty": {
+    "rank": 5,
+    "level": "easy-medium",
+    "reasons": [
+      "Recurring appointments and waiting lists are automatable",
+      "Reminders and reviews map to existing tools",
+      "Pet medical and behavior records need human control"
+    ]
+  },
+  "pain_mappings": [
+    {
+      "pain_id": "PP-013",
+      "pain_name": "Rover and Wag marketplace tax",
+      "category": "marketplace_aggregator_tax",
+      "verification": "VERIFIED",
+      "autonomy": 5,
+      "current_stack": ["Rover", "Wag", "TendPets", "Time To Pet"],
+      "service": "Direct-repeat migration",
+      "method": [
+        "Identify repeat marketplace clients",
+        "Offer direct booking with consent",
+        "Keep marketplace for discovery where useful"
+      ],
+      "evidence_note": "Fee research verified; migration results vary."
+    },
+    {
+      "pain_id": "PP-043",
+      "pain_name": "Lapsed owners never re-engaged",
+      "category": "silent_churn_lapse",
+      "verification": "PROPOSED",
+      "autonomy": 5,
+      "current_stack": ["Time To Pet", "TendPets", "Google Calendar"],
+      "service": "Rebooking workflow",
+      "method": [
+        "Track grooming intervals",
+        "Send consent-based reminders",
+        "Require approval before broadcasts"
+      ],
+      "evidence_note": "Template-analysis hypothesis."
+    },
+    {
+      "pain_id": "PP-065",
+      "pain_name": "Single visits where grouping would work; route sprawl",
+      "category": "recurring_operations_scheduling",
+      "verification": "PROPOSED",
+      "autonomy": 3,
+      "current_stack": ["Time To Pet", "Dog Walker Central", "Google Calendar"],
+      "service": "Route and grouping workflow",
+      "method": [
+        "Group nearby appointments",
+        "Check temperament and medical flags",
+        "Require owner approval for changes"
+      ],
+      "evidence_note": "Do not automate safety judgments."
+    },
+    {
+      "pain_id": "PP-079",
+      "pain_name": "Proof-of-service records never reviewed",
+      "category": "quality_trust",
+      "verification": "PROPOSED",
+      "autonomy": 5,
+      "current_stack": ["Time To Pet", "Google Business Profile"],
+      "service": "Trust and review workflow",
+      "method": [
+        "Send service summary after appointment",
+        "Request detailed reviews",
+        "Retain incident records securely"
+      ],
+      "evidence_note": "Template-analysis hypothesis."
+    }
+  ],
+  "current_stack": [
+    {"tool": "Time To Pet", "category": "petcare ops", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "TendPets", "category": "own-tool (flat sub)", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "Dog Walker Central", "category": "petcare ops", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "Rover", "category": "marketplace", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "Wag", "category": "marketplace", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"}
+  ],
+  "agent_readiness": {
+    "muse_status": "US-only; no confirmed UK date; not included",
+    "chatgpt_status": "No guaranteed listing or placement",
+    "connector_requirements": [
+      "customer-owned accounts",
+      "explicit authorization",
+      "verification",
+      "supplier-paid costs"
+    ],
+    "approval_rules": [
+      "bookings",
+      "payments",
+      "medical and behavior handling",
+      "outbound customer messages"
+    ]
+  }
+}

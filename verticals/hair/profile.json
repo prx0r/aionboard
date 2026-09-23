@@ -1,0 +1,101 @@
+{
+  "vertical": "hair",
+  "display_name": "Mobile Hairdressers and Braiders",
+  "status": "pilot-pack-ready",
+  "onboarding_difficulty": {
+    "rank": 3,
+    "level": "easy",
+    "reasons": [
+      "Repeatable services and maintenance intervals",
+      "Portfolio-led social discovery",
+      "Booking, deposit, and reminder tooling exists",
+      "Service-area profile reduces wasted enquiries"
+    ]
+  },
+  "pain_mappings": [
+    {
+      "pain_id": "PP-002",
+      "pain_name": "Missed inbound during appointments",
+      "category": "missed_inbound",
+      "verification": "VERIFIED",
+      "autonomy": 5,
+      "current_stack": ["WhatsApp Business app", "Booksy", "Fresha", "Square Appointments"],
+      "service": "Message triage setup",
+      "method": [
+        "Add booking link to bios",
+        "Create quick replies for services and travel area",
+        "Label new enquiry, quoted, booked, follow-up"
+      ],
+      "evidence_note": "Channel gap verified; outcomes vary."
+    },
+    {
+      "pain_id": "PP-008",
+      "pain_name": "No-shows on staffed time",
+      "category": "no-shows",
+      "verification": "VERIFIED",
+      "autonomy": 5,
+      "current_stack": ["Booksy", "Fresha", "Square Appointments"],
+      "service": "Deposit and reminder setup",
+      "method": [
+        "Enable deposits for long appointments",
+        "Send automated reminders",
+        "Document cancellation rules"
+      ],
+      "evidence_note": "Mechanics verified; uplift varies."
+    },
+    {
+      "pain_id": "PP-037",
+      "pain_name": "Lapsed regulars never win-backed",
+      "category": "silent_churn_lapse",
+      "verification": "PROPOSED",
+      "autonomy": 5,
+      "current_stack": ["Booksy", "Fresha", "Square Appointments"],
+      "service": "Rebooking workflow",
+      "method": [
+        "Track maintenance intervals",
+        "Send consent-based reminders",
+        "Require approval before broadcasts"
+      ],
+      "evidence_note": "Template-analysis hypothesis."
+    },
+    {
+      "pain_id": "HAIR-SERVICE-AREA",
+      "pain_name": "Service-area ambiguity wastes enquiries",
+      "category": "data_visibility_gaps",
+      "verification": "PROPOSED",
+      "autonomy": 4,
+      "current_stack": ["Google Business Profile", "Instagram", "Facebook"],
+      "service": "Service-area profile",
+      "method": [
+        "State travel towns and radius",
+        "State travel fees explicitly",
+        "Decline out-of-area work cleanly"
+      ],
+      "evidence_note": "Operational hypothesis, not measured outcome."
+    }
+  ],
+  "current_stack": [
+    {"tool": "Booksy", "category": "booking + marketplace", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "Fresha", "category": "booking + marketplace", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "Square Appointments", "category": "booking + POS", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "Google Calendar", "category": "scheduling", "use": "integrate", "source": "customer-owned"},
+    {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"},
+    {"tool": "Instagram", "category": "discovery + portfolio", "use": "integrate", "source": "vendor-docs"}
+  ],
+  "agent_readiness": {
+    "muse_status": "US-only; no confirmed UK date; not included",
+    "chatgpt_status": "No guaranteed listing or placement",
+    "connector_requirements": [
+      "customer-owned accounts",
+      "explicit authorization",
+      "verification",
+      "supplier-paid costs"
+    ],
+    "approval_rules": [
+      "bookings",
+      "deposits",
+      "payments",
+      "outbound customer messages"
+    ]
+  }
+}

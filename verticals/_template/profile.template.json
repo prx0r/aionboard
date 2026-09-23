@@ -1,0 +1,49 @@
+{
+  "vertical": "TODO-vertical-slug",
+  "display_name": "TODO Display Name",
+  "status": "template",
+  "onboarding_difficulty": {
+    "rank": 0,
+    "level": "TODO-easy|medium|hard",
+    "reasons": ["TODO-reason"]
+  },
+  "pain_mappings": [
+    {
+      "pain_id": "TODO-PP-000",
+      "pain_name": "TODO pain",
+      "category": "TODO-category",
+      "verification": "TODO-VERIFIED|PROPOSED|template-analysis",
+      "autonomy": 0,
+      "current_stack": ["TODO-tool"],
+      "service": "TODO-service",
+      "method": ["TODO-step"],
+      "evidence_note": "TODO-note"
+    }
+  ],
+  "current_stack": [
+    {
+      "tool": "TODO-tool",
+      "category": "TODO-category",
+      "use": "TODO-integrate|import-from",
+      "source": "TODO-source"
+    }
+  ],
+  "agent_readiness": {
+    "muse_status": "US-only; no confirmed UK date; not included",
+    "chatgpt_status": "No guaranteed listing or placement",
+    "connector_requirements": [
+      "customer-owned accounts",
+      "explicit authorization",
+      "verification",
+      "supplier-paid costs"
+    ],
+    "approval_rules": [
+      "quotes",
+      "bookings",
+      "deposits",
+      "payments",
+      "contracts",
+      "outbound customer messages"
+    ]
+  }
+}

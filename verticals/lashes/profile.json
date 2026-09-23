@@ -1,0 +1,101 @@
+{
+  "vertical": "lashes",
+  "display_name": "Lash and Brow Artists",
+  "status": "pilot-pack-ready",
+  "onboarding_difficulty": {
+    "rank": 2,
+    "level": "easy",
+    "reasons": [
+      "Repeatable treatments and refill intervals",
+      "Booking, deposit, and reminder tooling exists",
+      "Social-led discovery maps to booking links",
+      "One extra safety workflow versus nails"
+    ]
+  },
+  "pain_mappings": [
+    {
+      "pain_id": "PP-002",
+      "pain_name": "Missed inbound during treatments",
+      "category": "missed_inbound",
+      "verification": "VERIFIED",
+      "autonomy": 5,
+      "current_stack": ["WhatsApp Business app", "Booksy", "Fresha", "Square Appointments"],
+      "service": "Message triage setup",
+      "method": [
+        "Add booking link to bios",
+        "Create quick replies for treatments and preparation",
+        "Label new enquiry, quoted, booked, follow-up"
+      ],
+      "evidence_note": "Channel gap verified; outcomes vary."
+    },
+    {
+      "pain_id": "PP-008",
+      "pain_name": "No-shows on staffed time",
+      "category": "no-shows",
+      "verification": "VERIFIED",
+      "autonomy": 5,
+      "current_stack": ["Booksy", "Fresha", "Square Appointments"],
+      "service": "Deposit and reminder setup",
+      "method": [
+        "Enable deposits for long appointments",
+        "Send automated reminders",
+        "Document cancellation rules"
+      ],
+      "evidence_note": "Mechanics verified; uplift varies."
+    },
+    {
+      "pain_id": "PP-038",
+      "pain_name": "Prepaid packages expire unworked",
+      "category": "silent_churn_lapse",
+      "verification": "PROPOSED",
+      "autonomy": 4,
+      "current_stack": ["Phorest", "Vagaro", "Booksy"],
+      "service": "Package and refill workflow",
+      "method": [
+        "Track balances and expiry",
+        "Send consent-based reminders",
+        "Require approval before broadcasts"
+      ],
+      "evidence_note": "Template-analysis hypothesis."
+    },
+    {
+      "pain_id": "SAFETY-PATCH-TEST",
+      "pain_name": "Patch-test and allergy records",
+      "category": "compliance_drift",
+      "verification": "PROPOSED",
+      "autonomy": 3,
+      "current_stack": ["Booksy", "Fresha", "Phorest"],
+      "service": "Safety checklist workflow",
+      "method": [
+        "Record patch-test date and result",
+        "Block relevant treatments without valid cover",
+        "Retain allergy records securely"
+      ],
+      "evidence_note": "Safety workflow; do not automate allergy judgments."
+    }
+  ],
+  "current_stack": [
+    {"tool": "Booksy", "category": "booking + marketplace", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "Fresha", "category": "booking + marketplace", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "Square Appointments", "category": "booking + POS", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "Phorest", "category": "salon management", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "Vagaro", "category": "salon management", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"}
+  ],
+  "agent_readiness": {
+    "muse_status": "US-only; no confirmed UK date; not included",
+    "chatgpt_status": "No guaranteed listing or placement",
+    "connector_requirements": [
+      "customer-owned accounts",
+      "explicit authorization",
+      "verification",
+      "supplier-paid costs"
+    ],
+    "approval_rules": [
+      "bookings",
+      "deposits",
+      "payments",
+      "outbound customer messages"
+    ]
+  }
+}

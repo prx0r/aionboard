@@ -1,0 +1,102 @@
+{
+  "vertical": "cleaners",
+  "display_name": "Domestic Cleaners",
+  "status": "pilot-pack-ready",
+  "onboarding_difficulty": {
+    "rank": 4,
+    "level": "easy",
+    "reasons": [
+      "Recurring plans are highly automatable",
+      "Reminders and payment chasing map to existing tools",
+      "Win-back has clear intervals",
+      "Pricing variation is lower than site-visit trades"
+    ]
+  },
+  "pain_mappings": [
+    {
+      "pain_id": "PP-039",
+      "pain_name": "Paused or cancelled plans never won back",
+      "category": "silent_churn_lapse",
+      "verification": "PROPOSED",
+      "autonomy": 5,
+      "current_stack": ["ZenMaid", "BookingKoala", "Cleenie", "ProCleanerUK"],
+      "service": "Win-back workflow",
+      "method": [
+        "Import authorized client list",
+        "Identify paused or lapsed plans",
+        "Send consent-based reactivation offers"
+      ],
+      "evidence_note": "Recovery volume is a hypothesis."
+    },
+    {
+      "pain_id": "PP-073",
+      "pain_name": "Missed direct debits never chased",
+      "category": "payment_cash_flow",
+      "verification": "PROPOSED",
+      "autonomy": 5,
+      "current_stack": ["GoCardless", "Stripe", "Square"],
+      "service": "Payment-reminder workflow",
+      "method": [
+        "Track failed or overdue payments",
+        "Send approved chase messages",
+        "Require approval before enforcement or write-off"
+      ],
+      "evidence_note": "Template-analysis hypothesis."
+    },
+    {
+      "pain_id": "PP-064",
+      "pain_name": "Non-weekly cadences poorly supported",
+      "category": "recurring_operations_scheduling",
+      "verification": "VERIFIED",
+      "autonomy": 4,
+      "current_stack": ["ZenMaid", "BookingKoala", "Cleenie", "ProCleanerUK"],
+      "service": "Recurring scheduling setup",
+      "method": [
+        "Configure weekly, fortnightly, and custom cadences",
+        "Handle skips without losing the plan",
+        "Confirm changes with the customer"
+      ],
+      "evidence_note": "Cadence gap verified; customer uplift unmeasured."
+    },
+    {
+      "pain_id": "PP-025",
+      "pain_name": "Travel, materials, and deep-clean extras unbilled",
+      "category": "unpriced_work_scope_creep",
+      "verification": "PROPOSED",
+      "autonomy": 3,
+      "current_stack": ["ZenMaid", "BookingKoala", "Xero / QuickBooks / Sage"],
+      "service": "Extras capture",
+      "method": [
+        "Record extras at the job",
+        "Price from approved rates",
+        "Require customer approval before billing"
+      ],
+      "evidence_note": "Template-analysis hypothesis."
+    }
+  ],
+  "current_stack": [
+    {"tool": "ZenMaid", "category": "cleaning ops", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "BookingKoala", "category": "cleaning ops", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "Cleenie", "category": "cleaning ops (UK)", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "ProCleanerUK", "category": "cleaning ops (UK flat-rate)", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "GoCardless", "category": "payments", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "Stripe", "category": "payments", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"}
+  ],
+  "agent_readiness": {
+    "muse_status": "US-only; no confirmed UK date; not included",
+    "chatgpt_status": "No guaranteed listing or placement",
+    "connector_requirements": [
+      "customer-owned accounts",
+      "explicit authorization",
+      "verification",
+      "supplier-paid costs"
+    ],
+    "approval_rules": [
+      "scheduling changes",
+      "payments",
+      "credits and refunds",
+      "outbound customer messages"
+    ]
+  }
+}

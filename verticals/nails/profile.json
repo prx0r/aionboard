@@ -1,0 +1,102 @@
+{
+  "vertical": "nails",
+  "display_name": "Nail Technicians",
+  "status": "pilot-pack-ready",
+  "onboarding_difficulty": {
+    "rank": 1,
+    "level": "easy",
+    "reasons": [
+      "Narrow repeatable services",
+      "Social DM intake maps to booking links",
+      "Deposits and reminders already exist in booking tools",
+      "Low compliance complexity versus trades"
+    ]
+  },
+  "pain_mappings": [
+    {
+      "pain_id": "PP-008",
+      "pain_name": "No-shows on staffed time",
+      "category": "no-shows",
+      "verification": "VERIFIED",
+      "autonomy": 5,
+      "current_stack": ["Booksy", "Fresha", "Square Appointments"],
+      "service": "Deposit and reminder setup",
+      "method": [
+        "Enable deposits for long appointments",
+        "Send automated reminders",
+        "Document refund and cancellation rules"
+      ],
+      "evidence_note": "Mechanics verified; customer uplift unmeasured."
+    },
+    {
+      "pain_id": "PP-002",
+      "pain_name": "Missed DMs and calls during appointments",
+      "category": "missed_inbound",
+      "verification": "VERIFIED",
+      "autonomy": 5,
+      "current_stack": ["WhatsApp Business app", "Instagram", "TikTok"],
+      "service": "Message triage setup",
+      "method": [
+        "Add booking link to bios",
+        "Create quick replies for price and availability",
+        "Label new enquiry, quoted, booked, follow-up"
+      ],
+      "evidence_note": "Channel gap verified; outcomes vary."
+    },
+    {
+      "pain_id": "PP-037",
+      "pain_name": "Lapsed regulars never win-backed",
+      "category": "silent_churn_lapse",
+      "verification": "PROPOSED",
+      "autonomy": 5,
+      "current_stack": ["Booksy", "Fresha", "Square Appointments"],
+      "service": "Rebooking workflow",
+      "method": [
+        "Track infill intervals",
+        "Send consent-based reminders",
+        "Require approval before broadcasts"
+      ],
+      "evidence_note": "Template-analysis hypothesis."
+    },
+    {
+      "pain_id": "PP-060",
+      "pain_name": "Reviews never answered or leveraged",
+      "category": "revenue_capture_pricing",
+      "verification": "PROPOSED",
+      "autonomy": 4,
+      "current_stack": ["Google Business Profile", "Facebook", "Trustpilot"],
+      "service": "Review workflow",
+      "method": [
+        "Ask immediately after service",
+        "Request service and location details",
+        "Respond to every review"
+      ],
+      "evidence_note": "Review impact varies by customer."
+    }
+  ],
+  "current_stack": [
+    {"tool": "Booksy", "category": "booking + marketplace", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "Fresha", "category": "booking + marketplace", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "Square Appointments", "category": "booking + POS", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "GlossGenius", "category": "salon management (solo)", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"},
+    {"tool": "Instagram", "category": "discovery + portfolio", "use": "integrate", "source": "vendor-docs"},
+    {"tool": "TikTok", "category": "discovery", "use": "integrate", "source": "vendor-docs"}
+  ],
+  "agent_readiness": {
+    "muse_status": "US-only; no confirmed UK date; not included",
+    "chatgpt_status": "No guaranteed listing or placement",
+    "connector_requirements": [
+      "customer-owned accounts",
+      "explicit authorization",
+      "verification",
+      "supplier-paid costs"
+    ],
+    "approval_rules": [
+      "bookings",
+      "deposits",
+      "payments",
+      "outbound customer messages"
+    ]
+  }
+}

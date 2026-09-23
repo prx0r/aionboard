@@ -1,0 +1,103 @@
+{
+  "vertical": "electrician",
+  "display_name": "Electrician",
+  "status": "pilot-pack-ready",
+  "onboarding_difficulty": {
+    "rank": 7,
+    "level": "medium",
+    "reasons": [
+      "Strong demand and clear job pipeline",
+      "Site visits and safety judgments add complexity",
+      "Pricing varies by job and property",
+      "Compliance checks required per job type"
+    ]
+  },
+  "pain_mappings": [
+    {
+      "pain_id": "PP-001",
+      "pain_name": "Missed calls while on the tools",
+      "category": "missed_inbound",
+      "verification": "template-analysis",
+      "autonomy": 5,
+      "current_stack": ["WhatsApp Business app", "Telnyx + voice agent"],
+      "service": "Missed-call recovery",
+      "method": [
+        "Keep existing number",
+        "Configure greeting and away message",
+        "Capture name, number, job, urgency",
+        "Require owner callback approval"
+      ],
+      "evidence_note": "Template-analysis hypothesis, not measured outcome."
+    },
+    {
+      "pain_id": "PP-070",
+      "pain_name": "Quotes sent, never chased",
+      "category": "quote_estimate_management",
+      "verification": "PROPOSED",
+      "autonomy": 4,
+      "current_stack": ["Tradify", "Fergus", "Jobber", "Xero / QuickBooks / Sage"],
+      "service": "Quote follow-up",
+      "method": [
+        "Draft from approved price book",
+        "Follow up at 24h, 48h, 7 days",
+        "Require owner approval before sending"
+      ],
+      "evidence_note": "Close-rate uplift is a target, not evidence."
+    },
+    {
+      "pain_id": "PP-030",
+      "pain_name": "Cert coverage gaps discovered at the worst moment",
+      "category": "compliance_drift",
+      "verification": "PROPOSED",
+      "autonomy": 4,
+      "current_stack": ["Powered Now", "Xero / QuickBooks / Sage"],
+      "service": "Compliance tracker",
+      "method": [
+        "List certifications and expiry dates",
+        "Remind at 90d, 30d, 7d",
+        "Block notifiable work without valid cover"
+      ],
+      "evidence_note": "Compliance rules vary by job; verify per customer."
+    },
+    {
+      "pain_id": "PP-019",
+      "pain_name": "Extras done on a nod, never billed",
+      "category": "unpriced_work_scope_creep",
+      "verification": "PROPOSED",
+      "autonomy": 3,
+      "current_stack": ["Tradify", "Fergus", "Xero / QuickBooks / Sage"],
+      "service": "Variation and extras capture",
+      "method": [
+        "Record extras on site",
+        "Price from approved rates",
+        "Require customer approval before work continues"
+      ],
+      "evidence_note": "Template-analysis hypothesis."
+    }
+  ],
+  "current_stack": [
+    {"tool": "Tradify", "category": "job management (UK/AU)", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "Fergus", "category": "job management (UK)", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "Jobber", "category": "field service (generalist)", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "Powered Now", "category": "compliance (UK)", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "Xero / QuickBooks / Sage", "category": "accounting + tax", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"},
+    {"tool": "Telnyx + voice agent", "category": "comms", "use": "separate-deliverable", "source": "cgraphuk"}
+  ],
+  "agent_readiness": {
+    "muse_status": "US-only; no confirmed UK date; not included",
+    "chatgpt_status": "No guaranteed listing or placement",
+    "connector_requirements": [
+      "customer-owned accounts",
+      "explicit authorization",
+      "verification",
+      "supplier-paid costs"
+    ],
+    "approval_rules": [
+      "quotes",
+      "bookings",
+      "payments",
+      "outbound customer messages"
+    ]
+  }
+}

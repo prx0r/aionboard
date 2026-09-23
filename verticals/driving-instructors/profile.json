@@ -1,0 +1,69 @@
+{
+  "vertical": "driving-instructors",
+  "display_name": "Driving Instructors",
+  "status": "research-stub",
+  "onboarding_difficulty": {
+    "rank": 8,
+    "level": "medium",
+    "reasons": [
+      "Scheduling and waiting lists are automatable",
+      "Progress administration is repeatable",
+      "Regulatory, insurance, and safeguarding checks vary",
+      "No dedicated upstream teardown yet"
+    ]
+  },
+  "pain_mappings": [
+    {
+      "pain_id": "DISCOVERY-SCHEDULING",
+      "pain_name": "Lesson scheduling competes with cancellations and waiting lists",
+      "category": "recurring_operations_scheduling",
+      "verification": "PROPOSED",
+      "autonomy": 3,
+      "current_stack": ["Google Calendar", "WhatsApp Business app"],
+      "service": "Lesson and waiting-list workflow",
+      "method": [
+        "Track availability and waiting list explicitly",
+        "Offer cancellations in order",
+        "Require approval before booking changes"
+      ],
+      "evidence_note": "Discovery hypothesis; no dedicated teardown."
+    },
+    {
+      "pain_id": "DISCOVERY-PROGRESS",
+      "pain_name": "Progress records live in notebooks, messages, or memory",
+      "category": "data_visibility_gaps",
+      "verification": "PROPOSED",
+      "autonomy": 3,
+      "current_stack": ["Google Calendar", "Customer-owned notes"],
+      "service": "Progress-record organization",
+      "method": [
+        "Record lessons, skills, and next steps",
+        "Retain records securely",
+        "Share only with explicit permission"
+      ],
+      "evidence_note": "Discovery hypothesis; no dedicated teardown."
+    }
+  ],
+  "current_stack": [
+    {"tool": "Customer-owned scheduling tool", "category": "to be discovered", "use": "import-from", "source": "customer"},
+    {"tool": "Google Calendar", "category": "scheduling", "use": "integrate", "source": "customer-owned"},
+    {"tool": "Customer-owned payments", "category": "payments", "use": "integrate", "source": "customer-owned"},
+    {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"}
+  ],
+  "agent_readiness": {
+    "muse_status": "US-only; no confirmed UK date; not included",
+    "chatgpt_status": "No guaranteed listing or placement",
+    "connector_requirements": [
+      "customer-owned accounts",
+      "explicit authorization",
+      "verification",
+      "supplier-paid costs"
+    ],
+    "approval_rules": [
+      "scheduling changes",
+      "payments",
+      "progress sharing",
+      "outbound customer messages"
+    ]
+  }
+}

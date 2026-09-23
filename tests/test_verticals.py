@@ -8,6 +8,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 VERTICALS_ROOT = REPO_ROOT / "verticals"
 REQUIRED_FILES = (
     "manifest.json",
+    "profile.json",
     "README.md",
     "PAINS.md",
     "STACK.md",
@@ -59,6 +60,25 @@ class VerticalPackTests(unittest.TestCase):
                         (vertical / filename).is_file(),
                         msg=f"{vertical.name} is missing {filename}",
                     )
+
+    def test_profiles_are_structured(self):
+        for vertical in vertical_directories():
+            with self.subTest(vertical=vertical.name):
+                profile = json.loads((vertical / "profile.json").read_text(encoding="utf-8"))
+                self.assertEqual(profile["vertical"], vertical.name)
+                self.assertIn(profile["status"], {"pilot-pack-ready", "research-stub"})
+                self.assertIn("rank", profile["onboarding_difficulty"])
+                self.assertIn(profile["onboarding_difficulty"]["level"], {"easy", "easy-medium", "medium"})
+                self.assertTrue(profile["pain_mappings"])
+                self.assertTrue(profile["current_stack"])
+                for mapping in profile["pain_mappings"]:
+                    for key in ("pain_id", "pain_name", "category", "verification", "autonomy", "current_stack", "service", "method"):
+                        self.assertIn(key, mapping)
+                readiness = profile["agent_readiness"]
+                self.assertIn("muse_status", readiness)
+                self.assertIn("chatgpt_status", readiness)
+                self.assertIn("connector_requirements", readiness)
+                self.assertIn("approval_rules", readiness)
 
     def test_vertical_docs_make_no_guarantees(self):
         for vertical in vertical_directories():

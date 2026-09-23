@@ -1,0 +1,71 @@
+{
+  "vertical": "weddings",
+  "display_name": "Wedding Photographers and Makeup Artists",
+  "status": "research-stub",
+  "onboarding_difficulty": {
+    "rank": 9,
+    "level": "medium",
+    "reasons": [
+      "Enquiry qualification and availability are automatable",
+      "Proposals, deposits, and contracts need careful approval",
+      "Makeup can reuse beauty research; photography cannot",
+      "No dedicated wedding-photography teardown yet"
+    ]
+  },
+  "pain_mappings": [
+    {
+      "pain_id": "DISCOVERY-QUALIFICATION",
+      "pain_name": "Incomplete dates, venues, packages, and budgets",
+      "category": "data_visibility_gaps",
+      "verification": "PROPOSED",
+      "autonomy": 3,
+      "current_stack": ["WhatsApp Business app", "Instagram", "Google Calendar"],
+      "service": "Enquiry qualification workflow",
+      "method": [
+        "Capture date, venue, party size, package, and budget",
+        "Check availability before quoting",
+        "Require approval before proposals"
+      ],
+      "evidence_note": "Discovery hypothesis; no dedicated teardown."
+    },
+    {
+      "pain_id": "DISCOVERY-PROPOSAL",
+      "pain_name": "Proposals, deposits, contracts, and payments need careful approval",
+      "category": "quote_estimate_management",
+      "verification": "PROPOSED",
+      "autonomy": 3,
+      "current_stack": ["Stripe / Square", "Customer-owned contracts"],
+      "service": "Proposal, deposit, and contract workflow",
+      "method": [
+        "Draft from approved packages and rates",
+        "Require owner and customer signatures",
+        "Track deposits and balances explicitly"
+      ],
+      "evidence_note": "Discovery hypothesis; no dedicated teardown."
+    }
+  ],
+  "current_stack": [
+    {"tool": "Booksy", "category": "booking + marketplace", "use": "makeup-only", "source": "cgraphuk"},
+    {"tool": "Fresha", "category": "booking + marketplace", "use": "makeup-only", "source": "cgraphuk"},
+    {"tool": "Square Appointments", "category": "booking + POS", "use": "makeup-only", "source": "cgraphuk"},
+    {"tool": "Photography tooling", "category": "to be discovered", "use": "import-from", "source": "customer"},
+    {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"}
+  ],
+  "agent_readiness": {
+    "muse_status": "US-only; no confirmed UK date; not included",
+    "chatgpt_status": "No guaranteed listing or placement",
+    "connector_requirements": [
+      "customer-owned accounts",
+      "explicit authorization",
+      "verification",
+      "supplier-paid costs"
+    ],
+    "approval_rules": [
+      "proposals",
+      "deposits",
+      "contracts",
+      "payments",
+      "outbound customer messages"
+    ]
+  }
+}

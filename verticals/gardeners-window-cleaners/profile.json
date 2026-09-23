@@ -1,0 +1,100 @@
+{
+  "vertical": "gardeners-window-cleaners",
+  "display_name": "Gardeners and Window Cleaners",
+  "status": "pilot-pack-ready",
+  "onboarding_difficulty": {
+    "rank": 6,
+    "level": "medium",
+    "reasons": [
+      "Round ledgers and debt chasing are highly automatable",
+      "Route density compounds with good records",
+      "Gardening adds weather, access, waste, and seasonal variability"
+    ]
+  },
+  "pain_mappings": [
+    {
+      "pain_id": "PP-024",
+      "pain_name": "Unbilled cleans, verbal credits, unchased debt",
+      "category": "unpriced_work_scope_creep",
+      "verification": "PROPOSED",
+      "autonomy": 5,
+      "current_stack": ["Cleaner Planner", "Work Planner", "Manage My Round", "GoCardless"],
+      "service": "Round ledger setup",
+      "method": [
+        "Digitize round and visit history",
+        "Record skips, credits, and debt explicitly",
+        "Require approval before write-offs"
+      ],
+      "evidence_note": "Template-analysis hypothesis."
+    },
+    {
+      "pain_id": "PP-066",
+      "pain_name": "Paper round book is a single point of failure",
+      "category": "recurring_operations_scheduling",
+      "verification": "PROPOSED",
+      "autonomy": 4,
+      "current_stack": ["Cleaner Planner", "Work Planner", "Manage My Round"],
+      "service": "Round digitization",
+      "method": [
+        "Import round book with customer authorization",
+        "Back up customer and payment records",
+        "Verify route order before use"
+      ],
+      "evidence_note": "Template-analysis hypothesis."
+    },
+    {
+      "pain_id": "PP-073",
+      "pain_name": "Missed direct debits never chased",
+      "category": "payment_cash_flow",
+      "verification": "PROPOSED",
+      "autonomy": 5,
+      "current_stack": ["GoCardless", "Stripe"],
+      "service": "Payment-reminder workflow",
+      "method": [
+        "Track failed or overdue payments",
+        "Send approved chase messages",
+        "Require approval before enforcement"
+      ],
+      "evidence_note": "Template-analysis hypothesis."
+    },
+    {
+      "pain_id": "PP-061",
+      "pain_name": "First cleans priced as standard cleans",
+      "category": "revenue_capture_pricing",
+      "verification": "PROPOSED",
+      "autonomy": 3,
+      "current_stack": ["Cleaner Planner", "Work Planner", "Xero / QuickBooks / Sage"],
+      "service": "First-visit pricing workflow",
+      "method": [
+        "Price first cleans separately",
+        "Require customer approval",
+        "Record agreed scope in writing"
+      ],
+      "evidence_note": "Template-analysis hypothesis."
+    }
+  ],
+  "current_stack": [
+    {"tool": "Cleaner Planner", "category": "round ops", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "Work Planner", "category": "round ops", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "Manage My Round", "category": "round ops", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "Squeegee / George / Aworka", "category": "round ops (legacy)", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "GoCardless", "category": "payments", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"}
+  ],
+  "agent_readiness": {
+    "muse_status": "US-only; no confirmed UK date; not included",
+    "chatgpt_status": "No guaranteed listing or placement",
+    "connector_requirements": [
+      "customer-owned accounts",
+      "explicit authorization",
+      "verification",
+      "supplier-paid costs"
+    ],
+    "approval_rules": [
+      "scheduling changes",
+      "payments",
+      "credits and refunds",
+      "outbound customer messages"
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "vertical": "beauty",
+  "display_name": "Beauty",
+  "status": "pilot-pack-ready",
+  "onboarding_difficulty": {
+    "rank": 2,
+    "level": "easy",
+    "reasons": [
+      "Repeatable appointment services",
+      "Existing booking and deposit tooling",
+      "Message-first enquiries",
+      "Portfolio-led discovery"
+    ]
+  },
+  "pain_mappings": [
+    {
+      "pain_id": "PP-002",
+      "pain_name": "Calls go to voicemail during treatments",
+      "category": "missed_inbound",
+      "verification": "VERIFIED",
+      "autonomy": 5,
+      "current_stack": ["WhatsApp Business app", "Booksy", "Fresha", "Square Appointments"],
+      "service": "Message triage and reception workflow",
+      "method": [
+        "Complete business profile",
+        "Create quick replies for price, availability, deposits",
+        "Label new enquiry, quoted, booked, follow-up",
+        "Require approval before booking or payment"
+      ],
+      "evidence_note": "Platform gap is verified; customer outcomes are not."
+    },
+    {
+      "pain_id": "PP-008",
+      "pain_name": "No-shows on staffed rooms",
+      "category": "no-shows",
+      "verification": "VERIFIED",
+      "autonomy": 5,
+      "current_stack": ["Booksy", "Fresha", "Square Appointments"],
+      "service": "No-show protection",
+      "method": [
+        "Enable deposits or card capture",
+        "Send automated reminders",
+        "Enforce cancellation policy with approval"
+      ],
+      "evidence_note": "Deposit and reminder mechanics verified; uplift varies by customer."
+    },
+    {
+      "pain_id": "PP-038",
+      "pain_name": "Prepaid packages expire unworked",
+      "category": "silent_churn_lapse",
+      "verification": "PROPOSED",
+      "autonomy": 4,
+      "current_stack": ["Phorest", "Vagaro", "Booksy", "Fresha"],
+      "service": "Package and rebooking workflow",
+      "method": [
+        "Import authorized client and package data",
+        "Track expiry and intervals",
+        "Send consent-based reminders"
+      ],
+      "evidence_note": "Template-analysis hypothesis."
+    },
+    {
+      "pain_id": "PP-060",
+      "pain_name": "Reviews never answered or leveraged",
+      "category": "revenue_capture_pricing",
+      "verification": "PROPOSED",
+      "autonomy": 4,
+      "current_stack": ["Google Business Profile", "Facebook", "Trustpilot"],
+      "service": "Review workflow",
+      "method": [
+        "Ask immediately after service",
+        "Request service and location details",
+        "Respond to every review"
+      ],
+      "evidence_note": "Review impact varies by customer."
+    }
+  ],
+  "current_stack": [
+    {"tool": "Booksy", "category": "booking + marketplace", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "Fresha", "category": "booking + marketplace", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "Square Appointments", "category": "booking + POS", "use": "integrate", "source": "cgraphuk"},
+    {"tool": "Phorest", "category": "salon management", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "Vagaro", "category": "salon management", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "GlossGenius", "category": "salon management (solo)", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "Mangomint", "category": "salon management", "use": "import-from", "source": "cgraphuk"},
+    {"tool": "WhatsApp Business app", "category": "comms", "use": "integrate", "source": "vendor-docs"}
+  ],
+  "agent_readiness": {
+    "muse_status": "US-only; no confirmed UK date; not included",
+    "chatgpt_status": "No guaranteed listing or placement",
+    "connector_requirements": [
+      "customer-owned accounts",
+      "explicit authorization",
+      "verification",
+      "supplier-paid costs"
+    ],
+    "approval_rules": [
+      "bookings",
+      "deposits",
+      "payments",
+      "outbound customer messages"
+    ]
+  }
+}
