@@ -497,11 +497,12 @@ Ten todos, worked autonomously. Focus: close validation gaps the peer reviews fl
 Three agents now share this repo. AGENTS.md predated two of them. Preparing a clean handover.
 
 ### What was done
-- AGENTS.md rewritten: full module map (assistant/, redteam/, security_audit/, verify.py, dashboard.py), honest state table, recent three-agent history with the merge lesson, conventions updated to 161 tests.
-- README test count corrected to 161.
+- AGENTS.md rewritten: full module map, honest state table, recent three-agent history with the merge lesson.
+- Corrected after the security suite moved to prx0r/aocsec: redteam/security_audit references removed, counts fixed to 147.
+- README test count corrected to 147.
 
 ### Current state
-- 161 tests pass.
+- 147 tests pass.
 - Working tree clean, remote in sync.
 - No completed paying installation is recorded.
 

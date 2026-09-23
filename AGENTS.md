@@ -31,8 +31,6 @@ aionboard/            Python package (stdlib + cryptography only)
   assistant/          Per-target chatbot: profiles, legislation lookup,
                       powuk bridge, agent factory, approvals (separate agent's work)
   dashboard.py        Live operator dashboard, powops pattern (separate agent's work)
-  redteam/            Attack suite: 8 classes, grader, runner (security agent's work)
-  security_audit/     Domain checks + report builder (security agent's work)
 
 verticals/            11 packs: manifest + profile + 7 docs each
 regulations/          36-rule combined registry (registry.json + README)
@@ -40,7 +38,7 @@ mcp/                  Tool contracts (tools.json) — designed, not deployed
 connector/            Muse submission pack — draft, not submitted
 site/                 Generated static pages (index, chat, dashboard, knowledge)
 docs/                 MUSE_SECURITY.md (security agent's channel design)
-tests/                161 tests, all must pass
+tests/                147 tests, all must pass
 ```
 
 ## State of the world (honest)
@@ -50,7 +48,7 @@ tests/                161 tests, all must pass
 | CRM, installs, onboarding, handover, manual, support, fleet report | Working code, tested |
 | Approvals, isolation, secret scan, audit helpers, rate limiter | Working code, tested — **not deployed as a gateway** |
 | Encrypted backups with restore verify | Working code, tested |
-| Redteam suite + security audits | Working code, tested (security agent) |
+| Redteam suite + security audits | **Moved to `prx0r/aocsec`** — no longer in this repo |
 | Per-target chatbot + powuk bridge + live dashboard | Working code, tested (assistant agent) |
 | Booking-link verifier, prospect import, support metrics | Working code, tested |
 | MCP tool contracts | Designed (`mcp/tools.json`), **no server running** |
@@ -81,7 +79,7 @@ Lesson from the merge: when multiple agents push, rebase carefully and run the F
 
 ## Conventions (non-negotiable)
 
-1. **Tests must pass before any commit.** `python3 -m unittest discover -s tests -v`. Currently 161.
+1. **Tests must pass before any commit.** `python3 -m unittest discover -s tests -v`. Currently 147.
 2. **No secrets in the tree.** Run `grep -rE "sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}" --exclude-dir=.git .` before pushing. Test fixtures use obviously-fake values.
 3. **Docs stay honest.** Hypotheses marked as hypotheses. No invented case studies, no guaranteed outcomes, no live prices outside `OFFER.md`. Failing tests beat comforting docs.
 4. **Stdlib + cryptography only.** No new dependencies without discussion.
