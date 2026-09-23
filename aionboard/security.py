@@ -119,6 +119,92 @@ def stable_client_fingerprint(client_id: str, created_at: str) -> str:
     return hashlib.sha256(payload).hexdigest()
 
 
+def redact_args(arguments: Mapping[str, Any] | None) -> dict:
+    """Redact tool arguments for audit logging.
+
+    Returns argument shapes (keys, types, lengths) plus a SHA-256 hash of
+    the canonical values — never the values themselves. Audit logs must
+    prove what happened without becoming a second copy of customer data.
+    """
+    redacted: dict[str, Any] = {}
+    canonical = json.dumps(arguments or {}, sort_keys=True, separators=(",", ":"), default=str)
+    for key, value in (arguments or {}).items():
+        if isinstance(value, str):
+            redacted[key] = {"type": "str", "length": len(value)}
+        elif isinstance(value, (int, float)):
+            redacted[key] = {"type": "number"}
+        elif isinstance(value, bool):
+            redacted[key] = {"type": "bool"}
+        elif value is None:
+            redacted[key] = {"type": "null"}
+        else:
+            redacted[key] = {"type": type(value).__name__}
+    redacted["_hash"] = hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+    return redacted
+
+
+def audit_tool_call(
+    connection: sqlite3.Connection,
+    *,
+    identity: str,
+    tool_name: str,
+    arguments: Mapping[str, Any] | None,
+    scopes: list[str],
+    result: str,
+    latency_ms: int = 0,
+) -> int:
+    """Write a redacted audit entry. Values never reach the log."""
+    if not identity.strip() or not tool_name.strip():
+        raise ValueError("identity and tool_name are required")
+    if result not in {"success", "denied_auth", "denied_rate", "denied_approval", "error"}:
+        raise ValueError(f"unsupported result: {result}")
+    cursor = connection.execute(
+        "INSERT INTO audit_log (at, business_id, action, detail) VALUES (?, ?, ?, ?)",
+        (
+            utcnow(),
+            identity.strip(),
+            f"tool:{tool_name.strip()}",
+            json.dumps(
+                {
+                    "arguments": redact_args(arguments),
+                    "scopes": sorted(scopes),
+                    "result": result,
+                    "latency_ms": latency_ms,
+                },
+                sort_keys=True,
+            ),
+        ),
+    )
+    connection.commit()
+    return int(cursor.lastrowid)
+
+
+class RateLimiter:
+    """Per-client, per-tool rate limiter. A runaway agent can't fire unbounded calls."""
+
+    def __init__(self, max_calls: int, window_seconds: int = 60) -> None:
+        if max_calls <= 0 or window_seconds <= 0:
+            raise ValueError("max_calls and window_seconds must be positive")
+        self.max_calls = max_calls
+        self.window_seconds = window_seconds
+        self._hits: dict[tuple[str, str], list[float]] = {}
+
+    def check(self, client_id: str, tool_name: str, now: float | None = None) -> bool:
+        """Return True if the call is allowed, False if rate-limited."""
+        import time
+
+        timestamp = now if now is not None else time.time()
+        key = (client_id.strip(), tool_name.strip())
+        cutoff = timestamp - self.window_seconds
+        hits = [hit for hit in self._hits.get(key, []) if hit > cutoff]
+        if len(hits) >= self.max_calls:
+            self._hits[key] = hits
+            return False
+        hits.append(timestamp)
+        self._hits[key] = hits
+        return True
+
+
 def init_approval_tables(connection: sqlite3.Connection) -> None:
     connection.executescript(
         """

@@ -62,12 +62,19 @@ Every write returns:
 
 ## Security rules
 
-1. OAuth 2.1 with scoped tokens. No broad API keys.
-2. Tool-level RBAC at the gateway, not per server.
-3. Audit logging at the tool-call level: identity, parameters, response, approval ID.
-4. Customer data isolation: one client's credentials and storage paths must never be reachable from another client's session.
-5. Secrets never enter prompts, handovers, or logs. `scan_text()` rejects them.
-6. Failed verification can never be recorded as complete.
+1. OAuth 2.1 with PKCE and audience-bound tokens (RFC 8707). Reject tokens issued for other resources. No broad API keys, no static keys.
+2. Tool-level RBAC at the gateway, not per server. Per-tool scopes; a read token can never invoke writes.
+3. Short-lived tokens (15–60 min), rotation, tested revocation path.
+4. Rate limits per client and per tool (`RateLimiter`).
+5. Audit every call including denials: identity, tool, argument hash (never values), scopes, result, latency (`audit_tool_call()`).
+6. Never log tokens, headers, secrets, or full payloads. Redact at the source (`redact_args()`), not downstream.
+7. Customer data isolation: one client's credentials and storage paths must never be reachable from another client's session.
+8. Secrets never enter prompts, handovers, logs. `scan_text()` rejects them.
+9. Failed verification can never be recorded as complete.
+10. Approval tiers: auto-approve reads → log-and-proceed queries → require-approval writes → block destructive.
+11. HTTPS only. Prompt-injection defense in layers (scopes + rate limits + confirmations + audit), never prompt wording alone.
+
+Full design: `SECURITY_ARCHITECTURE.md`.
 
 ## What to build
 

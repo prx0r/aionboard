@@ -442,6 +442,28 @@ Cloned prx0r/aoc (TikTok slideshow factory with per-vertical segments). The wedg
 
 ---
 
+## Session 2026-09-23 — Never-touch-money security
+
+### Context
+The wedge is the vault, not the assistant. Research converged on the industry pattern: tokenization, scoped mandates, and audit-everything.
+
+### What was done
+- `SECURITY_ARCHITECTURE.md`: money never touches us (Stripe tokenization, SAQ A), scoped mandates, MCP hardening checklist, audit rules, deliberate non-goals.
+- `security.py`: `redact_args()` (shapes + hash, never values), `audit_tool_call()` (denials logged louder than successes), `RateLimiter` (per-client, per-tool, sliding window).
+- `MCP.md`: 11-rule hardening list aligned with current MCP guidance.
+- 11 new security tests.
+
+### Current state
+- 119 tests pass.
+- No completed paying installation is recorded.
+
+### Next steps
+1. Validate one manual electrician installation.
+2. Validate one £20 nail-tech quickstart and measure support minutes.
+3. Deploy the MCP gateway with these controls switched on, then test it.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:
