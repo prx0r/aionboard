@@ -1,0 +1,58 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Misha & Eti Beauty Studio",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "118 High St",
+    "addressLocality": "Manchester",
+    "postalCode": "M4 1HQ"
+  },
+  "telephone": "0161 393 3388",
+  "email": "Mishaetibeauty@gmail.com",
+  "url": "http://mishaetibeauty.co.uk/",
+  "openingHours": "Tue-Sat 9:00-18:00",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "273"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Beauty Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Manicure"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pedicure"
+      },
+      {
+        "@type": "Offer",
+        "name": "Brow Lamination"
+      },
+      {
+        "@type": "Offer",
+        "name": "Lash Extensions"
+      },
+      {
+        "@type": "Offer",
+        "name": "Facial"
+      },
+      {
+        "@type": "Offer",
+        "name": "Waxing"
+      },
+      {
+        "@type": "Offer",
+        "name": "Tinting"
+      },
+      {
+        "@type": "Offer",
+        "name": "Dermaplaning"
+      }
+    ]
+  }
+}
