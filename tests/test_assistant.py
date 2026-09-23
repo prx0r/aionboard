@@ -109,14 +109,23 @@ class TestPowukBridge(unittest.TestCase):
 
     def test_opportunities_for_electrician(self):
         with tempfile.TemporaryDirectory() as tmp:
-            import aionboard.assistant.powuk_bridge as bridge
+            opps = opportunities_for_target(_profile(), base=self._powuk(tmp))
+            self.assertTrue(any("extension" in o["title"].lower() for o in opps))
+
+    def test_powuk_base_override_respected(self):
+        # Regression: base must resolve at call time, never freeze at def time.
+        import aionboard.assistant.powuk_bridge as bridge
+
+        with tempfile.TemporaryDirectory() as tmp:
+            fixture = self._powuk(tmp)
             orig = bridge.POWUK_BASE
-            bridge.POWUK_BASE = self._powuk(tmp)
+            bridge.POWUK_BASE = fixture
             try:
-                opps = opportunities_for_target(_profile())
+                sigs = bridge.load_powuk_signals()
             finally:
                 bridge.POWUK_BASE = orig
-            self.assertTrue(any("extension" in o["title"].lower() for o in opps))
+            self.assertEqual(len(sigs), 2)
+            self.assertTrue(all(s["_observed_file"].startswith(str(fixture)) for s in sigs))
 
     def test_no_profile_no_opps(self):
         opps = opportunities_for_target(TargetProfile(

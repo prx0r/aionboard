@@ -38,14 +38,19 @@ def _latest_jsonl(source: str, base: Path = POWUK_BASE) -> Path | None:
 def load_powuk_signals(
     sources: tuple[str, ...] = ("planning_apps", "contracts_finder"),
     limit_per_source: int = 500,
-    base: Path = POWUK_BASE,
+    base: Path | None = None,
 ) -> list[dict]:
     """Load recent records from powuk sources as opportunity dicts.
 
     Each dict carries title/description/summary plus provenance
     (_source, _observed_file). Empty list when powuk has no data —
     callers must handle absence, never invent signals.
+
+    NOTE: base defaults to None (resolved to POWUK_BASE at call time),
+    never to POWUK_BASE directly — a def-time default would freeze the
+    path and silently ignore test fixtures and env overrides.
     """
+    base = base or POWUK_BASE
     out: list[dict] = []
     for source in sources:
         path = _latest_jsonl(source, base)
@@ -78,11 +83,12 @@ def opportunities_for_target(
     profile,
     limit_per_source: int = 500,
     top_n: int = 5,
+    base: Path | None = None,
 ) -> list[dict]:
     """Score powuk signals for a target profile. Highest first."""
     from ..opportunities import match_for_business
 
-    signals = load_powuk_signals(limit_per_source=limit_per_source)
+    signals = load_powuk_signals(limit_per_source=limit_per_source, base=base)
     if not signals or not profile.vertical or not profile.postcode:
         return []
     matched = match_for_business(
