@@ -1,0 +1,8 @@
+city,businessName,phone,address,postcode,website,rating,reviewCount,source
+Manchester,Beauty and Bubbles,+44 161 228 3375,"47 Dale St, Manchester M1 2HF, United Kingdom",,https://www.beautyandbubbles.co.uk/,4.7,1413,apify
+Manchester,Deluxe Beauty Lounge Manchester | Beauty Salon,+44 7481 250920,"24 Blackfriars St, Salford M3 5BQ, United Kingdom",,https://deluxebeautylounge.co.uk/,4.8,44,apify
+Manchester,Cut & Glow hair and beauty,+44 7348 131852,"Market, Manchester Arndale, 49 Market street,Indide, Manchester M4 3AH, United Kingdom",,,5,96,apify
+Manchester,MS Beauty Salon,+44 7903 916231,"65 Peter St, Manchester M2 5PB, United Kingdom",,https://msbeautysalon.uk/,5,35,apify
+Manchester,Manchester Beauty,+44 7554 456907,"21 Saddlewood Ave, Manchester M19 1QW, United Kingdom",,,4.8,43,apify
+Manchester,GlamAura Hair & Beauty Salon,+44 7407 742227,"Ste 9 - 1st Floor, The Point Building, 173 175 Cheetham Hill Rd, Cheetham Hill, Manchester M8 8LG, United Kingdom",,http://www.glam-aura.co.uk/,5,613,apify
+Manchester,Nataya Beauty,+44 161 390 0121,"First Floor, Pleer House, 1 Fennel St, Manchester M4 3DU, United Kingdom",,https://natayabeauty.co.uk/,4.8,113,apify

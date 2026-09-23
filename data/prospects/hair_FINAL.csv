@@ -1,0 +1,11 @@
+city,businessName,phone,address,postcode,website,rating,reviewCount,source
+Manchester,LoA Tokyo Manchester,+44 7778 432650,"38 Spear St, Manchester M1 1AS, United Kingdom",,,4.9,165,apify
+Manchester,Melissa Timperley Hair Salon,+44 161 834 5945,"City Centre, 67 Tib St, Manchester M4 1LS, United Kingdom",,http://www.melissa-salons.com/?utm_source=gmb&utm_medium=Organic&utm_campaign=gmb%20traffic,4.9,668,apify
+Manchester,Manchester Curly Hairdresser : Tori Styless,+44 7479 926079,"Unit 7, 8 King St, Manchester M2 4LQ, United Kingdom",,https://toristyless.as.me/,5,10,apify
+Manchester,Rush Hair Manchester,+44 161 241 7618,"69 Deansgate, Manchester M3 2BW, United Kingdom",,https://www.rush.co.uk/salons/manchester,4.3,604,apify
+Manchester,The Studio,+44 161 236 4182,"10 Stevenson Square, Manchester M1 1FB, United Kingdom",,http://www.thestudiomanchester.co.uk/,5,211,apify
+Manchester,HAIR,+44 7930 612668,"63a Faulkner St, Manchester M1 4FF, United Kingdom",,,4.6,110,apify
+Manchester,RCNQ,+44 161 222 0200,"16 Whittle St, Manchester M4 1LT, United Kingdom",,http://www.rcnq.co.uk/,4.8,761,apify
+Manchester,Shade Hair Mcr,+44 7417 547070,"86 Princess St, Manchester M1 6NG, United Kingdom",,http://www.shademcr.com/,4.9,135,apify
+Manchester,Vox Hairdressing,+44 161 637 4077,"City Centre, 50 Port St, Manchester M1 2EQ, United Kingdom",,http://www.voxhairdressing.com/,4.9,707,apify
+Manchester,Love Is In The Hair by Aggela - Ancoats,+44 161 526 1474,"22 Swan St, Manchester M4 5JQ, United Kingdom",,https://hairbyaggela.co.uk/,4.9,174,apify

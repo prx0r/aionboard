@@ -1,0 +1,10 @@
+city,businessName,phone,address,postcode,website,rating,reviewCount,source
+Manchester,Vulpix Car Detailing Manchester,07999 716916,"Unit 1 Lower Wharf Street, ASHTON-UNDER-LYNE OL6 7PE",,,5,266,apify
+Manchester,Fresh Car Valeting Manchester,,"4 Whitworth St, Piccadilly, Manchester M1 3BR, United Kingdom",,https://www.freshcar.co.uk/england-locations/north-west/car-valeting-manchester/,4.9,411,apify
+Manchester,Lukas Car Detailing Manchester,,"Unit 8A Reliance St, Manchester M40 3AG, United Kingdom",,https://www.lukascardetailing.co.uk/,5,57,apify
+Manchester,M14 Valeters,+44 7440 151765,"Printworks Ln, Manchester M19 3HS, United Kingdom",,https://www.m14valeters.co.uk/,5,98,apify
+Manchester,H6 Car Studio,,"137 Fairfield St, Manchester M12 6FJ, United Kingdom",,https://h6carstudio.com/,4.6,201,apify
+Manchester,Central Auto Clean EST 1962,+44 161 273 1906,"351 Stockport Rd, Longsight, Manchester M13 0LF, United Kingdom",,https://centralautoclean.co.uk/,4.8,817,apify
+Manchester,ARC ELITE DETAILING,+44 7984 499931,"universal square, Devonshire St N, Manchester M12 6JH, United Kingdom",,,5,8,apify
+Manchester,Manchester Car Spa,+44 7547 332227,"Parrs Wood Rd, Manchester M20 5NH, United Kingdom",,https://www.facebook.com/manchestercarspa,5,2,apify
+Manchester,2 GLOSSY VALETS AND DETAILING,+44 7958 384862,"6 Owen St., Manchester M15 4TQ, United Kingdom",,https://my2glossy.com/,4.8,19,apify

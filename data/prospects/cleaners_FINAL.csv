@@ -1,0 +1,11 @@
+city,businessName,phone,address,postcode,website,rating,reviewCount,source
+Manchester,Cleaner in Manchester (0161) Ltd,+44 161 710 4789,"St James Tower, 7 Charlotte St, Manchester M1 4DZ, United Kingdom",,https://0161cleanerinmanchester.co.uk/,4.9,29,apify
+Manchester,Cleaners With Pride,+44 7840 017649,"23 Pattishall Cl, Manchester M4 7DU, United Kingdom",,https://www.cleanerswithpride.co.uk/,4.9,804,apify
+Manchester,"The 3D Laundry & Dry Cleaning Services - Laundry Services Manchester, free pick up and 24-hour delivery.book online",+44 7553 960088,"78 Stockport Rd, Ardwick, Manchester M12 6AL, United Kingdom",,https://3dlaundry.co.uk/,4.7,53,apify
+Manchester,Frontline Cleaners Manchester.,+44 7513 442399,"Bartle House, 9 Oxford Ct, Manchester M2 3WQ, United Kingdom",,http://frontlineexpress.co.uk/,4.8,51,apify
+Manchester,Manchester Dry Cleaners,+44 161 832 5863,"24 Red Bank, Cheetham Hill, Manchester M4 4HF, United Kingdom",,http://www.manchester-dry-cleaners.co.uk/,4.7,98,apify
+Manchester,Manchester Cleaner,+44 161 823 0200,"58 Oldham Rd, Ancoats, Manchester M4 5EE, United Kingdom",,https://www.manchestercleaner.co.uk/,5,2,apify
+Manchester,Village Dry Cleaners Limited,+44 161 860 4451,"38 Manchester Rd, Chorlton-cum-Hardy, Manchester M21 9PH, United Kingdom",,http://www.villagedrycleaners.com/,4.6,194,apify
+Manchester,Atlas Dry cleaning laundrette and tailoring services Manchester,+44 161 256 4545,"10B Wilmslow Rd, Manchester M14 5TP, United Kingdom",,,4.2,199,apify
+Manchester,Morio Cleaners Manchester Ltd,+44 7380 736728,"31 Thurlwood Ave, Manchester M20 1DZ, United Kingdom",,,4.8,6,apify
+Manchester,Manchester House Cleaning Services,+44 161 676 2888,"61 Mosley St, Manchester M2 3HZ, United Kingdom",,https://www.manchesterhousecleaningservices.co.uk/,4.9,201,apify

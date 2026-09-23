@@ -1,0 +1,11 @@
+city,businessName,phone,address,postcode,website,rating,reviewCount,source
+Manchester,Astra Driving School Manchester,+44 7758 837589,"11 Bowling Green Ln., Longsight, Manchester M12 5FZ, United Kingdom",,https://astradrivingschool.com/,4.9,315,apify
+Manchester,Suja Driving School Manchester - Intensive Driving Lessons & Driving Crash Course Manchester,+44 333 322 2233,"Peter House, Oxford St, Manchester M1 5AE, United Kingdom",,https://sujadrivingschool.co.uk/,4.8,2234,apify
+Manchester,Make It Driving School Manchester | Manual and Automatic Driving Lessons in Manchester | Best Intensive Driving Courses,+44 7301 626872,"Smalldale Ave, Manchester M16 7JH, United Kingdom",,https://www.makeitdrivingschool.co.uk/,5,142,apify
+Manchester,Round the Bends (Manual & Automatic) Driving School Manchester,+44 7402 905394,"7 Whalley Ave, Levenshulme, Manchester M19 3FD, United Kingdom",,http://roundthebends.com/,4.9,593,apify
+Manchester,Impulse Driving School - Manchester,+44 161 492 0547,"Spaces, 2 Oxford St, Manchester M1 5AN, United Kingdom",,https://impulsedrive.co.uk/,5,594,apify
+Manchester,ZK Driving School (Manchester),+44 7539 046284,"115 Russell St, Manchester M16 7JL, United Kingdom",,https://zkdrivingschool.co.uk/,5,73,apify
+Manchester,Best Drive School of Motoring | Driving Lessons Manchester,+44 7930 921226,"131 Manley Rd, Manchester M16 8WE, United Kingdom",,https://bestdrive.co.uk/,5,778,apify
+Manchester,Uncle Joe's Driving School,+44 7951 982866,"Unit 113, Uncle Joe's Driving School, 2 Hellidon Cl, Ardwick, Manchester M12 4AH, United Kingdom",,http://www.passwithunclejoe.co.uk/,4.9,440,apify
+Manchester,Express Pass Driving School Ltd,,"167 Waterloo Rd, Cheetham Hill, Manchester M8 8BT, United Kingdom",,https://expresspass.co.uk/,5,763,apify
+Manchester,SMH (Automatic) Driving School Manchester,+44 7883 913604,"4 Edlin Cl, Manchester M12 4WG, United Kingdom",,http://www.smhdrivingschoolmanchester.co.uk/,5,252,apify
