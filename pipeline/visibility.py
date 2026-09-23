@@ -1,6 +1,11 @@
 """ChatGPT visibility tools per vertical.
 
 Makes businesses show up when people ask AI assistants.
+
+NOTE: The 'data completeness score' below measures what data WE have about
+a business in our database. It does NOT measure actual Google Business
+Profile status, Google ranking, or real-world visibility. Do not present
+this score as 'GBP completeness' or 'Google visibility'.
 """
 
 import json
@@ -298,8 +303,13 @@ def generate_visibility_checklist(vertical: str, business_data: dict) -> list:
     return checklist
 
 
-def calculate_visibility_score(vertical: str, business_data: dict) -> dict:
-    """Calculate AI visibility score (0-100)."""
+def calculate_data_completeness_score(vertical: str, business_data: dict) -> dict:
+    """Calculate data completeness score (0-100).
+
+    IMPORTANT: This measures data we have in OUR database, NOT actual
+    Google Business Profile completeness, Google ranking, or real-world
+    online visibility. Do not present this as 'GBP score' or 'visibility'.
+    """
     score = 0
     factors = []
     
@@ -308,10 +318,10 @@ def calculate_visibility_score(vertical: str, business_data: dict) -> dict:
         score += 20
         factors.append("has_website")
     
-    # Has Google Business Profile (+20)
+    # Has rating (+20) — means we have Google data
     if business_data.get("rating"):
         score += 20
-        factors.append("has_gbp")
+        factors.append("has_rating_data")
     
     # Has phone number (+10)
     if business_data.get("phone"):
@@ -343,7 +353,7 @@ def calculate_visibility_score(vertical: str, business_data: dict) -> dict:
         score += 5
         factors.append("has_instagram")
     
-    # Has website with meta description (+5)
+    # Has description (+5)
     if business_data.get("description"):
         score += 5
         factors.append("has_description")
@@ -356,8 +366,15 @@ def calculate_visibility_score(vertical: str, business_data: dict) -> dict:
     return {
         "score": min(score, 100),
         "factors": factors,
-        "missing": [f for f in ["has_website", "has_gbp", "has_phone", "has_address", "has_reviews", "good_rating", "has_email", "has_instagram", "has_description", "has_services"] if f not in factors],
+        "missing": [f for f in ["has_website", "has_rating_data", "has_phone", "has_address", "has_reviews", "good_rating", "has_email", "has_instagram", "has_description", "has_services"] if f not in factors],
+        "_disclaimer": "This score measures data completeness in our database, NOT actual Google Business Profile status or online visibility.",
     }
+
+
+# Backward-compatible alias (deprecated — use calculate_data_completeness_score)
+def calculate_visibility_score(vertical: str, business_data: dict) -> dict:
+    """Deprecated: use calculate_data_completeness_score instead."""
+    return calculate_data_completeness_score(vertical, business_data)
 
 
 if __name__ == "__main__":
@@ -386,9 +403,9 @@ if __name__ == "__main__":
     })
     print(llms)
     
-    # Test visibility score
-    print("\n=== VISIBILITY SCORE ===\n")
-    score = calculate_visibility_score("nails", {
+    # Test data completeness score
+    print("\n=== DATA COMPLETENESS SCORE ===\n")
+    score = calculate_data_completeness_score("nails", {
         "website": "https://mcrnails.co.uk",
         "rating": "4.8",
         "phone": "07858 358562",

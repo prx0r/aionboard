@@ -2,6 +2,11 @@
 
 Uses influence's WhatsApp adapter for real messaging.
 Falls back to stubs when no credentials are present.
+
+Message states:
+  drafted  — message composed but not sent (stub / no provider)
+  sent     — provider accepted the message (real send confirmed)
+  delivered — provider confirmed delivery to device
 """
 
 import os
@@ -19,25 +24,34 @@ except ImportError:
 
 def send_message(phone: str, message: str, channel: str = "whatsapp") -> dict:
     """Send a message via WhatsApp or SMS.
-    
-    Returns: {"ok": bool, "stubbed": bool, "channel": str}
+
+    Returns: {
+        "ok": bool,        # True only if provider confirmed acceptance
+        "status": str,     # drafted | sent | delivered
+        "stubbed": bool,   # True if no real provider was used
+        "channel": str,
+        "note": str,
+    }
     """
     if channel == "whatsapp":
         if WHATSAPP_AVAILABLE:
             result = send_whatsapp(phone, message)
+            provider_ok = result.get("ok", False) and not result.get("stubbed", True)
             return {
-                "ok": result.get("ok", False),
+                "ok": provider_ok,
+                "status": "sent" if provider_ok else "drafted",
                 "stubbed": result.get("stubbed", True),
                 "channel": "whatsapp",
                 "note": result.get("note", ""),
             }
         else:
-            # Stub mode
+            # Stub mode — message was NOT sent
             return {
-                "ok": True,
+                "ok": False,
+                "status": "drafted",
                 "stubbed": True,
                 "channel": "whatsapp",
-                "note": "WhatsApp not configured. Set WHATSAPP_TOKEN for live sends.",
+                "note": "Stub only — WhatsApp not configured. Set WHATSAPP_TOKEN for live sends. Message was NOT delivered.",
                 "to": phone,
                 "message": message[:200],
             }
@@ -45,27 +59,34 @@ def send_message(phone: str, message: str, channel: str = "whatsapp") -> dict:
     elif channel == "sms":
         if WHATSAPP_AVAILABLE:
             result = send_sms(phone, message)
+            provider_ok = result.get("ok", False) and not result.get("stubbed", True)
             return {
-                "ok": result.get("ok", False),
+                "ok": provider_ok,
+                "status": "sent" if provider_ok else "drafted",
                 "stubbed": result.get("stubbed", True),
                 "channel": "sms",
                 "note": result.get("note", ""),
             }
         else:
             return {
-                "ok": True,
+                "ok": False,
+                "status": "drafted",
                 "stubbed": True,
                 "channel": "sms",
-                "note": "SMS not configured. Set TELNYX_API_KEY for live sends.",
+                "note": "Stub only — SMS not configured. Set TELNYX_API_KEY for live sends. Message was NOT delivered.",
                 "to": phone,
                 "message": message[:200],
             }
     
-    return {"ok": False, "stubbed": False, "channel": channel, "note": f"Unknown channel: {channel}"}
+    return {"ok": False, "status": "drafted", "stubbed": False, "channel": channel, "note": f"Unknown channel: {channel}"}
 
 
 def send_outreach(prospect_id: int, db_conn, channel: str = "whatsapp") -> dict:
-    """Send outreach message to a prospect."""
+    """Send outreach message to a prospect.
+
+    Only records outreach in DB if the messaging provider confirmed delivery.
+    Stubs are reported as status="drafted" and NOT recorded as sent.
+    """
     from pipeline.db import record_outreach
     from pipeline.outreach import get_outreach_queue
     from pipeline.templates import get_initial_template, format_template
@@ -91,10 +112,10 @@ def send_outreach(prospect_id: int, db_conn, channel: str = "whatsapp") -> dict:
         "reviews": prospect["review_count"] or "N/A",
     })
     
-    # Send via WhatsApp
+    # Send via provider
     result = send_message(prospect["phone"], message, channel)
     
-    # Record in database
+    # Only record outreach if provider confirmed the send
     if result["ok"]:
         record_outreach(db_conn, prospect_id, channel, "outbound", message, f"initial_{channel}")
     
@@ -103,13 +124,17 @@ def send_outreach(prospect_id: int, db_conn, channel: str = "whatsapp") -> dict:
         "phone": prospect["phone"],
         "channel": channel,
         "sent": result["ok"],
+        "status": result.get("status", "drafted"),
         "stubbed": result.get("stubbed", True),
         "message": message,
     }
 
 
 def send_followup(prospect_id: int, db_conn, followup_type: str, channel: str = "whatsapp") -> dict:
-    """Send a follow-up message to a prospect."""
+    """Send a follow-up message to a prospect.
+
+    Only records outreach in DB if the messaging provider confirmed delivery.
+    """
     from pipeline.db import record_outreach
     from pipeline.templates import get_followup_template, format_template
     
@@ -128,6 +153,7 @@ def send_followup(prospect_id: int, db_conn, followup_type: str, channel: str = 
     
     result = send_message(prospect["phone"], message, channel)
     
+    # Only record outreach if provider confirmed the send
     if result["ok"]:
         record_outreach(db_conn, prospect_id, channel, "outbound", message, f"followup_{followup_type}")
     
@@ -136,6 +162,7 @@ def send_followup(prospect_id: int, db_conn, followup_type: str, channel: str = 
         "phone": prospect["phone"],
         "channel": channel,
         "sent": result["ok"],
+        "status": result.get("status", "drafted"),
         "stubbed": result.get("stubbed", True),
         "message": message,
     }

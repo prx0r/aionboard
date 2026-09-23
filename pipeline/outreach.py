@@ -5,14 +5,67 @@ from pipeline.db import get_db, record_outreach, schedule_followup
 from pipeline.templates import get_initial_template, get_followup_template, format_template
 
 
+def _check_consent(db_conn, prospect_id: int) -> dict:
+    """Check if prospect has given marketing consent.
+
+    Returns {"ok": bool, "reason": str}
+    """
+    # Check for explicit opt-out / suppression
+    row = db_conn.execute(
+        "SELECT stage FROM prospects WHERE id=?", (prospect_id,)
+    ).fetchone()
+    if row and row["stage"] == "churned":
+        return {"ok": False, "reason": "prospect_churned"}
+
+    # Check contacts table for do_not_contact or TPS block
+    contact = db_conn.execute(
+        """SELECT outcome FROM contact_attempts
+           WHERE contact_id IN (
+               SELECT id FROM contacts WHERE prospect_id=?
+           )
+           ORDER BY attempted_at DESC LIMIT 1""",
+        (prospect_id,)
+    ).fetchone()
+    if contact and contact["outcome"] == "do_not_contact":
+        return {"ok": False, "reason": "do_not_contact"}
+
+    # Check if TPS blocked
+    suppressed = db_conn.execute(
+        """SELECT 1 FROM tps_checks
+           WHERE prospect_id=? AND result='blocked' LIMIT 1""",
+        (prospect_id,)
+    ).fetchone()
+    if suppressed:
+        return {"ok": False, "reason": "tps_blocked"}
+
+    return {"ok": True, "reason": "consent_ok"}
+
+
+def _cancel_pending_followups(db_conn, prospect_id: int):
+    """Cancel all pending follow-ups for a prospect (e.g. after opt-out)."""
+    db_conn.execute(
+        "UPDATE followups SET status='skipped' WHERE prospect_id=? AND status='pending'",
+        (prospect_id,)
+    )
+
+
 def start_outreach(db_conn, prospect_id: int, channel: str = "whatsapp") -> dict:
-    """Start outreach to a prospect."""
+    """Start outreach to a prospect.
+
+    Checks consent and suppression before recording any outbound message.
+    Does NOT record outreach as "sent" unless messaging provider confirms.
+    """
     prospect = db_conn.execute("SELECT * FROM prospects WHERE id=?", (prospect_id,)).fetchone()
     if not prospect:
         return {"error": "Prospect not found"}
     
     if prospect["stage"] != "new":
         return {"error": f"Prospect already in stage: {prospect['stage']}"}
+
+    # P0-3: Check consent and suppression before any outreach
+    consent = _check_consent(db_conn, prospect_id)
+    if not consent["ok"]:
+        return {"error": f"Outreach blocked: {consent['reason']}"}
     
     # Get template
     template = get_initial_template(prospect["vertical"], channel)
@@ -27,7 +80,20 @@ def start_outreach(db_conn, prospect_id: int, channel: str = "whatsapp") -> dict
         "reviews": prospect["review_count"] or "N/A",
     })
     
-    # Record outreach
+    # P0-3: Send via messaging provider — only record if provider confirms
+    from pipeline.messaging import send_message
+    result = send_message(prospect["phone"], message, channel)
+
+    if not result["ok"]:
+        return {
+            "prospect": prospect["business_name"],
+            "channel": channel,
+            "sent": False,
+            "status": result.get("status", "drafted"),
+            "note": result.get("note", "Message not sent — provider did not confirm"),
+        }
+
+    # Provider confirmed — record outreach
     outreach_id = record_outreach(db_conn, prospect_id, channel, "outbound", message, f"initial_{channel}")
     
     # Schedule follow-ups
@@ -43,6 +109,8 @@ def start_outreach(db_conn, prospect_id: int, channel: str = "whatsapp") -> dict
         "prospect": prospect["business_name"],
         "channel": channel,
         "message": message,
+        "sent": True,
+        "status": result.get("status", "sent"),
         "followups_scheduled": 3,
     }
 
@@ -65,11 +133,12 @@ def record_reply(db_conn, prospect_id: int, message: str, channel: str = "whatsa
         )
     elif any(w in msg_lower for w in negative_words):
         sentiment = "negative"
-        # Move to churned stage
+        # Move to churned stage and cancel pending follow-ups
         db_conn.execute(
             "UPDATE prospects SET stage='churned', stage_changed_at=? WHERE id=?",
             (datetime.now().isoformat(), prospect_id)
         )
+        _cancel_pending_followups(db_conn, prospect_id)
     else:
         sentiment = "neutral"
     
@@ -78,11 +147,12 @@ def record_reply(db_conn, prospect_id: int, message: str, channel: str = "whatsa
         (sentiment, prospect_id)
     )
     
-    # Cancel pending follow-ups if replied
-    db_conn.execute(
-        "UPDATE followups SET status='skipped' WHERE prospect_id=? AND status='pending'",
-        (prospect_id,)
-    )
+    # Cancel pending follow-ups if replied (any reply, not just negative)
+    if sentiment != "neutral":
+        db_conn.execute(
+            "UPDATE followups SET status='skipped' WHERE prospect_id=? AND status='pending'",
+            (prospect_id,)
+        )
     
     db_conn.commit()
     

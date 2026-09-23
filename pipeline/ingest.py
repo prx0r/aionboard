@@ -100,7 +100,14 @@ def ingest_from_serpapi(db_conn, api_key: str, verticals: dict, cities: list) ->
 
 
 def enrich_with_companies_house(db_conn, api_key: str, limit: int = 100) -> int:
-    """Enrich prospects with Companies House data."""
+    """Enrich prospects with Companies House data.
+
+    Matching rules (P0-2 fix):
+    - Require exact name match (case-insensitive) OR exact company_number match
+    - Partial substring matches are NOT accepted
+    - If no confident match, leave fields empty (don't guess)
+    - Log when match is uncertain
+    """
     from pipeline.db import upsert_prospect
     
     prospects = db_conn.execute(
@@ -121,14 +128,20 @@ def enrich_with_companies_house(db_conn, api_key: str, limit: int = 100) -> int:
             items = data.get("items", [])
             
             if items:
-                # Find best match
+                # Find exact name match only — no partial matches
                 best = None
+                name_lower = name.lower().strip()
                 for item in items:
-                    if name.lower() in item.get("title", "").lower() or item.get("title", "").lower() in name.lower():
+                    item_title = (item.get("title", "") or "").lower().strip()
+                    if item_title == name_lower:
                         best = item
                         break
+                
                 if not best:
-                    best = items[0]
+                    # No exact match found — skip to avoid false positives
+                    print(f"  [CH] No exact match for '{name}' — skipping enrichment")
+                    time.sleep(0.3)
+                    continue
                 
                 company_number = best.get("company_number", "")
                 if company_number:
@@ -243,64 +256,108 @@ def enrich_with_website_scrape(db_conn, limit: int = 100) -> int:
 
 
 def score_prospects(db_conn) -> int:
-    """Score prospects based on available data."""
+    """Score prospects based on business fit and observable gaps.
+
+    P0-5/P0-8 fix: Separates fit (is it the right business?) from gap
+    (does it need our help?). High ratings/reviews REDUCE priority —
+    businesses doing well online don't need us. Businesses with gaps
+    (low reviews, no website, incomplete profile) are our targets.
+    """
     prospects = db_conn.execute("SELECT * FROM prospects").fetchall()
     
     scored = 0
     for p in prospects:
-        score = 0
+        fit_score = 0
+        gap_score = 0
         reasons = []
         
-        # Rating score (0-30)
-        if p["rating"] and p["rating"] >= 4.5:
-            score += 30
-            reasons.append("high_rating")
-        elif p["rating"] and p["rating"] >= 4.0:
-            score += 20
-            reasons.append("good_rating")
+        # === FIT SCORE: Is this the right type of business? (0-50) ===
         
-        # Review count (0-20)
-        if p["review_count"] and p["review_count"] >= 100:
-            score += 20
-            reasons.append("many_reviews")
-        elif p["review_count"] and p["review_count"] >= 20:
-            score += 10
-            reasons.append("some_reviews")
-        
-        # Has phone (0-15)
+        # Has phone (contactable = higher fit)
         if p["phone"]:
-            score += 15
+            fit_score += 10
             reasons.append("has_phone")
         
-        # Has website (0-10)
-        if p["website"]:
-            score += 10
-            reasons.append("has_website")
-        
-        # Has email (0-10)
+        # Has email (contactable)
         if p["email"]:
-            score += 10
+            fit_score += 5
             reasons.append("has_email")
         
-        # Has Instagram (0-5)
-        if p["instagram"]:
-            score += 5
-            reasons.append("has_instagram")
-        
-        # Has director name (0-10)
+        # Has director name (real business, not a shell)
         if p["director_name"]:
-            score += 10
+            fit_score += 10
             reasons.append("has_director")
         
-        # Company is active (0-5)
+        # Company is active
         if p["company_status"] == "active":
-            score += 5
+            fit_score += 10
             reasons.append("active_company")
+        
+        # Has address (real location)
+        if p["address"]:
+            fit_score += 5
+            reasons.append("has_address")
+        
+        # Has services listed
+        if p["services"]:
+            fit_score += 5
+            reasons.append("has_services")
+        
+        # Has website (contactable, established)
+        if p["website"]:
+            fit_score += 5
+            reasons.append("has_website")
+        
+        # === GAP SCORE: Does this business need our help? (0-50) ===
+        
+        # Low reviews = big gap (invisible or struggling)
+        reviews = p["review_count"] or 0
+        if reviews == 0:
+            gap_score += 20
+            reasons.append("no_reviews")
+        elif reviews < 5:
+            gap_score += 15
+            reasons.append("few_reviews")
+        elif reviews < 20:
+            gap_score += 10
+            reasons.append("low_reviews")
+        # 20+ reviews = no gap bonus
+        
+        # Low or missing rating
+        rating = p["rating"] or 0
+        if rating == 0:
+            gap_score += 10
+            reasons.append("no_rating")
+        elif rating < 3.5:
+            gap_score += 10
+            reasons.append("low_rating")
+        elif rating < 4.0:
+            gap_score += 5
+            reasons.append("below_4_rating")
+        # 4.0+ = no gap bonus
+        
+        # No website = gap
+        if not p["website"]:
+            gap_score += 10
+            reasons.append("no_website")
+        
+        # Incomplete profile (missing social/contact data)
+        missing_fields = sum(1 for f in [p["email"], p["instagram"], p["facebook"], p["description"]] if not f)
+        if missing_fields >= 3:
+            gap_score += 10
+            reasons.append("incomplete_profile")
+        elif missing_fields >= 2:
+            gap_score += 5
+            reasons.append("partially_incomplete")
+        
+        # Combined score: fit × gap_ratio
+        gap_ratio = gap_score / 50.0  # normalize to 0-1
+        combined = round(fit_score * gap_ratio, 1)
         
         # Update
         db_conn.execute(
             "UPDATE prospects SET score=?, score_reasons=? WHERE id=?",
-            (score, ",".join(reasons), p["id"])
+            (combined, ",".join(reasons), p["id"])
         )
         scored += 1
     

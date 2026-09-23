@@ -7,7 +7,13 @@ from datetime import datetime
 
 
 def import_planning_leads(db_conn, csv_path: str) -> int:
-    """Import planning application leads into pipeline."""
+    """Import planning application leads into pipeline.
+
+    P0-4 fix: Planning applications are attributed to their actual location
+    extracted from the application data, not spread across areas associated
+    with procurement contracts. If no location can be determined, the lead
+    is marked as 'location unknown' rather than 'nearby'.
+    """
     count = 0
     with open(csv_path) as f:
         reader = csv.DictReader(f)
@@ -31,7 +37,7 @@ def import_planning_leads(db_conn, csv_path: str) -> int:
             if not vertical:
                 vertical = 'general'
             
-            # Extract location from description
+            # Extract location from description — use actual location only
             location = ''
             if 'manchester' in desc_lower:
                 location = 'Manchester'
@@ -43,11 +49,15 @@ def import_planning_leads(db_conn, csv_path: str) -> int:
                 location = 'Leeds'
             elif 'liverpool' in desc_lower:
                 location = 'Liverpool'
+
+            # P0-4: If no location data found, mark as unknown — don't guess
+            if not location:
+                location = 'location unknown'
             
             # Create lead record
             lead_data = {
                 'vertical': vertical,
-                'city': location or 'UK',
+                'city': location,
                 'business_name': f"Planning App: {row.get('reference', 'Unknown')[:50]}",
                 'phone': '',
                 'address': '',

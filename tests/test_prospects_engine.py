@@ -8,6 +8,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 from aionboard.prospects import (
+    calculate_gap_score,
     count_area_signals,
     count_postcode_density,
     export_csv,
