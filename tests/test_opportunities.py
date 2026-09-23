@@ -4,7 +4,9 @@ import unittest
 
 from aionboard.opportunities import (
     OPPORTUNITY_KEYWORDS,
+    customer_digest,
     digest,
+    match_customers,
     match_for_business,
     same_area,
     score_opportunity,
@@ -108,6 +110,49 @@ class MatchingTests(unittest.TestCase):
             opportunities=[SALON_RECORD],
         )
         self.assertEqual(matches, [])
+
+
+class CustomerFindingTests(unittest.TestCase):
+    def test_match_customers_adds_compliant_next_step(self):
+        matches = match_customers(
+            business_postcode="M1 1AA",
+            vertical="electrician",
+            opportunities=[PLANNING_RECORD],
+        )
+        self.assertEqual(len(matches), 1)
+        self.assertIn("customer_read", matches[0])
+        self.assertIn("TPS", matches[0]["customer_read"])
+
+    def test_match_customers_empty_when_no_match(self):
+        matches = match_customers(
+            business_postcode="M1 1AA",
+            vertical="electrician",
+            opportunities=[SALON_RECORD],
+        )
+        self.assertEqual(matches, [])
+
+    def test_customer_digest_warns_about_permission(self):
+        matches = match_customers(
+            business_postcode="M1 1AA",
+            vertical="nails",
+            opportunities=[SALON_RECORD],
+        )
+        # SALON_RECORD is Leeds, business is Manchester: filtered out.
+        self.assertEqual(matches, [])
+        text = customer_digest("Fictional Nails", "nails", matches)
+        self.assertIn("not permission to contact", text)
+
+    def test_customer_digest_requires_approval(self):
+        local_salon = {**SALON_RECORD, "postcode": "M1 9AB"}
+        matches = match_customers(
+            business_postcode="M1 1AA",
+            vertical="nails",
+            opportunities=[local_salon],
+        )
+        self.assertEqual(len(matches), 1)
+        text = customer_digest("Fictional Nails", "nails", matches)
+        self.assertIn("Reply APPROVE", text)
+        self.assertIn("verified details", text)
 
 
 class DigestTests(unittest.TestCase):

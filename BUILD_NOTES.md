@@ -331,6 +331,28 @@ Saved the strategic analysis as STRATEGY.md, then combined it with powuk signals
 
 ---
 
+## Session 2026-09-23 — Two-sided matching
+
+### Context
+Opportunity matching only answered "what work is coming." The inverse — "who near me might need me" — completes the loop and powers the retention pitch.
+
+### What was done
+- `match_customers()` + `customer_digest()`: same scoring engine, customer-side framing with compliant next steps per vertical.
+- Planning applicants treated as research, never prospects. Contact still needs verified details, permission, TPS/CTPS.
+- `GEO_OPPORTUNITIES.md`: two-sided model table plus hard-parts analysis (what Meta absorbs vs what we own).
+- 4 new matcher tests.
+
+### Current state
+- 71 tests pass.
+- No completed paying installation is recorded.
+
+### Next steps
+1. Validate one manual electrician installation.
+2. Validate one £20 nail-tech quickstart and measure support minutes.
+3. Feed live powuk signals into the matcher on a schedule.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:

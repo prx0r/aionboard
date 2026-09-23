@@ -160,6 +160,85 @@ def match_for_business(
     return matches
 
 
+# Customer-side framing: what a matched signal implies about who nearby
+# might need work, plus the compliant next step. Conservative by design —
+# no contact details are ever fabricated. Planning applicants are named
+# individuals in public records: research, not prospects.
+CUSTOMER_ACTIONS: dict[str, str] = {
+    "electrician": "Leaflet the street or check the letting agent — never cold-call a homeowner without a verified number and TPS check.",
+    "beauty": "New salon openings nearby may need subcontractors or referrals — approach the business, not its clients.",
+    "nails": "New salon openings nearby may need subcontractors or referrals — approach the business, not its clients.",
+    "lashes": "New salon openings nearby may need subcontractors or referrals — approach the business, not its clients.",
+    "hair": "New salon openings nearby may need subcontractors or referrals — approach the business, not its clients.",
+    "cleaners": "New offices and developments need contract cleaners — approach the managing agent or facilities contact.",
+    "dog-groomers": "New residential areas mean new dog owners — leaflet vet-adjacent spots and parks noticeboards.",
+    "gardeners-window-cleaners": "New estates mean whole streets needing rounds — canvass the street, not individuals.",
+    "car-detailers": "Dealerships and garages need overflow detailers — approach the business.",
+    "driving-instructors": "New schools and housing mean new learners — school gates and local boards, not DMs.",
+    "weddings": "New venues need preferred suppliers — approach the venue, not couples.",
+}
+
+
+def match_customers(
+    *,
+    business_postcode: str,
+    vertical: str,
+    opportunities: list[dict],
+    same_region_only: bool = True,
+) -> list[dict]:
+    """Flip the matcher: who nearby is likely to need work.
+
+    Same scoring engine, customer-side framing. Planning applicants are
+    named individuals in public records — that makes them research, not
+    prospects. Contact still needs verified details, permission, and
+    TPS/CTPS screening. Every match carries its compliant next step.
+    """
+    matches = match_for_business(
+        business_postcode=business_postcode,
+        vertical=vertical,
+        opportunities=opportunities,
+        same_region_only=same_region_only,
+    )
+    framed = []
+    for match in matches:
+        framed.append(
+            {
+                **match,
+                "customer_read": (
+                    f"Someone nearby is doing work matching {vertical} services. "
+                    f"{CUSTOMER_ACTIONS.get(vertical, 'Investigate before any contact.')}"
+                ),
+            }
+        )
+    return framed
+
+
+def customer_digest(business_name: str, vertical: str, matches: list[dict], limit: int = 5) -> str:
+    """Plain-English customer-finding digest. Compliance warnings included."""
+    lines = [
+        f"# Potential customers near you — {business_name}",
+        "",
+        f"{len(matches)} signal(s) suggest nearby demand for {vertical} work.",
+        "These are public-record signals, not permission to contact anyone.",
+        "",
+    ]
+    for match in matches[:limit]:
+        title = match.get("title") or match.get("summary") or "Untitled record"
+        locality = match.get("locality", "")
+        where = f" ({locality})" if locality else ""
+        lines.append(f"- {title}{where} [relevance {match['score']}]")
+        lines.append(f"  Next step: {match.get('customer_read', 'Investigate before any contact.')}")
+    if not matches:
+        lines.append("- No signals this week. We'll keep watching.")
+    lines += [
+        "",
+        "Reply APPROVE before we act on any lead. "
+        "We never contact homeowners or businesses without verified details, "
+        "permission, and TPS/CTPS screening.",
+    ]
+    return "\n".join(lines)
+
+
 def digest(business_name: str, vertical: str, matches: list[dict], limit: int = 5) -> str:
     """Plain-English digest a customer can read. States limits honestly."""
     lines = [

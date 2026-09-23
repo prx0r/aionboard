@@ -54,7 +54,15 @@ from .integrations import (
     set_capability_state,
 )
 from .manual import generate_manual
-from .opportunities import digest, match_for_business, same_area, score_opportunity
+from .opportunities import (
+    CUSTOMER_ACTIONS,
+    customer_digest,
+    digest,
+    match_customers,
+    match_for_business,
+    same_area,
+    score_opportunity,
+)
 from .onboarding import (
     PACKAGES,
     create_onboarding,
@@ -111,6 +119,8 @@ __all__ = [
     "canonical_domain",
     "connect",
     "contains_instruction_override",
+    "CUSTOMER_ACTIONS",
+    "customer_digest",
     "create_backup",
     "create_business",
     "create_install",
@@ -139,6 +149,7 @@ __all__ = [
     "list_stack",
     "mark_untrusted",
     "marketing_allowed",
+    "match_customers",
     "match_for_business",
     "needs_legal_review",
     "new_business_id",
