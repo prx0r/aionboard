@@ -112,6 +112,29 @@ The peer review found untested API claims, expanded-bundle pricing, unverified s
 
 ---
 
+## Session 2026-09-23 — Beauty vertical and subdomain decision
+
+### Context
+Beauty is a strong second pilot because missed calls, deposits, repeat bookings, packages, and reviews map cleanly onto the same narrow installation workflow.
+
+### What was done
+- Added `verticals/beauty/` using the reusable vertical template.
+- Added vertical-pack acceptance tests.
+- Kept `beauty.aionboard.co.uk` as the proposed subdomain.
+- Did not create a separate beauty domain or customer database.
+
+### Current state
+- 23 tests pass.
+- Pilot verticals: electrician and beauty.
+- No completed paying installation is recorded.
+
+### Next steps
+1. Validate one electrician installation before expanding beauty outreach.
+2. Keep shared CRM, install checklist, handover, security, and website code vertical-agnostic.
+3. Add new verticals by copying `verticals/_template/`, not by forking infrastructure.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:
