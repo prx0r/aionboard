@@ -79,6 +79,66 @@ def vertical_prompts(
                 "scheduling",
             ),
         ],
+        "beauty": [
+            (
+                "Draft a rebooking message for clients due for their next treatment.",
+                "booking",
+            ),
+            (
+                "Help me write a service description with prices for my booking page.",
+                "social",
+            ),
+        ],
+        "dog-groomers": [
+            (
+                "List dogs due for grooming in the next two weeks and draft reminders.",
+                "booking",
+            ),
+            (
+                "Prepare a waiting-list message for the next cancelled slot.",
+                "scheduling",
+            ),
+        ],
+        "gardeners-window-cleaners": [
+            (
+                "List this week's round visits with any skips or credits noted.",
+                "scheduling",
+            ),
+            (
+                "Draft a payment reminder for overdue round customers.",
+                "booking",
+            ),
+        ],
+        "car-detailers": [
+            (
+                "Prepare a quote request checklist for this vehicle: size, condition photos, location.",
+                "quoting",
+            ),
+            (
+                "Draft a follow-up for quotes older than 48 hours. Do not send it.",
+                "enquiries",
+            ),
+        ],
+        "driving-instructors": [
+            (
+                "Show my lesson schedule this week and any waiting-list gaps.",
+                "scheduling",
+            ),
+            (
+                "Draft a reminder for pupils with lessons tomorrow.",
+                "booking",
+            ),
+        ],
+        "weddings": [
+            (
+                "Prepare an enquiry qualification checklist: date, venue, party size, package.",
+                "enquiries",
+            ),
+            (
+                "Draft a proposal from my approved packages. Do not send it.",
+                "quoting",
+            ),
+        ],
     }
     for prompt, capability in extras.get(vertical, []):
         if capabilities is None or capability in capabilities:

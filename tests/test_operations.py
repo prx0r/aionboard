@@ -9,13 +9,17 @@ from pathlib import Path
 from aionboard import (
     audit_history,
     connect,
+    fleet_support_report,
     get_prospect,
     import_prospects,
     init_approval_tables,
+    init_support_tables,
     issue_approval,
     list_stack,
+    open_ticket,
     record_stack_item,
     redeem_approval,
+    resolve_ticket,
 )
 from aionboard.backup import create_backup, verify_backup
 
@@ -282,6 +286,27 @@ class AuthenticatedApprovalTests(unittest.TestCase):
         actions = [entry["action"] for entry in history]
         self.assertIn("approval_issued", actions)
         self.assertIn("approval_redeemed", actions)
+
+
+class FleetReportTests(unittest.TestCase):
+    def test_fleet_viability_flag(self):
+        connection = connect()
+        init_support_tables(connection)
+        t1 = open_ticket(connection, business_id="biz-a", question="Q1")
+        resolve_ticket(connection, ticket_id=t1, resolved_by="guide", human_minutes=0)
+        t2 = open_ticket(connection, business_id="biz-b", question="Q2")
+        resolve_ticket(connection, ticket_id=t2, resolved_by="human", human_minutes=30)
+        report = fleet_support_report(connection, viability_minutes=20)
+        self.assertEqual(report["businesses"], 2)
+        self.assertFalse(report["viable"])
+        self.assertEqual(report["over_threshold"], ["biz-b"])
+
+    def test_empty_fleet_is_viable(self):
+        connection = connect()
+        init_support_tables(connection)
+        report = fleet_support_report(connection)
+        self.assertTrue(report["viable"])
+        self.assertEqual(report["total_tickets"], 0)
 
 
 class McpContractTests(unittest.TestCase):

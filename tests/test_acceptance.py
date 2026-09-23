@@ -287,6 +287,12 @@ class ExportRevocationTest(unittest.TestCase):
         self.assertGreater(result.get("support_tickets", 0), 0)
         remaining = export_business(connection, business_key=business_id, by="business_id")
         self.assertEqual(remaining.get("support_tickets", []), [])
+        # Business identity itself is gone; re-export finds nothing anywhere.
+        from aionboard.businesses import get_business
+
+        self.assertIsNone(get_business(connection, business_id))
+        for table_rows in remaining.values():
+            self.assertEqual(table_rows, [])
 
 
 class InterruptedSetupTest(unittest.TestCase):

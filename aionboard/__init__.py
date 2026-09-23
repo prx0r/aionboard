@@ -68,7 +68,13 @@ from .onboarding import (
     support_active,
     tasks_for,
 )
-from .support import init_support_tables, open_ticket, resolve_ticket, support_stats
+from .support import (
+    fleet_support_report,
+    init_support_tables,
+    open_ticket,
+    resolve_ticket,
+    support_stats,
+)
 from .installs import (
     OPTIONAL_TASKS,
     REQUIRED_TASKS,
@@ -196,6 +202,7 @@ __all__ = [
     "set_onboarding_task",
     "set_task",
     "stale_rules",
+    "fleet_support_report",
     "support_active",
     "support_stats",
     "tasks_for",

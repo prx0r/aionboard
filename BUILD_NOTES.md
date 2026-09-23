@@ -464,6 +464,33 @@ The wedge is the vault, not the assistant. Research converged on the industry pa
 
 ---
 
+## Session 2026-09-23 — Autonomous build: verification + metrics + content
+
+### Context
+Ten todos, worked autonomously. Focus: close validation gaps the peer reviews flagged, instrument the key metric, prepare the funnel.
+
+### What was done
+1. Pricing/claim audit: fixed SERVICE_DEFINITIONS live-price drift; all other guarantee-hits are disclaimers.
+2. Booking-link verifier (`verify.py` + 6 tests): fetches URL, checks 200 + expected services, injectable fetcher, names failure causes.
+3. Five launch markets already had fictional installs — verified, no duplication.
+4. Prospect import tests (4): real 10k CSV, dedupe on re-import, provenance preserved, zero consent/contacts created.
+5. Fleet support report (`fleet_support_report` + 2 tests): per-business minutes, median, viability flag at 20-min default.
+6. TikTok batch 1 (5 scripts): one pain → one sourced number → one demo question → link in bio.
+7. Manual prompts: all 11 verticals now have 7 prompts (5 generic + 2 specific).
+8. Compliance freshness audit: 0 stale today, mechanism verified, platform-volatility note already in README.
+9. Export/revoke test strengthened: business row gone, all tables empty on re-export.
+
+### Current state
+- 131 tests pass.
+- No completed paying installation is recorded.
+
+### Next steps
+1. Validate one manual electrician installation.
+2. Validate one £20 nail-tech quickstart and measure support minutes.
+3. Produce the 5 TikToks and measure views → chat → email.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:

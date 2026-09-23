@@ -26,6 +26,8 @@ Benefit statements in this research catalog are targets. They must not be presen
 
 Based on 72 pain points across 24 industries.
 
+> **Pricing note:** every `**Price:**` figure below is a superseded research hypothesis, not a live price. The only current prices are in `OFFER.md` (£499 standard, £20 quickstart).
+
 ---
 
 ### SERVICE 1: Missed Call Recovery

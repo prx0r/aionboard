@@ -105,3 +105,45 @@ def support_stats(connection: sqlite3.Connection, business_id: str) -> dict:
         "human_minutes": human_minutes,
         "open": open_count,
     }
+
+
+def fleet_support_report(
+    connection: sqlite3.Connection, *, viability_minutes: int = 20
+) -> dict:
+    """Fleet-wide support economics — the metric the £20 product lives or dies by.
+
+    Returns per-business minutes plus fleet medians and a flag list of
+    businesses over the viability threshold. A median above the threshold
+    means kill or reprice, not hope.
+    """
+    rows = connection.execute(
+        "SELECT business_id, resolved_by, human_minutes, status FROM support_tickets"
+    ).fetchall()
+    by_business: dict[str, dict] = {}
+    for row in rows:
+        entry = by_business.setdefault(
+            row["business_id"], {"total": 0, "guide_resolved": 0, "human_minutes": 0, "open": 0}
+        )
+        entry["total"] += 1
+        if row["resolved_by"] == "guide":
+            entry["guide_resolved"] += 1
+        entry["human_minutes"] += int(row["human_minutes"] or 0)
+        if row["status"] == "open":
+            entry["open"] += 1
+
+    minutes = sorted(entry["human_minutes"] for entry in by_business.values())
+    median = minutes[len(minutes) // 2] if minutes else 0
+    total_minutes = sum(minutes)
+    over_threshold = sorted(
+        bid for bid, entry in by_business.items() if entry["human_minutes"] > viability_minutes
+    )
+    return {
+        "businesses": len(by_business),
+        "total_tickets": len(rows),
+        "total_human_minutes": total_minutes,
+        "median_human_minutes": median,
+        "viability_threshold_minutes": viability_minutes,
+        "viable": median <= viability_minutes,
+        "over_threshold": over_threshold,
+        "per_business": by_business,
+    }
