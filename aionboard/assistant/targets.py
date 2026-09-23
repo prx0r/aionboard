@@ -23,10 +23,16 @@ class TargetProfile:
     price_book_ref: str = ""
     team_size: int = 1
     areas_served: list[str] = field(default_factory=list)
+    # Agent identity — how the assistant appears (agent_identity addon).
+    # Defaults keep existing behavior unchanged.
+    assistant_name: str = "Buddy"
+    assistant_personality: str = "Direct, friendly, no jargon."
+    assistant_greeting: str = "Hi — how can I help?"
 
     def system_identity(self) -> str:
         """Identity block embedded in the assistant system prompt."""
         lines = [
+            f"You are {self.assistant_name}. {self.assistant_personality}",
             f"You serve {self.business_name} ({self.business_id}), "
             f"a {self.vertical} business based in {self.postcode}.",
         ]
@@ -60,4 +66,9 @@ def profile_from_business(record: dict) -> TargetProfile:
         price_book_ref=record.get("price_book_ref", ""),
         team_size=int(record.get("team_size", 1) or 1),
         areas_served=list(record.get("areas_served", [])),
+        assistant_name=record.get("assistant_name", "Buddy"),
+        assistant_personality=record.get(
+            "assistant_personality", "Direct, friendly, no jargon."),
+        assistant_greeting=record.get(
+            "assistant_greeting", "Hi — how can I help?"),
     )
