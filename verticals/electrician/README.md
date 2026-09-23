@@ -15,3 +15,13 @@ Sources:
 - Prospects: `../prospects_electrical.csv` — research only
 
 Canonical pilot scope remains in `../../OFFER.md`. Any broader roadmap language in upstream research does not override it.
+
+## Files
+
+| File | Purpose |
+|------|---------|
+| `profile.json` | Machine-readable vertical profile: pains, stack, legal, finance, tax |
+| `manifest.json` | Vertical manifest with sources, workflows, required evidence |
+| `RULEBOOK.md` | 30 failure modes organized by pain category; the moat |
+| `INTAKE.md` | 5-field intake form adapted for electricians |
+| `OUTCOMES.md` | Offer rewritten as outcomes; pricing vs human alternative; measurement framework |

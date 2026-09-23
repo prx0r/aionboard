@@ -13,3 +13,12 @@ Sources:
 - Delivery pattern: `influence/stevejobless/SKILL.md`
 
 Canonical pilot scope remains in `../../OFFER.md`.
+
+## Files
+
+| File | Purpose |
+|------|---------|
+| `profile.json` | Machine-readable vertical definition |
+| `RULEBOOK.md` | 39 failure modes across 7 categories — the moat |
+| `INTAKE.md` | 5-field intake form with rules |
+| `OUTCOMES.md` | Offer rewritten as measurable outcomes |
