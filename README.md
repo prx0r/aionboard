@@ -66,7 +66,8 @@ archive/              Superseded reference docs
 | **Regulations** | [regulations/registry.json](regulations/registry.json) |
 | **Build history** | [BUILD_NOTES.md](BUILD_NOTES.md) |
 | **Electrician intel** | [ELECTRICIAN_INTEL.md](ELECTRICIAN_INTEL.md) |
-| **Old research** | [archive/](archive/) — superseded but useful for reference |
+| **Research intel** | [INTEL.md](INTEL.md) — market stats, competitor pricing, data assets, legal details |
+| **Old research** | [archive/](archive/) — original docs, gold extracted to INTEL.md |
 
 ## Conventions
 

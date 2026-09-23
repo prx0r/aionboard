@@ -1,14 +1,14 @@
 # archive/
 
-Superseded or partially stale reference docs. Kept for research value, not for current direction.
+Superseded reference docs. Unique research gold has been extracted into `INTEL.md` (active).
 
-| File | Why archived |
-|------|-------------|
-| `VISION.md` | Pricing/scope superseded by OFFER.md; still valuable as market research |
-| `SERVICE_DEFINITIONS.md` | Pricing hypotheses superseded by OFFER.md |
-| `PEER_REVIEW.md` | Build list and pricing block stale; security/architecture now in SECURITY_ARCHITECTURE.md + TRUST_MODEL.md |
-| `INTEGRATION.md` | Repo map superseded by AGENTS.md; phases superseded by DEVPLAN_NEXT.md |
-| `REPORT.md` | Implementation priorities stale; prospect scoring now in PROSPECT_SCORING.md |
-| `devplan.md` | Checkpoints A-J completed; forward plan now in DEVPLAN_NEXT.md + THREADS.md |
-| `FLYWHEEL.md` | Growth loop overlaps with STRATEGY.md economics section |
-| `FUNNEL.md` | TikTok funnel + metrics merged into TIKTOK_BATCH_01.md |
+| File | Why archived | Extracted to INTEL.md |
+|------|-------------|----------------------|
+| `VISION.md` | Pricing/scope superseded by OFFER.md | Yes — market stats, competitor pricing, Manchester leads, referral channels |
+| `SERVICE_DEFINITIONS.md` | Pricing hypotheses superseded by OFFER.md | Yes — 10 services with setup times, pain statistics, certification mappings |
+| `PEER_REVIEW.md` | Build list stale | Yes — multi-language opportunity, Meta stack, asset inventory, Apple Maps |
+| `INTEGRATION.md` | Repo map superseded by AGENTS.md | Yes — repo capabilities, BigQuery tables/SQL, data flow, security issues |
+| `REPORT.md` | Implementation priorities stale | Yes — regional density, dataset sizes, BigQuery schema, data quality |
+| `devplan.md` | Checkpoints A-J completed | Yes — competitor pricing, legal details, 5 vertical specs, acceptance tests |
+| `FLYWHEEL.md` | Overlaps with STRATEGY.md | Yes — 10 metrics, verified format, standing orders |
+| `FUNNEL.md` | Merged into TIKTOK_BATCH_01.md | N/A — no unique content remaining |
