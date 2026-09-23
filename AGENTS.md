@@ -16,7 +16,7 @@ aionboard/            Python package (stdlib + cryptography only)
   onboarding.py       Package registry (standard-ai-setup, muse-quickstart) + recipes
   integrations.py     Capability inventory with lifecycle states
   manual.py           Customer teaching manual + vertical prompts
-  support.py          7-day tickets with guide/human/minutes tracking
+  support.py          7-day tickets with guide/human/minutes tracking + fleet report
   handover.py         Handover generator (rejects secrets)
   security.py         Approvals, isolation, secret scan, audit, rate limiter
   backup.py           Encrypted SQLite backups with restore verify
@@ -25,30 +25,47 @@ aionboard/            Python package (stdlib + cryptography only)
   buddy.py            Per-business scoped assistant
   graph.py            Global knowledge graph + retrieval
   opportunities.py    Geographic matcher, both directions
+  verify.py           Booking-link verification (fetch + check, injectable)
   demo.py             Fictional electrician demo
   website.py          Static site generators (index, chat, dashboard)
+  assistant/          Per-target chatbot: profiles, legislation lookup,
+                      powuk bridge, agent factory, approvals (separate agent's work)
+  dashboard.py        Live operator dashboard, powops pattern (separate agent's work)
+  redteam/            Attack suite: 8 classes, grader, runner (security agent's work)
+  security_audit/     Domain checks + report builder (security agent's work)
 
 verticals/            11 packs: manifest + profile + 7 docs each
 regulations/          36-rule combined registry (registry.json + README)
 mcp/                  Tool contracts (tools.json) — designed, not deployed
 connector/            Muse submission pack — draft, not submitted
 site/                 Generated static pages (index, chat, dashboard, knowledge)
-tests/                119 tests, all must pass
+docs/                 MUSE_SECURITY.md (security agent's channel design)
+tests/                161 tests, all must pass
 ```
 
 ## State of the world (honest)
 
 | Area | Status |
 |------|--------|
-| CRM, installs, onboarding, handover, manual, support | Working code, tested |
+| CRM, installs, onboarding, handover, manual, support, fleet report | Working code, tested |
 | Approvals, isolation, secret scan, audit helpers, rate limiter | Working code, tested — **not deployed as a gateway** |
 | Encrypted backups with restore verify | Working code, tested |
+| Redteam suite + security audits | Working code, tested (security agent) |
+| Per-target chatbot + powuk bridge + live dashboard | Working code, tested (assistant agent) |
+| Booking-link verifier, prospect import, support metrics | Working code, tested |
 | MCP tool contracts | Designed (`mcp/tools.json`), **no server running** |
 | Muse connector | Draft manifest, **not submitted** |
 | Static site + demo chatbot | Generated, working |
-| Customer dashboard | Static mock only, **no backend** |
 | Live integrations (OAuth to real tools) | None. Every pipeline step is `manual`. |
 | Paying customers | Zero. All economics hypothetical. |
+
+## Recent history (three agents, one repo)
+
+`23b9685` assistant agent: per-target chatbot, powuk bridge (verified 5 real planning matches), live dashboard, 15 tests.
+`a6839e8` security agent: redteam suite (8 attack classes), security audits, `docs/MUSE_SECURITY.md`, 14 tests.
+`2e4f818` + `f040d62` this agent: verification tooling, prospect import, fleet metrics, TikTok batch, plus a cross-agent bugfix (powuk_bridge def-time default was silently reading live data in CI — fixed, regression-tested).
+
+Lesson from the merge: when multiple agents push, rebase carefully and run the FULL suite — the failure only surfaced across the combined tree.
 
 ## Security work queue (for the security agent, in order)
 
@@ -64,7 +81,7 @@ tests/                119 tests, all must pass
 
 ## Conventions (non-negotiable)
 
-1. **Tests must pass before any commit.** `python3 -m unittest discover -s tests -v`. Currently 119.
+1. **Tests must pass before any commit.** `python3 -m unittest discover -s tests -v`. Currently 161.
 2. **No secrets in the tree.** Run `grep -rE "sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}" --exclude-dir=.git .` before pushing. Test fixtures use obviously-fake values.
 3. **Docs stay honest.** Hypotheses marked as hypotheses. No invented case studies, no guaranteed outcomes, no live prices outside `OFFER.md`. Failing tests beat comforting docs.
 4. **Stdlib + cryptography only.** No new dependencies without discussion.

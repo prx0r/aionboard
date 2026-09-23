@@ -491,6 +491,28 @@ Ten todos, worked autonomously. Focus: close validation gaps the peer reviews fl
 
 ---
 
+## Session 2026-09-23 — Handover preparation
+
+### Context
+Three agents now share this repo. AGENTS.md predated two of them. Preparing a clean handover.
+
+### What was done
+- AGENTS.md rewritten: full module map (assistant/, redteam/, security_audit/, verify.py, dashboard.py), honest state table, recent three-agent history with the merge lesson, conventions updated to 161 tests.
+- README test count corrected to 161.
+
+### Current state
+- 161 tests pass.
+- Working tree clean, remote in sync.
+- No completed paying installation is recorded.
+
+### Open threads for whoever picks this up
+1. First real electrician installation (manual, measured).
+2. First £20 nail-tech quickstart with support-minute tracking.
+3. MCP gateway deployment (security agent's item 1).
+4. Five TikToks from TIKTOK_BATCH_01, measured per FUNNEL.md.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:
