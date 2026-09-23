@@ -1,0 +1,668 @@
+[
+ {
+  "id": "DISCOVERY-PROGRESS",
+  "kind": "pain",
+  "text": "Progress records live in notebooks, messages, or memory (data_visibility_gaps, PROPOSED).",
+  "source": "verticals/driving-instructors/profile.json"
+ },
+ {
+  "id": "DISCOVERY-PROPOSAL",
+  "kind": "pain",
+  "text": "Proposals, deposits, contracts, and payments need careful approval (quote_estimate_management, PROPOSED).",
+  "source": "verticals/weddings/profile.json"
+ },
+ {
+  "id": "DISCOVERY-QUALIFICATION",
+  "kind": "pain",
+  "text": "Incomplete dates, venues, packages, and budgets (data_visibility_gaps, PROPOSED).",
+  "source": "verticals/weddings/profile.json"
+ },
+ {
+  "id": "DISCOVERY-QUOTE-INTAKE",
+  "kind": "pain",
+  "text": "Incomplete vehicle, location, condition, and timing details (data_visibility_gaps, PROPOSED).",
+  "source": "verticals/car-detailers/profile.json"
+ },
+ {
+  "id": "DISCOVERY-REPEAT",
+  "kind": "pain",
+  "text": "Repeat services are not systematically offered (silent_churn_lapse, PROPOSED).",
+  "source": "verticals/car-detailers/profile.json"
+ },
+ {
+  "id": "DISCOVERY-SCHEDULING",
+  "kind": "pain",
+  "text": "Lesson scheduling competes with cancellations and waiting lists (recurring_operations_scheduling, PROPOSED).",
+  "source": "verticals/driving-instructors/profile.json"
+ },
+ {
+  "id": "HAIR-SERVICE-AREA",
+  "kind": "pain",
+  "text": "Service-area ambiguity wastes enquiries (data_visibility_gaps, PROPOSED).",
+  "source": "verticals/hair/profile.json"
+ },
+ {
+  "id": "PP-001",
+  "kind": "pain",
+  "text": "Missed calls while on the tools (missed_inbound, template-analysis).",
+  "source": "verticals/electrician/profile.json"
+ },
+ {
+  "id": "PP-002",
+  "kind": "pain",
+  "text": "Calls go to voicemail during treatments (missed_inbound, VERIFIED).",
+  "source": "verticals/beauty/profile.json"
+ },
+ {
+  "id": "PP-008",
+  "kind": "pain",
+  "text": "No-shows on staffed rooms (no-shows, VERIFIED).",
+  "source": "verticals/beauty/profile.json"
+ },
+ {
+  "id": "PP-013",
+  "kind": "pain",
+  "text": "Rover and Wag marketplace tax (marketplace_aggregator_tax, VERIFIED).",
+  "source": "verticals/dog-groomers/profile.json"
+ },
+ {
+  "id": "PP-019",
+  "kind": "pain",
+  "text": "Extras done on a nod, never billed (unpriced_work_scope_creep, PROPOSED).",
+  "source": "verticals/electrician/profile.json"
+ },
+ {
+  "id": "PP-024",
+  "kind": "pain",
+  "text": "Unbilled cleans, verbal credits, unchased debt (unpriced_work_scope_creep, PROPOSED).",
+  "source": "verticals/gardeners-window-cleaners/profile.json"
+ },
+ {
+  "id": "PP-025",
+  "kind": "pain",
+  "text": "Travel, materials, and deep-clean extras unbilled (unpriced_work_scope_creep, PROPOSED).",
+  "source": "verticals/cleaners/profile.json"
+ },
+ {
+  "id": "PP-030",
+  "kind": "pain",
+  "text": "Cert coverage gaps discovered at the worst moment (compliance_drift, PROPOSED).",
+  "source": "verticals/electrician/profile.json"
+ },
+ {
+  "id": "PP-037",
+  "kind": "pain",
+  "text": "Lapsed regulars never win-backed (silent_churn_lapse, PROPOSED).",
+  "source": "verticals/hair/profile.json"
+ },
+ {
+  "id": "PP-038",
+  "kind": "pain",
+  "text": "Prepaid packages expire unworked (silent_churn_lapse, PROPOSED).",
+  "source": "verticals/beauty/profile.json"
+ },
+ {
+  "id": "PP-039",
+  "kind": "pain",
+  "text": "Paused or cancelled plans never won back (silent_churn_lapse, PROPOSED).",
+  "source": "verticals/cleaners/profile.json"
+ },
+ {
+  "id": "PP-043",
+  "kind": "pain",
+  "text": "Lapsed owners never re-engaged (silent_churn_lapse, PROPOSED).",
+  "source": "verticals/dog-groomers/profile.json"
+ },
+ {
+  "id": "PP-060",
+  "kind": "pain",
+  "text": "Reviews never answered or leveraged (revenue_capture_pricing, PROPOSED).",
+  "source": "verticals/beauty/profile.json"
+ },
+ {
+  "id": "PP-061",
+  "kind": "pain",
+  "text": "First cleans priced as standard cleans (revenue_capture_pricing, PROPOSED).",
+  "source": "verticals/gardeners-window-cleaners/profile.json"
+ },
+ {
+  "id": "PP-064",
+  "kind": "pain",
+  "text": "Non-weekly cadences poorly supported (recurring_operations_scheduling, VERIFIED).",
+  "source": "verticals/cleaners/profile.json"
+ },
+ {
+  "id": "PP-065",
+  "kind": "pain",
+  "text": "Single visits where grouping would work; route sprawl (recurring_operations_scheduling, PROPOSED).",
+  "source": "verticals/dog-groomers/profile.json"
+ },
+ {
+  "id": "PP-066",
+  "kind": "pain",
+  "text": "Paper round book is a single point of failure (recurring_operations_scheduling, PROPOSED).",
+  "source": "verticals/gardeners-window-cleaners/profile.json"
+ },
+ {
+  "id": "PP-070",
+  "kind": "pain",
+  "text": "Quotes sent, never chased (quote_estimate_management, PROPOSED).",
+  "source": "verticals/electrician/profile.json"
+ },
+ {
+  "id": "PP-073",
+  "kind": "pain",
+  "text": "Missed direct debits never chased (payment_cash_flow, PROPOSED).",
+  "source": "verticals/cleaners/profile.json"
+ },
+ {
+  "id": "PP-079",
+  "kind": "pain",
+  "text": "Proof-of-service records never reviewed (quality_trust, PROPOSED).",
+  "source": "verticals/dog-groomers/profile.json"
+ },
+ {
+  "id": "SAFETY-PATCH-TEST",
+  "kind": "pain",
+  "text": "Patch-test and allergy records (compliance_drift, PROPOSED).",
+  "source": "verticals/lashes/profile.json"
+ },
+ {
+  "id": "AI-CHATGPT-MCP",
+  "kind": "regulation",
+  "text": "ChatGPT MCP gating (PLATFORM REALITY, not legislation). MCP is real but gated: Developer Mode plus paid plan, remote HTTPS endpoints only, per-action confirmation. Old 2023 plugins are deprecated. Availability varies by plan, region, workspace, and role.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "AI-MUSE-UK",
+  "kind": "regulation",
+  "text": "Muse availability and connector review (PLATFORM REALITY, not legislation). Muse is US-only with no confirmed UK date. Connectors need functional, security, and legal review. Custom connectors are unreviewed. Never promise directory placement.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "FIN-FCA-AISP-PISP",
+  "kind": "regulation",
+  "text": "FCA authorisation for account and payment initiation. Account-information and payment-initiation services are regulated activities. Use an appropriately authorised provider; never collect customer banking credentials.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-ANIMAL",
+  "kind": "regulation",
+  "text": "Boarding/daycare licensing + welfare duty. Local-authority licence required; 5-star rating criteria as ops checklist; incident protocol in place.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-CDM",
+  "kind": "regulation",
+  "text": "CDM principal-contractor + contractor duties. Principal contractor plans, manages, and monitors; contractors SKET-check appointees; domestic-client duties default to the contractor in control.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-CIS",
+  "kind": "regulation",
+  "text": "Construction Industry Scheme deductions. Verify subcontractors with HMRC; deduct 20% registered / 30% unregistered; file CIS300 monthly.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-CLEANCHEM",
+  "kind": "regulation",
+  "text": "COSHH + Work at Height for cleaning trades. COSHH assessments for bleach, solvents, and detergents; risk assessment and controls for ladder and window work; competent persons only.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-CLINICAL-BOUNDARY",
+  "kind": "regulation",
+  "text": "Clinical judgment stays with registered clinicians; duty of candour on harm. Agent handles admin and navigation only; every clinical decision traceable to a registered clinician; open disclosure on harm.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-CMA-FUNERALS",
+  "kind": "regulation",
+  "text": "Funeral price transparency + inducement ban. Standardised Price List plus Attended/Unattended prices; ownership disclosure; ban on hospital/hospice/care-home inducements and coroner/police solicitation. No licensing regime in England/Wales yet.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-CONSUMER",
+  "kind": "regulation",
+  "text": "Consumer rights + distance selling + trading allowance. Goods must be fit for purpose; 14-day distance-returns information; register with HMRC past \u00a31,000 trading income.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-COSHH-PATCH",
+  "kind": "regulation",
+  "text": "Chemical safety + patch-test records in hair/beauty. COSHH assessments for tints and bleach; patch test plus record before colour services.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-DATAPAY",
+  "kind": "regulation",
+  "text": "Data protection + card-data handling. Lawful basis and minimisation for client data and photos; never store raw PANs; secrets as references, never values.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-ELECTRICAL",
+  "kind": "regulation",
+  "text": "Electrical competence + Part P + PRS 5-yearly EICRs. Competent persons only; notifiable domestic work via registered scheme or building control; private rentals need valid 5-year EICR.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-FGAS",
+  "kind": "regulation",
+  "text": "F-Gas qualification requirement. Certificate required for F-gas work on stationary refrigeration, air conditioning, heat pumps, and refrigerated trucks/trailers.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-GSIUR",
+  "kind": "regulation",
+  "text": "Gas competence + Gas Safe Register membership. No gas work unless competent; no employee/self-employed gas work unless in HSE-approved class (Gas Safe Register). Employers must ensure and monitor competence.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-HIREREWARD",
+  "kind": "regulation",
+  "text": "Hire-and-reward insurance + mileage rules. Hire-and-reward cover required (standard SDP excludes paid work); log all miles for AMAP (55p/mile to 10k from Apr 2026).",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-HSCA-REGS",
+  "kind": "regulation",
+  "text": "CQC fundamental standards + fit and proper persons. Reg 19: robust recruitment, relevant checks, ongoing fitness monitoring; Regs 9-20A: person-centred care, consent, safe care, safeguarding, staffing, governance, duty of candour",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-LOLER-CHAINSAW",
+  "kind": "regulation",
+  "text": "LOLER inspections + chainsaw competence. 6-monthly thorough examination for climbing kit used for lifting persons; documented chainsaw training (NPTC route) for insurance and council work. No statutory 'chainsaw licence' exists.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-MLR",
+  "kind": "regulation",
+  "text": "AML supervision for accountancy service providers. Register with HMRC or a professional-body supervisor unless exempt (under \u00a330k turnover, under 5% accountancy, supervised review).",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-MTD-ITSA",
+  "kind": "regulation",
+  "text": "MTD for Income Tax: digital records + quarterly updates. Digital records plus quarterly updates via compatible software: \u00a350k+ from Apr 2026, \u00a330k+ from Apr 2027, \u00a320k+ from Apr 2028. Points accrue per missed deadline.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-NATASHA",
+  "kind": "regulation",
+  "text": "Natasha's Law: PPDS allergen labelling. Name plus full ingredients with 14 allergens emphasised, on package or label.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-SITEOPS",
+  "kind": "regulation",
+  "text": "Fire safety + MOT integrity + food hygiene baselines. Fire risk assessment with competent persons; honest MOT testing per DVSA standards; FHRS hygiene discipline.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-SVGA-ADULT",
+  "kind": "regulation",
+  "text": "Regulated activity with adults + DBS barred-list checks. Enhanced DBS + Adults' Barred List for personal care, healthcare under direction/supervision, social work, day-to-day management of those doing it; Regulated Activity Providers have a legal duty to refer",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-SVGA-CHILD",
+  "kind": "regulation",
+  "text": "Regulated activity with children (teaching/training unsupervised). Enhanced DBS + Children's Barred List for unsupervised teaching/training of under-18s.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-TIPS",
+  "kind": "regulation",
+  "text": "Fair tips: 100% pass-through + written policy + tronc rules. Allocate 100% of qualifying tips fairly with no deductions; written policy where non-occasional; independent tronc only if genuinely independent.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-TPO",
+  "kind": "regulation",
+  "text": "Tree Preservation Orders + conservation-area controls. Check TPO/register status before quoting; correct notice or application per route; diary the statutory response window per case. Never hardcode one clock.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "LEG-VETMEDS",
+  "kind": "regulation",
+  "text": "VMR batch/prescriber/5yr retention + Schedule 2 CD register + PSS. Every dispense logged with batch and prescriber, 5-year retention; controlled-drug running balances with witnesses; PSS evidence pack always ready.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "MKT-PECR",
+  "kind": "regulation",
+  "text": "PECR consent and soft opt-in for electronic marketing. Sole traders and some partnerships are individual subscribers: unsolicited electronic marketing generally needs consent unless a valid soft opt-in applies. Screen live calls against TPS/CTPS.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "NONLAW-MONEY-APPROVAL",
+  "kind": "regulation",
+  "text": "Money moves on human approval (DESIGN RULE, not legislation). Money moves only on human-issued, parameter-bound, single-use, expiring capability. Explicitly NOT statute.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "NONLAW-SOCIAL-CREATION",
+  "kind": "regulation",
+  "text": "Social account creation is human-only (PLATFORM RULE, not legislation). Social account creation is human-only. The agent maps, guides, verifies, and connects \u2014 it never creates accounts. Explicitly NOT law.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "SEC-SECRETS",
+  "kind": "regulation",
+  "text": "Secrets handling (DESIGN RULE, not legislation). No secrets in prompts, logs, handovers, or backups metadata. Secrets live in customer-owned vaults or OS keychains, referenced never valued.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "SEC-TENANT-ISOLATION",
+  "kind": "regulation",
+  "text": "Tenant isolation (DESIGN RULE, not legislation). Every row acted on must belong to the expected customer. Cross-tenant reads or writes fail closed.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "TAX-CT",
+  "kind": "regulation",
+  "text": "Corporation Tax on company profits. Corporation Tax on company profits; digital records for year end; main rate applies above thresholds with marginal relief below.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "TAX-NIC-PAYROLL",
+  "kind": "regulation",
+  "text": "PAYE, NICs, pensions, and wage floors for employers. Operate PAYE, deduct Income Tax and Class 1 NICs, auto-enrol eligible staff into pensions. National Minimum/Living Wage floors apply.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "TAX-VAT-90K",
+  "kind": "regulation",
+  "text": "VAT registration at \u00a390,000 rolling turnover. Register at \u00a390,000 taxable turnover over a rolling 12 months. MTD for VAT returns. Non-established UK suppliers can have different obligations.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "VOICE-RECORDING",
+  "kind": "regulation",
+  "text": "Call-recording notification and lawful basis (DESIGN GUIDANCE, not legislation). Inform all parties that calls are recorded; state the purpose; store securely with retention limits. Confirm the exact position with legal advice before deploying.",
+  "source": "regulations/registry.json"
+ },
+ {
+  "id": "BookingKoala",
+  "kind": "tool",
+  "text": "BookingKoala: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/cleaners/profile.json"
+ },
+ {
+  "id": "Booksy",
+  "kind": "tool",
+  "text": "Booksy: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/beauty/profile.json"
+ },
+ {
+  "id": "Cleaner Planner",
+  "kind": "tool",
+  "text": "Cleaner Planner: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/gardeners-window-cleaners/profile.json"
+ },
+ {
+  "id": "Cleenie",
+  "kind": "tool",
+  "text": "Cleenie: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/cleaners/profile.json"
+ },
+ {
+  "id": "Customer-owned contracts",
+  "kind": "tool",
+  "text": "Customer-owned contracts: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/weddings/profile.json"
+ },
+ {
+  "id": "Customer-owned notes",
+  "kind": "tool",
+  "text": "Customer-owned notes: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/driving-instructors/profile.json"
+ },
+ {
+  "id": "Dog Walker Central",
+  "kind": "tool",
+  "text": "Dog Walker Central: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/dog-groomers/profile.json"
+ },
+ {
+  "id": "Facebook",
+  "kind": "tool",
+  "text": "Facebook: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/beauty/profile.json"
+ },
+ {
+  "id": "Fergus",
+  "kind": "tool",
+  "text": "Fergus: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/electrician/profile.json"
+ },
+ {
+  "id": "Fresha",
+  "kind": "tool",
+  "text": "Fresha: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/beauty/profile.json"
+ },
+ {
+  "id": "GoCardless",
+  "kind": "tool",
+  "text": "GoCardless: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/cleaners/profile.json"
+ },
+ {
+  "id": "Google Business Profile",
+  "kind": "tool",
+  "text": "Google Business Profile: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/beauty/profile.json"
+ },
+ {
+  "id": "Google Calendar",
+  "kind": "tool",
+  "text": "Google Calendar: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/car-detailers/profile.json"
+ },
+ {
+  "id": "Instagram",
+  "kind": "tool",
+  "text": "Instagram: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/hair/profile.json"
+ },
+ {
+  "id": "Jobber",
+  "kind": "tool",
+  "text": "Jobber: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/electrician/profile.json"
+ },
+ {
+  "id": "Manage My Round",
+  "kind": "tool",
+  "text": "Manage My Round: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/gardeners-window-cleaners/profile.json"
+ },
+ {
+  "id": "Phorest",
+  "kind": "tool",
+  "text": "Phorest: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/beauty/profile.json"
+ },
+ {
+  "id": "Powered Now",
+  "kind": "tool",
+  "text": "Powered Now: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/electrician/profile.json"
+ },
+ {
+  "id": "ProCleanerUK",
+  "kind": "tool",
+  "text": "ProCleanerUK: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/cleaners/profile.json"
+ },
+ {
+  "id": "Rover",
+  "kind": "tool",
+  "text": "Rover: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/dog-groomers/profile.json"
+ },
+ {
+  "id": "Square",
+  "kind": "tool",
+  "text": "Square: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/cleaners/profile.json"
+ },
+ {
+  "id": "Square Appointments",
+  "kind": "tool",
+  "text": "Square Appointments: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/beauty/profile.json"
+ },
+ {
+  "id": "Stripe",
+  "kind": "tool",
+  "text": "Stripe: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/cleaners/profile.json"
+ },
+ {
+  "id": "Stripe / Square",
+  "kind": "tool",
+  "text": "Stripe / Square: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/car-detailers/profile.json"
+ },
+ {
+  "id": "Telnyx + voice agent",
+  "kind": "tool",
+  "text": "Telnyx + voice agent: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/electrician/profile.json"
+ },
+ {
+  "id": "TendPets",
+  "kind": "tool",
+  "text": "TendPets: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/dog-groomers/profile.json"
+ },
+ {
+  "id": "TikTok",
+  "kind": "tool",
+  "text": "TikTok: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/nails/profile.json"
+ },
+ {
+  "id": "Time To Pet",
+  "kind": "tool",
+  "text": "Time To Pet: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/dog-groomers/profile.json"
+ },
+ {
+  "id": "Tradify",
+  "kind": "tool",
+  "text": "Tradify: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/electrician/profile.json"
+ },
+ {
+  "id": "Trustpilot",
+  "kind": "tool",
+  "text": "Trustpilot: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/beauty/profile.json"
+ },
+ {
+  "id": "Vagaro",
+  "kind": "tool",
+  "text": "Vagaro: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/beauty/profile.json"
+ },
+ {
+  "id": "Wag",
+  "kind": "tool",
+  "text": "Wag: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/dog-groomers/profile.json"
+ },
+ {
+  "id": "WhatsApp Business app",
+  "kind": "tool",
+  "text": "WhatsApp Business app: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/beauty/profile.json"
+ },
+ {
+  "id": "Work Planner",
+  "kind": "tool",
+  "text": "Work Planner: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/gardeners-window-cleaners/profile.json"
+ },
+ {
+  "id": "Xero / QuickBooks / Sage",
+  "kind": "tool",
+  "text": "Xero / QuickBooks / Sage: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/cleaners/profile.json"
+ },
+ {
+  "id": "ZenMaid",
+  "kind": "tool",
+  "text": "ZenMaid: existing software to integrate or import, never replace unnecessarily.",
+  "source": "verticals/cleaners/profile.json"
+ },
+ {
+  "id": "beauty",
+  "kind": "vertical",
+  "text": "Beauty: easy onboarding difficulty.",
+  "source": "verticals/beauty/manifest.json"
+ },
+ {
+  "id": "car-detailers",
+  "kind": "vertical",
+  "text": "Mobile Car Detailers: medium onboarding difficulty.",
+  "source": "verticals/car-detailers/manifest.json"
+ },
+ {
+  "id": "cleaners",
+  "kind": "vertical",
+  "text": "Domestic Cleaners: easy onboarding difficulty.",
+  "source": "verticals/cleaners/manifest.json"
+ },
+ {
+  "id": "dog-groomers",
+  "kind": "vertical",
+  "text": "Dog Groomers: easy-medium onboarding difficulty.",
+  "source": "verticals/dog-groomers/manifest.json"
+ },
+ {
+  "id": "driving-instructors",
+  "kind": "vertical",
+  "text": "Driving Instructors: medium onboarding difficulty.",
+  "source": "verticals/driving-instructors/manifest.json"
+ },
+ {
+  "id": "electrician",
+  "kind": "vertical",
+  "text": "Electrician: medium onboarding difficulty.",
+  "source": "verticals/electrician/manifest.json"
+ },
+ {
+  "id": "gardeners-window-cleaners",
+  "kind": "vertical",
+  "text": "Gardeners and Window Cleaners: medium onboarding difficulty.",
+  "source": "verticals/gardeners-window-cleaners/manifest.json"
+ },
+ {
+  "id": "hair",
+  "kind": "vertical",
+  "text": "Mobile Hairdressers and Braiders: easy onboarding difficulty.",
+  "source": "verticals/hair/manifest.json"
+ },
+ {
+  "id": "lashes",
+  "kind": "vertical",
+  "text": "Lash and Brow Artists: easy onboarding difficulty.",
+  "source": "verticals/lashes/manifest.json"
+ },
+ {
+  "id": "nails",
+  "kind": "vertical",
+  "text": "Nail Technicians: easy onboarding difficulty.",
+  "source": "verticals/nails/manifest.json"
+ },
+ {
+  "id": "weddings",
+  "kind": "vertical",
+  "text": "Wedding Photographers and Makeup Artists: medium onboarding difficulty.",
+  "source": "verticals/weddings/manifest.json"
+ }
+]

@@ -375,6 +375,28 @@ Needed one combined source for legislation, tax, finance, security, voice, marke
 
 ---
 
+## Session 2026-09-23 — Knowledge graph + free chatbot wedge
+
+### Context
+Needed a zero-marginal-cost funnel (TikTok → site → £20) and a queryable structure over all vertical packs plus regulations.
+
+### What was done
+- `aionboard/graph.py`: 111 nodes, 179 edges from verticals + registry. Keyword retrieval with cited answers; honest ignorance on no match.
+- `site/chat.html` + `site/knowledge.json`: static demo chatbot. Same retrieval logic in JS, disclaimer on page, no accounts, no sends.
+- `FUNNEL.md`: content plan (one pain → one number → one demo question), conversion metrics, kill rules for videos.
+- 10 new tests (graph coverage, cited answers, demo status, no guarantees, bundle parity).
+
+### Current state
+- 91 tests pass.
+- No completed paying installation is recorded.
+
+### Next steps
+1. Publish 5 pilot TikToks and measure views → chat → email.
+2. Validate one manual electrician installation.
+3. Validate one £20 nail-tech quickstart and measure support minutes.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:

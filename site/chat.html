@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Onboard — Ask about the £20 setup</title>
+  <meta name="description" content="Demo assistant answering from AI Onboard's published research. No live AI, no account access." />
+</head>
+<body>
+  <main>
+    <h1>Ask about the £20 setup</h1>
+    <p><strong>Demo assistant.</strong> Answers come only from our published
+    research files, with sources shown. It cannot access your accounts,
+    book anything, or send messages.</p>
+    <div id="chat-log" aria-live="polite"></div>
+    <form id="chat-form">
+      <label for="chat-input">Your question</label>
+      <input id="chat-input" type="text" autocomplete="off"
+        placeholder="e.g. nail no-shows, MTD thresholds, what's included for £20?" />
+      <button type="submit">Ask</button>
+    </form>
+    <p>Try: <em>what does £20 get me</em> · <em>nail no-shows</em> ·
+    <em>MTD thresholds</em> · <em>do you move money</em></p>
+    <p><a href="index.html">Back to AI Onboard pilot</a></p>
+  </main>
+<script>
+const STOPWORDS = new Set(["what","how","does","do","is","are","the","a","an","to","for","my","i","it","of","in","on","me","you","your"]);
+let NODES = [];
+fetch("knowledge.json").then(r => r.json()).then(data => { NODES = data; });
+function tokens(s) {
+  return (s.toLowerCase().match(/[a-z0-9]+/g) || []).filter(t => !STOPWORDS.has(t));
+}
+function answer(question) {
+  const query = new Set(tokens(question));
+  if (query.size === 0) {
+    return "Ask about a specific trade, pain point, tool, or regulation — for example 'nail no-shows' or 'MTD thresholds'.";
+  }
+  const scored = [];
+  for (const node of NODES) {
+    const nodeTokens = new Set(tokens(node.id + " " + node.text));
+    let overlap = 0;
+    for (const t of query) { if (nodeTokens.has(t)) overlap++; }
+    if (overlap > 0) scored.push([overlap, node]);
+  }
+  scored.sort((a, b) => b[0] - a[0]);
+  if (scored.length === 0) {
+    return "I don't have verified information on that yet. Try a trade, pain, tool, or regulation — for example 'electrician quotes' or 'VAT threshold'.";
+  }
+  const lines = ["Here's what our research covers:"];
+  for (const [, node] of scored.slice(0, 5)) {
+    lines.push("- [" + node.kind + "] " + node.text + " (source: " + node.source + ")");
+  }
+  return lines.join("\n");
+}
+document.getElementById("chat-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const input = document.getElementById("chat-input");
+  const log = document.getElementById("chat-log");
+  const q = document.createElement("p");
+  q.textContent = "You: " + input.value;
+  log.appendChild(q);
+  const a = document.createElement("p");
+  a.style.whiteSpace = "pre-wrap";
+  a.textContent = "Assistant: " + answer(input.value);
+  log.appendChild(a);
+  input.value = "";
+});
+</script>
+</body>
+</html>

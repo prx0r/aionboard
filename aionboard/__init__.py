@@ -36,6 +36,7 @@ from .compliance import (
     stale_rules,
 )
 from .demo import run_demo
+from .graph import answer_text, ask, build_graph
 from .handover import generate_handover, write_handover
 from .integrations import (
     CAPABILITY_STATES,
@@ -90,7 +91,14 @@ from .security import (
     redeem_approval,
     scan_text,
 )
-from .website import canonical_domain, render_site, write_site
+from .website import (
+    build_knowledge_bundle,
+    canonical_domain,
+    render_chat_page,
+    render_site,
+    write_chat_page,
+    write_site,
+)
 
 __all__ = [
     "CAPABILITY_STATES",
@@ -119,6 +127,10 @@ __all__ = [
     "create_onboarding",
     "execute_outbound",
     "find_by_company_number",
+    "answer_text",
+    "ask",
+    "build_graph",
+    "build_knowledge_bundle",
     "generate_handover",
     "generate_manual",
     "get_business",
@@ -155,6 +167,7 @@ __all__ = [
     "record_stack_item",
     "record_tps_check",
     "redeem_approval",
+    "render_chat_page",
     "render_site",
     "digest",
     "resolve_ticket",
@@ -174,6 +187,7 @@ __all__ = [
     "support_stats",
     "tasks_for",
     "verify_backup",
+    "write_chat_page",
     "write_handover",
     "write_site",
 ]
