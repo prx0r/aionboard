@@ -288,6 +288,26 @@ Saved the competitive research + dev brief as `devplan.md`, then implemented Che
 
 ---
 
+## Session 2026-09-23 — Trust-first process reframing
+
+### Context
+Exact per-tool API automation is the wrong deliverable. Customers won't hand over credentials; trust is the product. Reframed around customer-led process with security guarantees at each step.
+
+### What was done
+- New `TRUST_MODEL.md`: five guarantees (no passwords, no money movement, no silent sends, revocable everything, minimal data) plus see/never-see table.
+- Rewrote `AUTOMATION_PLAYBOOK.md` as trust-first process cards: goal, customer action, our action, what we see, what we never touch, how to revoke, if-blocked fallback. Removed untested API code samples.
+- Added trust-rules pointer to all 11 vertical INSTALL.md files.
+
+### Current state
+- 53 tests pass.
+- No completed paying installation is recorded.
+
+### Next steps
+1. Validate one manual electrician installation.
+2. Validate one £20 nail-tech quickstart and measure support minutes.
+
+---
+
 ## Adding new build notes
 
 When you make changes, add a new session header with:

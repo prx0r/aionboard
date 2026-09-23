@@ -33,3 +33,5 @@ Separate optional tasks:
 - `meta_production_integration`
 - `custom_integration`
 - `lead_generation`
+
+Trust rules for every task: customer-owned accounts, no passwords held, owner approval before sends, revocation documented. See `../../TRUST_MODEL.md`.
